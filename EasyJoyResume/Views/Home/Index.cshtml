@@ -1,0 +1,652 @@
+﻿@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="keywords" content="简悦，个人简历，简历模板，个人简历模板，在线简历">
+    <meta name="description" content="简悦是便捷的在线简历制作平台  - 创意简历模板、简历封面、英文简历、简历表格、求职自荐信，及在线免费制作工具,高效-便捷-实用，满足各类求职者的简历制作需求，有效提升求职效率，做好简历就上简悦！">
+    <title>简悦&nbsp;-&nbsp;在线简历制作平台，提供优质个人简历模板，免费在线制作</title>
+    <link rel="stylesheet" href="../Content/common/common.css" type="text/css">
+    <link rel="stylesheet" href="../Content/index.css" type="text/css">
+    <script src="../Scripts/jquery-1.8.0.js" type="text/javascript"></script>
+    <script src="../Scripts/utils.js" type="text/javascript"></script>
+    <script src="../Scripts/common_ext.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery.validate.js" type="text/javascript"></script>
+    <script src="../Scripts/pswd/jsbn.js" type="text/javascript"></script>
+    <script src="../Scripts/pswd/prng4.js" type="text/javascript"></script>
+    <script src="../Scripts/pswd/rng.js" type="text/javascript"></script>
+    <script src="../Scripts/pswd/rsa.js" type="text/javascript"></script>
+    <script src="../Scripts/pswd/base64.js" type="text/javascript"></script>
+    <script src="/../Scripts/layer.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../Scripts/skin/layer.css" id="layui_layer_skinlayercss" style="">
+    <script src="../Scripts/plugin/modal/modal.js" type="text/javascript"></script>
+    <script src="../Scripts/login.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery.lazyload.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../Content/layer.css" type="text/css">
+    <script src="../Scripts/index/index.js" type="text/javascript"></script>
+    <script src="../Scripts/plugin/owl-carouselowl/owl.carousel.min.js"></script>
+    <link href="../Scripts/plugin/owl-carouselowl/owl.carousel.min.css" rel="stylesheet">
+</head>
+<body class="index_div">
+    <div class="index_header">
+        <div class="jl-header">
+            <div class="jl-logo">
+                <h1><a href="/"></a></h1>
+            </div>
+            <div class="jl-touxiang" id="userHead">
+                <a class="jl-tx-img" id="user_center" href="/Member/Myresume/"> 
+                <i style="display: none;"></i> 
+                <img src="/../images/0.png" alt="" width="48" height="48"> 
+                <span>个人中心</span> </a>
+                <div class="jl-user-info" style="display: none;">
+                    <span class="triangle-up"></span>
+                    <div class="user-bd">
+                        <ul class="user-ul-l">
+                            <li class="sz"><a href="/Member/Myresume/">我的简历</a></li>
+                            <li class="dd"><a href="/Member/Order/">订单管理</a></li>
+                            <li class="gj"><a href="/Member/ResumeSendEdit">简历投递</a></li>
+                            <li class="sc"><a href="/Member/Set/">账号设置</a></li>
+                            <li class="tc"><a href="#" id="user_logout">安全退出</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="jl-login"> 
+            <a style="display:none;" id="login" class="jl-login-a">登录&nbsp;/&nbsp;注册</a> 
+            </div>
+            <div class="jl-nav">
+                <ul>
+                    <li class="nav-li"><a href="/CvResume/CvTemplate">在线制作</a></li>
+                    <li class="nav-li"><a href="/Article">简历技巧</a></li>
+                    @*<li class="nav-li other-nav-li">
+                        <a href="javascript:;"></a>
+                        <div class="jl-ej-nav">
+                            <ul>
+                                <li><a href="http://www.500d.me/common/joinus/">咨询客服</a></li>
+                                <li><a href="http://www.500d.me/common/joinus/">关于我们</a></li>
+                            </ul>
+                        </div>
+                    </li>*@
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="mark_mask" style="display:none;position:fixed;top:40px;left:0;z-index:99999999;height:1000px;width:100%;background:rgba(0,0,0,0.4);"></div>
+    <!--创建  搜索 轮播-->
+    <div class="index-skrollr-container">
+        <div class="jl-index-bj index-skrollr-content">
+            <div class="g-w1240 index-bjcontent-cneter">
+                <div class="jl-index-text">
+                    <h1>备受好评的求职利器，HR专家联名推荐</h1>
+                </div>
+                <div class="jl-index-startmake"> <a class="free-resume-btn"><i></i>免费制作简历</a> </div>
+            </div>
+            <ul class="index-banner-slide">
+                <li class="show"><img src="../images/index/index_banner1.png"></li>
+                <li><img src="../images/index/index_banner2.png"></li>
+                <li><img src="../images/index/index_banner3.png"></li>
+                <li><img src="../images/index/index_banner4.png"></li>
+            </ul>
+            <div class="jl-index-bannerfoot">
+                <ul class="g-w1240">
+                    <li class="bannerfoot-text">
+                        <i></i><span>高效</span>
+                        <p>一键生成 , 自动排版 , 轻松编辑</p>
+                    </li>
+                    <li class="bannerfoot-text">
+                        <i></i><span>专业</span>
+                        <p>模板范例 , 专业HR指导</p>
+                    </li>
+                    <li class="bannerfoot-text">
+                        <i></i><span>智能</span>
+                        <p>智能诊断，免费获取简历报告</p>
+                    </li>
+                    <li class="bannerfoot-text">
+                        <i></i><span>云端</span>
+                        <p>实时保持，多端同步，随时查看</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--选择j简历-->
+    <div class="index-skrollr-layer">
+        <div class="jl-index-createresume">
+            <div class="createresume-title">
+                <div class="g-w1240">
+                    <h1>- 请选择简历精美模板 -</h1>
+                    <span> 模板样式，使用时可一键更换，为简历选一款好皮肤</span>
+                </div>
+            </div>
+            <div class="show-template-container">
+                <ul class="show-template-content">
+                    <li class="show-template-list">
+                        <div class="createresume-template" id="createresume-template">
+                            <div class="template_type">
+                                <div class="template_type_title">
+                                    <span>时尚</span><span>简历样式的2.0版本，广受求职者欢迎</span>
+                                    
+                                </div>
+                                <div class="type_template_list" style="width: 4200px; left: 0px;">
+                                    <div class="template_card" data_itemid="206">
+                                        <img src="http://file.500d.me/upload/image/201811/01/34a66513-66fd-462a-971c-c883dcfafe7d.png" alt="JM0203">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="73">
+                                        <img src="http://file.500d.me/upload/image/201811/01/444c2024-b321-46c4-b3f5-1e86449f0d5a.png" alt="JM0256">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="660">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/sjs0140.jpg" alt="sjs0140">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="240">
+                                        <img src="http://file.500d.me/upload/image/201811/01/6843ed25-f159-4d49-b1ef-1a8266b6c8f1.png" alt="JM0217">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="244">
+                                        <img src="http://file.500d.me/upload/image/201811/01/16787090-ed1b-4c4a-922f-1fa7dc949b3e.png" alt="JM0288">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="249">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0292.jpg" alt="JM0292">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="394">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/um0016.jpg" alt="UM0016">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="251">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0296.jpg" alt="JM0296">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="128">
+                                        <img src="http://file.500d.me/upload/image/201811/01/890be099-b1d6-47d3-b6e6-6304582e1d20.png" alt="JM0084">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="76">
+                                        <img src="http://file.500d.me/upload/image/201811/01/c15fdc90-b4e9-4b9b-bbde-ee6de99d729e.png" alt="JM0206">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="81">
+                                        <img src="http://file.500d.me/upload/image/201811/01/73c481b2-1d6d-4003-b278-64b03639ce7d.png" alt="JM0193">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="113">
+                                        <img src="http://file.500d.me/upload/image/201811/01/6d64fdd8-2cf7-4bd7-b647-d3108d884aed.png" alt="JM0087">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="224">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0207.jpg" alt="JM0207">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="104">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0188.jpg" alt="JM0188">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="453">
+                                        <img src="http://file.500d.me/upload/image/201811/01/9c836498-74d4-4187-8a9c-64453f3bbd66.png" alt="JM0208">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="template_type">
+                                <div class="template_type_title">
+                                    <span>简洁</span><span>极简设计，文字是简历上的绝对王者</span>
+                                    
+                                </div>
+                                <div class="type_template_list" style="width: 4480px; left: 0px;">
+                                    <div class="template_card" data_itemid="664">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0369.jpg" alt="jm0369">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="653">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jl0003.jpg" alt="jl0003">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="652">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jl0002.jpg" alt="jl0002">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="656">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jl0001.jpg" alt="jl0001">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="659">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/sjs0081.jpg" alt="sjs0081">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="662">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/sjs0141.jpg" alt="sjs0141">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="658">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/sjs0139.jpg" alt="sjs0139">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="657">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jl0005.jpg" alt="jl0005">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="655">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jl0004.jpg" alt="jl0004">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="543">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0350.jpg" alt="jm0350">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="388">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/um0010.jpg" alt="UM0010">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="386">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/um0008.jpg" alt="UM0008">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="256">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0299.jpg" alt="JM0299">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="248">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0289.jpg" alt="JM0289">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="209">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0191.jpg" alt="JM0191">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="553">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/sjs0087.jpg" alt="sjs0087">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="template_type">
+                                <div class="template_type_title">
+                                    <span>经典</span><span>在很长一段时间里简历就长这样</span>
+                                    
+                                </div>
+                                <div class="type_template_list" style="width: 5600px; left: 0px;">
+                                    <div class="template_card" data_itemid="512">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/sjs0056.jpg" alt="SJS0056">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="1">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0001y.jpg" alt="JM0001Y">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="3">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0001.jpg" alt="JM0001">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="10">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0225.jpg" alt="JM0225">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="223">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0106.jpg" alt="JM0106">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="17">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0226.jpg" alt="JM0226">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="232">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/yw0005.jpg" alt="YW0005">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="591">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/sjs0061.jpg" alt="sjs0061">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="561">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0347.jpg" alt="jm0347">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="542">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/bg0019.jpg" alt="BG0019">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="590">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/yw0080.jpg" alt="yw0080">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="467">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/um0072.jpg" alt="UM0072">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="449">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/um0061.jpg" alt="UM0061">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="440">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0211.jpg" alt="JM0211">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="412">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/um0033.jpg" alt="UM0033">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="371">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/cy0039.jpg" alt="CY0039">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="254">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0300.jpg" alt="JM0300">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="253">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0293.jpg" alt="JM0293">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="252">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0298.jpg" alt="JM0298">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="552">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/sjs0086.jpg" alt="sjs0086">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="template_type">
+                                <div class="template_type_title">
+                                    <span>创意</span><span>略带夸张和不羁，我们建议创意工作者使用</span>
+                                    
+                                </div>
+                                <div class="type_template_list" style="width: 4480px; left: 0px;">
+                                    <div class="template_card" data_itemid="257">
+                                        <img src="http://file.500d.me/upload/image/201811/01/a51aaacb-6677-49fd-8f52-a02fd37ca4a6.png" alt="JM0306">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="129">
+                                        <img src="http://file.500d.me/upload/image/201811/01/2bd0b0d1-807e-46a9-90f0-0acdad01e28d.png" alt="JM0080">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="110">
+                                        <img src="http://file.500d.me/upload/image/201811/01/42d09001-22af-493e-9818-26dacdd34ed5.png" alt="JM0086">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="245">
+                                        <img src="http://file.500d.me/upload/image/201811/01/6422d0ef-1c96-4d9b-ab0e-fd4151d820f3.png" alt="JM0290">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="125">
+                                        <img src="http://file.500d.me/upload/image/201811/01/f7772a33-fea2-4baa-a7ac-a3946f854b73.png" alt="JM0073">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="665">
+                                        <img src="http://file.500d.me/upload/image/201811/01/73fc6dbe-7dab-4b23-8972-82771ce85274.png" alt="um0084">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="666">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/sjs0095.jpg" alt="sjs0095">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="507">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/wm0008.jpg" alt="WM0008">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="365">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0301.jpg" alt="JM0301">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="255">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0302.jpg" alt="JM0302">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="152">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0064.jpg" alt="JM0064">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="589">
+                                        <img src="http://file.500d.me/upload/image/201811/01/353a9e76-c073-4d00-993e-4ccb089b379f.png" alt="sjs0003">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="431">
+                                        <img src="http://file.500d.me/upload/image/201811/01/58f413bb-1966-4411-be56-738bfe7914ea.png" alt="JM0283">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="429">
+                                        <img src="http://file.500d.me/upload/image/201811/01/55b47e49-811d-4ecf-b848-f679131c9504.png" alt="JM0295">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="663">
+                                        <img src="http://file.500d.me/upload/image/201811/01/9f049740-6341-4873-808b-26b2ee32b0af.png" alt="sjs0102">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                    <div class="template_card" data_itemid="430">
+                                        <img src="http://static.500d.me/upload/resume_bank_item/jm0284.jpg" alt="JM0284">
+                                        <div class="check_masking"><button>开始编辑</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </li> 
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <div class="index-skrollr-layer">
+        <div class="jl-index-footer">
+            <div class="foot-makeresume">
+                <p class="makeresume-text"></p>
+                <div class="makeresume-btn">开始制作简历</div>
+            </div>
+            <div class="foot-link">
+                <p class="link-title">友情链接<span>友情链接交换、业务合作等请加微信号：</span></p>
+                <div class="foot-qrcode">
+                    <img src="../images/qrcode_jy500.png">
+                    <p>扫码关注简悦简历</p>
+                    <a class="icon-mblog" href="#" target="_blank"></a>
+                    <a class="icon-taobao" href="#" target="_blank"></a>
+                </div>
+                <ul class="link-list">
+                    <li><a href="http://www.baidu.com/xiaoyuan/" target="_blank">百度</a></li>
+                    <li><a href="http://www.taobao.com/" target="_blank">淘宝</a></li>
+                </ul>
+                <ul class="link-list">
+                    <li><a href="http://www.qq.com/" target="_blank">腾讯</a></li>
+                    <li><a href="http://jd.com/" target="_blank">京东</a></li>
+                </ul>
+            </div>
+            <div class="foot-copyright">
+                <div class="copyright-left">简悦网站所发布全部“简历模板”版权归简悦所有， 任何商业用途均须联系作者。如未经授权用作他处，简悦将保留追究侵权者法律责任的权利。</div>
+                <div class="copyright-right">
+                    <p class="company-name">山东简悦信息科技有限公司</p>
+                    <p class="company-about">
+                    <a href="/common/joinus/" target="_blank">关于我们</a>&nbsp;&#45;&nbsp;
+                    <a href="/common/joinus/" target="_blank">加入我们</a>&nbsp;&#45;&nbsp; 
+                    <a href="/common/joinus/" target="_blank">联系我们</a>&nbsp;&#45;&nbsp; 
+                    <a href="/help/" target="_blank">帮助中心</a>&nbsp;&#45;&nbsp; 
+                    <a href="/sitemap.html" target="_blank">网站地图</a></p>
+                    <p class="company-copyright">Copyright © 2018-@DateTime.Now.Year jy500.cn. All Rights Reserved. <a href="http://www.miitbeian.gov.cn/" target="_blank">鲁ICP备11111111号</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--账户登录-->
+    <div class="modal lrModal" id="zhloginModal">
+        <div class="modal-dialog zhlogin show-swal2">
+            <div class="modal-content">
+                <div class="hd">
+                    <h2>账号登录</h2>
+                </div>
+            </div>
+            <div class="cd">
+                <form class="zhlogin-form" method="POST" action="/login/submit/" id="loginForm">
+                    <input type="hidden" name="service" value="">
+                    <div class="valid-msg" style="display:none">
+                        <p class="error incorrect_username">你输入的密码与账号名不匹配，是否<a href="#" data-toggle="modal" data-target="#zhpasswordModal" data-dismiss="modal" aria-hidden="true"> 忘记密码?</a></p>
+                        <p class="error null_tips" style="display:none">请输入登录账号和密码</p>
+                    </div>
+                    <div class="field username-field">
+                        <label title="手机号 / 邮箱"></label>
+                        <input type="text" name="username" placeholder="手机号 / 邮箱">
+                    </div>
+                    <div class="field pwd-field">
+                        <label title="密码"></label>
+                        <input type="password" name="password" placeholder="密码">
+                    </div>
+                    <div class="submit">
+                        <button type="button">
+                            <input class="loading1 spin " style="display:none">
+                            登录
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="bd">
+                <a class="zc right" href="#" data-toggle="modal" data-target="#regemailModal" data-dismiss="modal" aria-hidden="true">邮箱注册</a>
+                <a class="wj right " href="#" data-toggle="modal" data-target="#zhpasswordModal" data-dismiss="modal" aria-hidden="true">忘记密码？</a>
+            </div>
+        </div>
+    </div>
+    <!--邮箱注册-->
+    <div class="modal lrModal" id="regemailModal">
+        <div class="modal-dialog reg show-swal2">
+            <div class="modal-content">
+                <div class="hd">
+                    <h2>邮箱注册</h2>
+                    <div class="other-yzc ">已注册<a href="#" data-toggle="modal" data-target="#zhloginModal" data-dismiss="modal" aria-hidden="true"> 登录</a></div>
+                </div>
+                <div class="cd">
+                    <form class="reg-form" id="regEmailForm" action="/register/submit/" method="POST">
+                        <input name="captchaId" type="hidden" value="">
+                        <div class="field phone-field">
+                            <label title="邮箱 ">邮箱</label>
+                            <input id="emailNum" type="email" name="email" autocomplete="off" placeholder="请输入你的邮箱地址 ">
+                            <div class="valid-tips">
+                                <p class="tips">验证完后，你可以用该邮箱登录和找回密码</p>
+                            </div>
+                            <div class="valid-error">
+                                <p class="error"></p>
+                            </div>
+                        </div>
+                        <div class="field pwd-field">
+                            <label title="密码">设置密码</label>
+                            <input type="password" name="password" autocomplete="off" placeholder="密码">
+                            <div class="valid-tips">
+                                <p class="tips">只能使用字母、数字、下划线，6-20个字符</p>
+                            </div>
+                            <div class="valid-error">
+                                <p class="error"></p>
+                            </div>
+                        </div>
+                        <div class="field code-field">
+                            <label title="验证码">验证码</label>
+                            <input type="text" placeholder="请输入验证码" name="captchaCode">
+                            <img class="codeimg captchaImage" src="">
+                            <div class="valid-error">
+                                <p class="error">请输入正确的验证码</p>
+                            </div>
+                        </div>
+                        <div class="submit">
+                            <button type="button">
+                                <input class="loading1 spin " style="display:none">
+                                注册
+                            </button>
+                        </div>
+                        <div class="agreement_field">点击 [ 注册 ] 按钮，即代表你同意<a href="http://static.500d.me/resources/html/member/agreement.html" target="_blank">《简悦用户协议》</a></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--找回密码-->
+    <div class="modal lrModal" id="zhpasswordModal">
+        <div class="modal-dialog zhpwd show-swal2">
+            <div class="modal-content">
+                <div class="hd">
+                    <h2>找回密码</h2>
+                </div>
+                <div class="cd">
+                    <form class="zhlogin-form" id="zhpwdForm">
+                        <input name="captchaId" type="hidden" value="">
+                        <input name="mid" type="hidden" value="SMS_61910002">
+                        <div class="field username-field">
+                            <label title="手机号 / 邮箱">用户名：</label>
+                            <input type="text" placeholder="请输入你的注册手机号/邮箱" autocomplete="off" name="username">
+                            <div class="valid-error">
+                                <p class="error">请输入正确的手机号或邮箱</p>
+                            </div>
+                        </div>
+                        <div class="field code-field">
+                            <label title="验证码：">验证码：</label>
+                            <input type="text" placeholder="请输入验证码" name="captchaCode" autocomplete="off">
+                            <img class="codeimg captchaImage" src="">
+                            <div class="valid-error">
+                                <p class="error">请输入正确的验证码</p>
+                            </div>
+                        </div>
+                        <div class="submit">
+                            <button type="button">
+                                <input class="loading1 spin " style="display:none">
+                                提交
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="bd">
+                    <a class="wx login_wx" href="#" data-toggle="modal" data-target="#zhloginModal" data-dismiss="modal" aria-hidden="true">账号登录</a>
+                    <a class="zc right " href="#" data-toggle="modal" data-target="#regemailModal" data-dismiss="modal" aria-hidden="true">邮箱注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--验证邮箱身份-->
+    <div class="modal lrModal" id="yzemailModal">
+        <div class="modal-dialog zhpwd show-swal2">
+            <div class="modal-content">
+                <div class="hd">
+                    <h2>验证邮箱</h2>
+                </div>
+                <div class="cd">
+                    <form>
+                        <p>亲爱的用户，邮件发送完成，请登录邮箱进行验证</p>
+                        <div class="yz">已发送邮件至：<i>service@500d.me</i><a data-toggle="modal" data-target="#zhpasswordModal" data-dismiss="modal" aria-hidden="true">修改邮箱</a></div>
+                        <div class="submit">
+                            <button type="button" id="forward_validate_email">
+                                <input class="loading1 spin" style="display:none">
+                                前往邮箱验证
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="zhemailtips">
+                    <i>如果没有收到验证邮件，可能是：</i><br>
+                    1.邮件被外星人劫持到垃圾箱了~<br>
+                    2.请检查邮箱地址是否正确~
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        /***
+         * 展示登录框
+         */
+        function show_login_modal() {
+            $("#zhloginModal").modal("show");
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            common.main.loginMsg();
+        });
+    </script>
+    <!--右边导航条显示在线客服，帮助中心，返回顶部这三个按钮-->
+    <!--回到顶部-->
+    <script>
+        $(document).ready(function () {
+            common.main.gotop();
+        });
+    </script>
+    <div class="gotop " style="display: none;"></div>
+</body>
+</html>

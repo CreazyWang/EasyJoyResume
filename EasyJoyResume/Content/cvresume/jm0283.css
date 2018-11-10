@@ -1,0 +1,214 @@
+.jyCv-baseLeft{float:left;width:270px;height:100%;padding: 15px 20px 0;background:white;color:#656565;}
+.jyCv-baseRight{float:right; width:550px; height:auto; padding:16px 40px 30px 30px; background:#fff;}
+.jyCv-baseRight .baseItem.template_css dt a.jyfont{width:30px; height:30px; line-height:32px; margin-right:10px; border-radius:50%; background:#254665; color:#fff; text-align:center;}
+.jyCv-baseRight .baseItem.template_css dt span{width:434px; height:30px; line-height:27px; color:black;}
+.jyCv-baseRight .baseItem.template_css dt{border-bottom:1px solid #D4D4D4;}
+.jyCv-baseRight .baseItem.template_css dt{padding-bottom:7px; margin-bottom:15px;}
+.jyCv-baseLeft .baseItem.template_css dt a.jyfont{float:left; display:inline-block; width:30px; height:30px; line-height:32px; margin-right:5px; border-radius:50%; background:#fff; color:#254665; text-align:center;}
+.jyCv-baseLeft .baseItem.template_css dt span{float:left; width:173px;}
+.jyCv-baseLeft .baseItem.template_css dl dt{padding-bottom:20px;}
+.jyCv-baseLeft .baseItem.template_css dl dt a.jyfont, .jyCv-baseLeft .infoItem.template_css dl dt a.jyfont{display:none;}
+.jyCv-baseLeft .baseItem.template_css dl dt, .jyCv-baseLeft .infoItem.template_css dl dt{position:relative; height:74px;}
+.jyCv-baseLeft .baseItem.template_css dt span, .jyCv-baseLeft .infoItem.template_css dt span{position:absolute;left: -21px;width:250px;height:50px;line-height:50px;padding-left:30px;background-color:#0b70bd; overflow:initial;}
+.jyCv-baseLeft .baseItem.template_css dl dt span div, .jyCv-baseLeft .infoItem.template_css dl dt span div{font-size:18px; font-weight:bold; color:white;}
+.jyCv-baseLeft .baseItem.template_css dt span:after, .jyCv-baseLeft .infoItem.template_css dt span:after{content:""; position:absolute; top:0; right:-17px; display:inline-block; width:18px; height:50px; background:url("../images/jm0283/prng4.js.png")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/prng4.js*//*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/j1_dt_bg.png*/ left top no-repeat;}
+
+/*块距*/
+.jyCv-baseStyle .baseItem.inteItem dl{padding: 30px 0;}
+
+/*工具样式*/
+.jyCv-baseLeft .baseItem-null{color:#656565;}
+
+/*封面*/
+.jyCv-cover .coverItem{position:absolute; bottom:73px; left:50%; width:360px; margin-left:-180px; font-size:16px; color:#fff; text-align:center;}
+
+/*自荐信*/
+.jyCv-letter{padding-top:185px;}
+.jyCv-letter .letterItem{line-height:30px; color:white;}
+.jyCv-letter .letterItem [contenteditable=true]{max-height:926px; overflow:hidden;}
+
+/*头像*/
+.jyCv-baseStyle .headItem.template_css{margin-bottom:0; margin-top:10px;}
+
+/*姓名*/
+.jyCv-baseStyle .nameItem.template_css .name-con .name,.jyCv-baseStyle .nameItem.template_css .name-con .word{display:inline-block; text-align:center;}
+.jyCv-baseStyle .nameItem.template_css .name-con .name{width:100%; text-align:center; font-size:30px; color:#414141;}
+
+/*标签*/
+.jyCv-baseStyle .nameItem.template_css .name-con .resume_tag{display:inline-block; width:100%; height:inherit; margin:0 auto; padding-bottom:10px; text-align:center;}
+.jyCv-baseStyle .nameItem.template_css .name-con .resume_tag span{display:inline-block;}
+.nameItem.template_css .name-con .resume_tag span:nth-child(1){border-color:#404552; color:#404552;}
+.nameItem.template_css .name-con .resume_tag span:nth-child(2){border-color:#00c091; color:#00c091;}
+.nameItem.template_css .name-con .resume_tag span:nth-child(3){border-color:#ff7272; color:#ff7272;}
+
+/*基本信息*/
+.jyCv-baseStyle .infoItem.template_css{margin-top:10px;}
+.jyCv-baseStyle .infoItem.template_css dl dt{display:block;}
+.jyCv-baseStyle .infoItem.template_css .info-con a.jyfont,.homeItem.template_css .home-con a.jyfont{float:left; display:inline-block; width:20px; line-height:26px; margin-right:5px; border-radius:100%; background:#fff; font-size:14px; color:#878686 !important; text-align:center;}
+.jyCv-baseStyle .infoItem.template_css .info-con div{margin:0 0 14px 0;}
+.jyCv-baseStyle .infoItem.template_css .info-list span{width:181px;}
+.jyCv-baseStyle .homeItem.template_css{margin-top:-5px;}
+.jyCv-baseStyle .homeItem.template_css .home-con .home-list{margin:7px 0;}
+.jyCv-baseStyle .homeItem.template_css dl{padding-top:9px;}
+
+/*社交账号*/
+.jyCv-baseStyle .socialItem.template_css{margin-top:-5px;}
+.jyCv-baseStyle .socialItem.template_css dl{padding-bottom:30px;}
+.socialItem.template_css .social-list a{border:1px solid #cecece; background:transparent url("../images/social/j17_social.png")/*tpa=http://static.500d.me/resources/500d/cvresume/images/social/j17_social.png*//*tpa=http://static.500d.me/resources/500d/cvresume/images/social/j17_social.png*/ no-repeat 0 0;}
+.jyCv-baseStyle .socialItem.template_css .social-list{margin:0;}
+
+/*兴趣爱好*/
+.jyCv-baseStyle .hobbyItem.template_css .hobby-list{margin:10px 30px 0 0;}
+.jyCv-baseStyle .hobbyItem.template_css .hobby-list a.jyfont{display:block; width:60px; height:60px; line-height:60px; margin:0 auto; border:1px solid rgba(37, 37, 37, 0.4); border-radius:4px; font-size:28px; text-align:center;}
+.jyCv-baseStyle .hobbyItem.template_css .hobby-list .hobby-title{width:70px;}
+.jyCv-baseRight .hobbyItem.template_css .hobby-list:nth-child(5n+1){margin-right:0;}
+.hobbyItem.template_css .hobby-list .delete{margin-right:-10px;}
+
+/*作品集*/
+.jyCv-baseStyle .workItem .work-list{width:232px; margin-right:9px; border:1px solid #e9e9e9;}
+.jyCv-baseStyle .workItem .work-list .work-img{width:230px; height:184px; overflow:hidden;}
+.jyCv-baseStyle .workItem .work-list .work-img img{display:block; width:100%;}
+.jyCv-baseStyle .workItem .work-list:nth-of-type(even){margin-right:0;}
+.jyCv-baseLeft .workItem .work-list{width:228px; margin-right:9px; border:1px solid #e9e9e9;}
+.jyCv-baseLeft .workItem .work-list:first-child{margin-top:0;}
+.jyCv-baseLeft  .workItem .work-list .work-img{width:226px; height:181px;}
+.jyCv-baseLeft .workItem .link-list{background-color:rgba(255,255,255,0.2);}
+
+/*推荐信*/
+.jyCv-baseStyle .recoment-list .info{float:left; width:414px; padding-left:15px; padding-top:2px;}
+.jyCv-baseStyle .recoment-list .info .name{width:100%; font-size:16px; color:#282828; font-weight:bold;}
+.jyCv-baseStyle .recoment-list .info span{color:#9f9f9f;}
+.jyCv-baseStyle .recoment-list .text{color:#7c7c7c;}
+.jyCv-baseStyle .recoment-list .info span.time{width:111px; text-align:right;}
+.jyCv-baseStyle .recoment-list .info span.relation{width:283px;}
+
+/*6.2.0 左侧添加自定义按钮修改*/
+.jyCv-baseLeft .addCustomItem{width:228px;}
+/*6.2.0 左侧添加自定义按钮修改end*/
+
+/*颜色设置*/
+.jyCv-baseStyle[data_color="j1"] .jyCv-cover{background:url("../../images/jf/rng.js.png")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/rng.js*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/jf0050_j1.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-cover{background:url("../../images/jf/rsa.js.png")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/rsa.js*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/jf0050_j2.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-cover{background:url("../../images/jf/base64.js.png")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/base64.js*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/jf0050_j3.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-cover{background:url("../../images/jf/layer.js.png")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/layer.js*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/jf0050_j4.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-cover{background:url("../../images/jf/modal.js.png")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/modal.js*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/jf0050_j5.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-cover{background:url("../../images/jf/sycn_resume_v5.js-v=7051")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/jf0050_j6.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-cover{background:url("../../images/jf/login.js-v=7051")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/jf0050_j7.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-cover{background:url("../../images/jf/wxLogin.js.png")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/wxLogin.js*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/jf0050_j8.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-cover{background:url("../../images/jf/jquery.lazyload.min.js.png")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/jquery.lazyload.min.js*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/jf0050_j9.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-cover{background:url("../../images/jf/layer.css.png")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/layer.css*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/jf0050_j10.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-cover{background:url("../../images/jf/index.js-v=7051")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/jf0050_j11.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-cover{background:url("../../images/jf/owl.carousel.min.js.png")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/owl.carousel.min.js*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/jf0050_j12.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-cover{background:url("../../images/jf/owl.carousel.min.css.png")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/owl.carousel.min.css*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/jf0050_j13.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-cover{background:url("../../images/jf/flipclock.css.png")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/flipclock.css*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/jf0050_j14.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-cover{background:url("../../images/jf/flipclock.min.js.png")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/flipclock.min.js*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/jf/jf0050_j15.jpg*/ no-repeat top center;}
+
+.jyCv-baseStyle[data_color="j1"] .jyCv-letter{background:url("../../images/zjx/zjx0008_j1.jpg")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j1.jpg*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j1.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-letter{background:url("../../images/zjx/zjx0008_j2.jpg")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j2.jpg*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j2.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-letter{background:url("../../images/zjx/zjx0008_j3.jpg")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j3.jpg*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j3.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-letter{background:url("../../images/zjx/zjx0008_j4.jpg")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j4.jpg*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j4.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-letter{background:url("../../images/zjx/zjx0008_j5.jpg")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j5.jpg*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j5.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-letter{background:url("../../images/zjx/zjx0008_j6.jpg")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j6.jpg*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j6.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-letter{background:url("../../images/zjx/zjx0008_j7.jpg")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j7.jpg*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j7.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-letter{background:url("../../images/zjx/zjx0008_j8.jpg")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j8.jpg*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j8.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-letter{background:url("../../images/zjx/zjx0008_j9.jpg")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j9.jpg*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j9.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-letter{background:url("../../images/zjx/zjx0008_j10.jpg")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j10.jpg*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j10.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-letter{background:url("../../images/zjx/zjx0008_j11.jpg")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j11.jpg*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j11.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-letter{background:url("../../images/zjx/zjx0008_j12.jpg")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j12.jpg*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j12.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-letter{background:url("../../images/zjx/zjx0008_j13.jpg")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j13.jpg*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j13.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-letter{background:url("../../images/zjx/zjx0008_j14.jpg")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j14.jpg*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j14.jpg*/ no-repeat top center;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-letter{background:url("../../images/zjx/zjx0008_j15.jpg")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j15.jpg*//*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j15.jpg*/ no-repeat top center;}
+
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseLeft .baseItem.template_css dt span, .jyCv-baseStyle[data_color="j1"] .jyCv-baseLeft .infoItem.template_css dt span{background:#0b70bd;}
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseLeft .baseItem.template_css dt span:after, .jyCv-baseStyle[data_color="j1"] .jyCv-baseLeft .infoItem.template_css dt span:after{background:url("../images/jm0283/prng4.js.png")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/prng4.js*//*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/j1_dt_bg.png*/ left top no-repeat;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseLeft .baseItem.template_css dt span, .jyCv-baseStyle[data_color="j2"] .jyCv-baseLeft .infoItem.template_css dt span{background:#254665;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseLeft .baseItem.template_css dt span:after, .jyCv-baseStyle[data_color="j2"] .jyCv-baseLeft .infoItem.template_css dt span:after{background:url("../images/jm0283/jquery.indexSlidePattern.js.png")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/jquery.indexSlidePattern.js*//*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/j2_dt_bg.png*/ left top no-repeat;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseLeft .baseItem.template_css dt span, .jyCv-baseStyle[data_color="j3"] .jyCv-baseLeft .infoItem.template_css dt span{background:#589bf7;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseLeft .baseItem.template_css dt span:after, .jyCv-baseStyle[data_color="j3"] .jyCv-baseLeft .infoItem.template_css dt span:after{background:url("../images/jm0283/default.jpg.png")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/default.jpg*//*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/j3_dt_bg.png*/ left top no-repeat;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseLeft .baseItem.template_css dt span, .jyCv-baseStyle[data_color="j4"] .jyCv-baseLeft .infoItem.template_css dt span{background:#ff7171;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseLeft .baseItem.template_css dt span:after, .jyCv-baseStyle[data_color="j4"] .jyCv-baseLeft .infoItem.template_css dt span:after{background:url("../images/jm0283/-itemid=206")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/j4_dt_bg.png*/ left top no-repeat;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseLeft .baseItem.template_css dt span, .jyCv-baseStyle[data_color="j5"] .jyCv-baseLeft .infoItem.template_css dt span{background:#37b754;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseLeft .baseItem.template_css dt span:after, .jyCv-baseStyle[data_color="j5"] .jyCv-baseLeft .infoItem.template_css dt span:after{background:url("../images/jm0283/-hmsr=500me&hmpl=wenzilian&hmcu=&hmkw=&hmci=")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/j5_dt_bg.png*/ left top no-repeat;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseLeft .baseItem.template_css dt span, .jyCv-baseStyle[data_color="j6"] .jyCv-baseLeft .infoItem.template_css dt span{background:#292929;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseLeft .baseItem.template_css dt span:after, .jyCv-baseStyle[data_color="j6"] .jyCv-baseLeft .infoItem.template_css dt span:after{background:url("../images/jm0283/70cQjV2")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/70cQjV2*//*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/j6_dt_bg.png*/ left top no-repeat;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseLeft .baseItem.template_css dt span, .jyCv-baseStyle[data_color="j7"] .jyCv-baseLeft .infoItem.template_css dt span{background:#ee7000;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseLeft .baseItem.template_css dt span:after, .jyCv-baseStyle[data_color="j7"] .jyCv-baseLeft .infoItem.template_css dt span:after{background:url("../images/jm0283/-itemid=543&title=")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/j7_dt_bg.png*/ left top no-repeat;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseLeft .baseItem.template_css dt span, .jyCv-baseStyle[data_color="j8"] .jyCv-baseLeft .infoItem.template_css dt span{background:#a29177;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseLeft .baseItem.template_css dt span:after, .jyCv-baseStyle[data_color="j8"] .jyCv-baseLeft .infoItem.template_css dt span:after{background:url("../images/jm0283/resume2.jpg-v=7041")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/j8_dt_bg.png*/ left top no-repeat;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseLeft .baseItem.template_css dt span, .jyCv-baseStyle[data_color="j9"] .jyCv-baseLeft .infoItem.template_css dt span{background:#da180f;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseLeft .baseItem.template_css dt span:after, .jyCv-baseStyle[data_color="j9"] .jyCv-baseLeft .infoItem.template_css dt span:after{background:url("../images/jm0283/-itemid=206&title=")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/j9_dt_bg.png*/ left top no-repeat;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseLeft .baseItem.template_css dt span, .jyCv-baseStyle[data_color="j10"] .jyCv-baseLeft .infoItem.template_css dt span{background:#6b4b24;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseLeft .baseItem.template_css dt span:after, .jyCv-baseStyle[data_color="j10"] .jyCv-baseLeft .infoItem.template_css dt span:after{background:url("../images/jm0283/resume1.jpg-v=7041")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/j10_dt_bg.png*/ left top no-repeat;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseLeft .baseItem.template_css dt span, .jyCv-baseStyle[data_color="j11"] .jyCv-baseLeft .infoItem.template_css dt span{background:#048BB3;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseLeft .baseItem.template_css dt span:after, .jyCv-baseStyle[data_color="j11"] .jyCv-baseLeft .infoItem.template_css dt span:after{background:url("../images/jm0283/-itemid=255&title=")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/j11_dt_bg.png*/ left top no-repeat;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseLeft .baseItem.template_css dt span, .jyCv-baseStyle[data_color="j12"] .jyCv-baseLeft .infoItem.template_css dt span{background:#5974D4;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseLeft .baseItem.template_css dt span:after, .jyCv-baseStyle[data_color="j12"] .jyCv-baseLeft .infoItem.template_css dt span:after{background:url("../images/jm0283/resume3.jpg-v=7041")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/j12_dt_bg.png*/ left top no-repeat;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseLeft .baseItem.template_css dt span, .jyCv-baseStyle[data_color="j13"] .jyCv-baseLeft .infoItem.template_css dt span{background:#cc7cff;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseLeft .baseItem.template_css dt span:after, .jyCv-baseStyle[data_color="j13"] .jyCv-baseLeft .infoItem.template_css dt span:after{background:url("../images/jm0283/924.html")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/924.html*//*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/j13_dt_bg.png*/ left top no-repeat;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseLeft .baseItem.template_css dt span, .jyCv-baseStyle[data_color="j14"] .jyCv-baseLeft .infoItem.template_css dt span{background:#d4ba38;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseLeft .baseItem.template_css dt span:after, .jyCv-baseStyle[data_color="j14"] .jyCv-baseLeft .infoItem.template_css dt span:after{background:url("../images/jm0283/491.html")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/491.html*//*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/j14_dt_bg.png*/ left top no-repeat;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseLeft .baseItem.template_css dt span, .jyCv-baseStyle[data_color="j15"] .jyCv-baseLeft .infoItem.template_css dt span{background:#69cc41;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseLeft .baseItem.template_css dt span:after, .jyCv-baseStyle[data_color="j15"] .jyCv-baseLeft .infoItem.template_css dt span:after{background:url("../images/jm0283/1059.html")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/1059.html*//*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0283/j15_dt_bg.png*/ left top no-repeat;}
+
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#0b70bd;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#254665;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#589bf7;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#ff7171;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#37b754;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#292929;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#ee7000;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#a29177;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#da180f;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#6b4b24;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#048BB3;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#5974D4;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#cc7cff;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#d4ba38;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#69cc41;}
+
+.jyCv-baseStyle[data_color="j1"] .infoItem.template_css .info-con a.jyfont{color:#0b70bd;}
+.jyCv-baseStyle[data_color="j1"] .homeItem.template_css .home-con a.jyfont{color:#0b70bd;}
+.jyCv-baseStyle[data_color="j2"] .infoItem.template_css .info-con a.jyfont{color:#254665;}
+.jyCv-baseStyle[data_color="j2"] .homeItem.template_css .home-con a.jyfont{color:#254665;}
+.jyCv-baseStyle[data_color="j3"] .infoItem.template_css .info-con a.jyfont{color:#589bf7;}
+.jyCv-baseStyle[data_color="j3"] .homeItem.template_css .home-con a.jyfont{color:#589bf7;}
+.jyCv-baseStyle[data_color="j4"] .infoItem.template_css .info-con a.jyfont{color:#ff7171;}
+.jyCv-baseStyle[data_color="j4"] .homeItem.template_css .home-con a.jyfont{color:#ff7171;}
+.jyCv-baseStyle[data_color="j5"] .infoItem.template_css .info-con a.jyfont{color:#37b754;}
+.jyCv-baseStyle[data_color="j5"] .homeItem.template_css .home-con a.jyfont{color:#37b754;}
+.jyCv-baseStyle[data_color="j6"] .infoItem.template_css .info-con a.jyfont{color:#292929;}
+.jyCv-baseStyle[data_color="j6"] .homeItem.template_css .home-con a.jyfont{color:#292929;}
+.jyCv-baseStyle[data_color="j7"] .infoItem.template_css .info-con a.jyfont{color:#ee7000;}
+.jyCv-baseStyle[data_color="j7"] .homeItem.template_css .home-con a.jyfont{color:#ee7000;}
+.jyCv-baseStyle[data_color="j8"] .infoItem.template_css .info-con a.jyfont{color:#a29177;}
+.jyCv-baseStyle[data_color="j8"] .homeItem.template_css .home-con a.jyfont{color:#a29177;}
+.jyCv-baseStyle[data_color="j9"] .infoItem.template_css .info-con a.jyfont{color:#da180f;}
+.jyCv-baseStyle[data_color="j9"] .homeItem.template_css .home-con a.jyfont{color:#da180f;}
+.jyCv-baseStyle[data_color="j10"] .infoItem.template_css .info-con a.jyfont{color:#6b4b24;}
+.jyCv-baseStyle[data_color="j10"] .homeItem.template_css .home-con a.jyfont{color:#6b4b24;}
+.jyCv-baseStyle[data_color="j11"] .infoItem.template_css .info-con a.jyfont{color:#048BB3;}
+.jyCv-baseStyle[data_color="j11"] .homeItem.template_css .home-con a.jyfont{color:#048BB3;}
+.jyCv-baseStyle[data_color="j12"] .infoItem.template_css .info-con a.jyfont{color:#5974D4;}
+.jyCv-baseStyle[data_color="j12"] .homeItem.template_css .home-con a.jyfont{color:#5974D4;}
+.jyCv-baseStyle[data_color="j13"] .infoItem.template_css .info-con a.jyfont{color:#cc7cff;}
+.jyCv-baseStyle[data_color="j13"] .homeItem.template_css .home-con a.jyfont{color:#cc7cff;}
+.jyCv-baseStyle[data_color="j14"] .infoItem.template_css .info-con a.jyfont{color:#d4ba38;}
+.jyCv-baseStyle[data_color="j14"] .homeItem.template_css .home-con a.jyfont{color:#d4ba38;}
+.jyCv-baseStyle[data_color="j15"] .infoItem.template_css .info-con a.jyfont{color:#69cc41;}
+.jyCv-baseStyle[data_color="j15"] .homeItem.template_css .home-con a.jyfont{color:#69cc41;}
+
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#0b70bd;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#254665;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#589bf7;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#ff7171;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#37b754;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#292929;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#ee7000;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#a29177;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#da180f;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#6b4b24;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#048BB3;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#5974D4;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#cc7cff;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#d4ba38;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#69cc41;}

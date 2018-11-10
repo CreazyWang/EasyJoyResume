@@ -1,0 +1,425 @@
+.jyCv-baseLeft{float:left; width:270px; height:inherit; padding:20px 30px 40px; background:#254665; color:#fff;}
+.jyCv-baseRight{float:right; width:550px; height:inherit; padding:10px 30px 40px 30px; background:#fff;}
+.jyCv-baseRight .baseItem.template_css dt a.jyfont{width:26px; height:26px; line-height:1.55; margin-right:5px; border-radius:50%; background:#254665; color:#fff; text-align:center;}
+.jyCv-baseRight .baseItem.template_css dt span{width:456px; height:26px; line-height:20px; border-bottom:1px solid #254665;}
+.jyCv-baseRight .baseItem.template_css dt{padding-bottom:15px;}
+.jyCv-baseLeft .baseItem.template_css dt a.jyfont{float:left; display:inline-block; width:26px; height:26px; line-height:1.6; margin-right:5px; border-radius:50%; background:#fff; color:#254665; text-align:center;}
+.jyCv-baseLeft .baseItem.template_css dt span{float:left; width:173px; height:26px; line-height:24px;}
+.jyCv-baseLeft .baseItem-null{color:#fff;}
+.jyCv-baseLeft .baseItem.template_css dl dt{padding-bottom:13px;}
+.jyCv-baseLeft .hobbyItem.template_css dl dt{padding-bottom:8px;}
+
+/*求职信息模块不受块距控制*/
+.jyCv-baseStyle .inteItem dl{padding:20px 0;}
+.jyCv-baseStyle .nameItem.bInfoItem dl{padding-bottom:35px;}
+
+/*封面*/
+.jyCv-cover .coverItem{position:absolute; top:854px; left:0; width:360px; padding-left:20px; font-size:16px; color:#fff;}
+
+/*自荐信*/
+.jyCv-letter .letterItem{line-height:30px;}
+
+/*头像 不做模板模块辨识处理*/
+.jyCv-baseStyle .headItem.template_css{margin-bottom:0;}
+
+/* 时间模块统一样式 */
+.jyCv-baseStyle .baseItem .dd-title span.time,
+.jyCv-baseStyle .baseItem .dd-title span.company{width:50%; font-weight:bold; font-size:14px; color:#666;}
+.jyCv-baseStyle .baseItem .dd-title span.company{float:right; margin-right:0; text-align:right;}
+.jyCv-baseStyle .baseItem .dd-title span.post{float:none; clear:both; width:60%; font-size:14px; color:#666;}
+.jyCv-baseStyle .baseItem .dd-title span.time{width:35%;}
+
+/*姓名*/
+.jyCv-baseStyle .nameItem.template_css .name-con .name{display:inline-block; height:30px; line-height:29px; padding-right:10px; font-size:30px; color:#414141;}
+.jyCv-baseStyle .nameItem.template_css .name-con .word{display:block; margin-top:18px;}
+
+/*标签*/
+.jyCv-baseStyle .nameItem.template_css .name-con .resume_tag{display:inline-block;}
+.nameItem.template_css .name-con .resume_tag span:nth-child(1){border-color:#1E9FFF; color:#1E9FFF;}
+.nameItem.template_css .name-con .resume_tag span:nth-child(2){border-color:#ff7272; color:#ff7272;}
+.nameItem.template_css .name-con .resume_tag span:nth-child(3){border-color:#404552; color:#404552;}
+
+/*基本信息*/
+.jyCv-baseStyle .infoItem.bInfoItem dl{padding-bottom:30px;}
+.jyCv-baseStyle .infoItem.template_css .info-con a.jyfont, .homeItem.template_css .home-con a.jyfont{float:left; display:inline-block; width:20px; line-height:23px; margin-right:5px; border-radius:100%; color:#ffffff; text-align:center;}
+.jyCv-baseStyle .infoItem.template_css .info-con div{margin:0 0 10px 0;}
+.jyCv-baseStyle .infoItem.template_css .info-list span{width:181px;}
+.jyCv-baseStyle .homeItem.template_css{margin-top:-5px;}
+.jyCv-baseStyle .homeItem.template_css .home-con .home-list{margin:7px 0;}
+.jyCv-baseStyle .homeItem.template_css dl{padding-top:20px;}
+
+/*社交账号*/
+.jyCv-baseStyle .socialItem.template_css{margin-top:-5px;}
+.jyCv-baseStyle .socialItem.template_css dl{padding-bottom:30px;}
+.jyCv-baseStyle .socialItem.template_css .social-list{position:relative; margin:0;}
+
+/*作品集*/
+.jyCv-baseStyle .workItem .work-list{width:232px; margin-right:24px; border:1px solid #e9e9e9;}
+.jyCv-baseStyle .workItem .work-list .work-img{width:230px; height:184px; overflow:hidden;}
+.jyCv-baseStyle .workItem .work-list .work-img img{display:block; width:100%;}
+.jyCv-baseStyle .workItem .work-list:nth-of-type(even){margin-right:0;}
+.jyCv-baseLeft .workItem .work-list{width:100%; border:1px solid #e9e9e9;}
+.jyCv-baseLeft .workItem .work-list .work-img{width:100%; height:160px;}
+.jyCv-baseLeft .workItem .link-list{background-color:rgba(255,255,255,0.2);}
+.jyCv-baseLeft .workItem .work-list span.work-title{color:#fff;}
+
+/*颜色设置 不做模板模块辨识处理*/
+.jyCv-baseStyle[data_color="j1"] .jyCv-cover{background:url(../../../images/jf/jf0001_j1.jpg) no-repeat top center; background-size:cover;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-cover{background:url(../../../images/jf/jf0001_j2.jpg) no-repeat top center; background-size:cover;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-cover{background:url(../../../images/jf/jf0001_j3.jpg) no-repeat top center; background-size:cover;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-cover{background:url(../../../images/jf/jf0001_j4.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-cover{background:url(../../../images/jf/jf0001_j5.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-cover{background:url(../../../images/jf/jf0001_j6.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-cover{background:url(../../../images/jf/jf0001_j7.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-cover{background:url(../../../images/jf/jf0001_j8.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-cover{background:url(../../../images/jf/jf0001_j9.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-cover{background:url(../../../images/jf/jf0001_j10.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-cover{background:url(../../../images/jf/jf0001_j11.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-cover{background:url(../../../images/jf/jf0001_j12.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-cover{background:url(../../../images/jf/jf0001_j13.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-cover{background:url(../../../images/jf/jf0001_j14.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-cover{background:url(../../../images/jf/jf0001_j15.jpg) no-repeat top center;}
+
+.jyCv-baseStyle[data_color="j1"] .jyCv-letter{background:url(../../../images/zjx/zjx0005_j1.jpg) no-repeat top center; background-size:cover;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-letter{background:url(../../../images/zjx/zjx0005_j2.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-letter{background:url(../../../images/zjx/zjx0005_j3.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-letter{background:url(../../../images/zjx/zjx0005_j4.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-letter{background:url(../../../images/zjx/zjx0005_j5.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-letter{background:url(../../../images/zjx/zjx0005_j6.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-letter{background:url(../../../images/zjx/zjx0005_j7.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-letter{background:url(../../../images/zjx/zjx0005_j8.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-letter{background:url(../../../images/zjx/zjx0005_j9.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-letter{background:url(../../../images/zjx/zjx0005_j10.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-letter{background:url(../../../images/zjx/zjx0005_j11.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-letter{background:url(../../../images/zjx/zjx0005_j12.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-letter{background:url(../../../images/zjx/zjx0005_j13.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-letter{background:url(../../../images/zjx/zjx0005_j14.jpg) no-repeat top center;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-letter{background:url(../../../images/zjx/zjx0005_j15.jpg) no-repeat top center;}
+
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseLeft{background:#0b70bd;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseLeft{background:#254665;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseLeft{background:#589bf7;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseLeft{background:#ff7171;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseLeft{background:#37b754;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseLeft{background:#292929;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseLeft{background:#ee7000;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseLeft{background:#a29177;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseLeft{background:#da180f;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseLeft{background:#6b4b24;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseLeft{background:#048BB3;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseLeft{background:#5974D4;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseLeft{background:#9D57CA;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseLeft{background:#d4ba38;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseLeft{background:#69cc41;}
+
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#0b70bd;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#254665;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#589bf7;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#ff7171;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#37b754;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#292929;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#ee7000;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#a29177;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#da180f;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#6b4b24;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#048BB3;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#5974D4;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#9D57CA;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#d4ba38;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseLeft .baseItem.template_css dt a.jyfont{color:#69cc41;}
+
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#0b70bd;}
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseRight .baseItem.template_css dt span{color:#0b70bd; border-color:#0b70bd;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#254665;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseRight .baseItem.template_css dt span{color:#254665; border-color:#254665;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#589bf7;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseRight .baseItem.template_css dt span{color:#079cfa; border-color:#589bf7;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#ff7171;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseRight .baseItem.template_css dt span{color:#ff7171; border-color:#ff7171;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#37b754;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseRight .baseItem.template_css dt span{color:#37b754; border-color:#37b754;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#292929;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseRight .baseItem.template_css dt span{color:#292929; border-color:#292929;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#ee7000;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseRight .baseItem.template_css dt span{color:#ee7000; border-color:#ee7000;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#a29177;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseRight .baseItem.template_css dt span{color:#aa9276; border-color:#a29177;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#da180f;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseRight .baseItem.template_css dt span{color:#da180f; border-color:#da180f;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#6b4b24;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseRight .baseItem.template_css dt span{color:#6b4b24; border-color:#6b4b24;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#048BB3;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseRight .baseItem.template_css dt span{color:#048BB3; border-color:#048BB3;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#5974D4;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseRight .baseItem.template_css dt span{color:#5974D4; border-color:#5974D4;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#9D57CA;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseRight .baseItem.template_css dt span{color:#9D57CA; border-color:#9D57CA;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#d4ba38;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseRight .baseItem.template_css dt span{color:#d4ba38; border-color:#d4ba38;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseRight .baseItem.template_css dt a.jyfont{background:#69cc41;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseRight .baseItem.template_css dt span{color:#69cc41; border-color:#69cc41;}
+
+/*个人标签白色样式*/
+.jyCv-baseStyle .jyCv-baseLeft .hobby-list .hobby-title,
+.jyCv-baseStyle .jyCv-baseLeft .hobby-list a{color:#fff;}
+.jyCv-baseStyle .jyCv-baseLeft .hobby-list{border-color:#fff;}
+
+/*标题白色样式*/
+/*1*/
+/*jyCv-baseLeft*/
+.jyCv-baseLeft .public_parts_01.baseItem dt::before{border-color:#fff !important;}
+.jyCv-baseLeft .public_parts_01.baseItem dt span{color:#fff !important;}
+.jyCv-baseLeft .public_parts_01.baseItem dt a{color:#fff !important; border-color:#fff !important;}
+/*jyCv-baseLeft-----end*/
+/*2*/
+/*jyCv-baseLeft*/
+.jyCv-baseLeft .public_parts_02.baseItem dt::before,
+.jyCv-baseLeft .public_parts_02.baseItem dt span::before,
+.jyCv-baseLeft .public_parts_02.baseItem dt span::after{background-color:#fff !important;}
+.jyCv-baseLeft .public_parts_02.baseItem dt span{color:#fff !important; border-color:#fff !important;}
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseLeft .public_parts_02.baseItem dt span{box-shadow:0 0 0 10px #0b70bd;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseLeft .public_parts_02.baseItem dt span{box-shadow:0 0 0 10px #254665;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseLeft .public_parts_02.baseItem dt span{box-shadow:0 0 0 10px #589bf7;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseLeft .public_parts_02.baseItem dt span{box-shadow:0 0 0 10px #ff7171;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseLeft .public_parts_02.baseItem dt span{box-shadow:0 0 0 10px #37b754;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseLeft .public_parts_02.baseItem dt span{box-shadow:0 0 0 10px #292929;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseLeft .public_parts_02.baseItem dt span{box-shadow:0 0 0 10px #ee7000;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseLeft .public_parts_02.baseItem dt span{box-shadow:0 0 0 10px #a29177;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseLeft .public_parts_02.baseItem dt span{box-shadow:0 0 0 10px #da180f;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseLeft .public_parts_02.baseItem dt span{box-shadow:0 0 0 10px #6b4b24;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseLeft .public_parts_02.baseItem dt span{box-shadow:0 0 0 10px #048BB3;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseLeft .public_parts_02.baseItem dt span{box-shadow:0 0 0 10px #5974D4;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseLeft .public_parts_02.baseItem dt span{box-shadow:0 0 0 10px #9D57CA;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseLeft .public_parts_02.baseItem dt span{box-shadow:0 0 0 10px #d4ba38;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseLeft .public_parts_02.baseItem dt span{box-shadow:0 0 0 10px #69cc41;}
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseLeft .public_parts_02.baseItem dt span{background-color:#0b70bd;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseLeft .public_parts_02.baseItem dt span{background-color:#254665;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseLeft .public_parts_02.baseItem dt span{background-color:#589bf7;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseLeft .public_parts_02.baseItem dt span{background-color:#ff7171;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseLeft .public_parts_02.baseItem dt span{background-color:#37b754;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseLeft .public_parts_02.baseItem dt span{background-color:#292929;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseLeft .public_parts_02.baseItem dt span{background-color:#ee7000;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseLeft .public_parts_02.baseItem dt span{background-color:#a29177;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseLeft .public_parts_02.baseItem dt span{background-color:#da180f;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseLeft .public_parts_02.baseItem dt span{background-color:#6b4b24;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseLeft .public_parts_02.baseItem dt span{background-color:#048BB3;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseLeft .public_parts_02.baseItem dt span{background-color:#5974D4;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseLeft .public_parts_02.baseItem dt span{background-color:#9D57CA;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseLeft .public_parts_02.baseItem dt span{background-color:#d4ba38;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseLeft .public_parts_02.baseItem dt span{background-color:#69cc41;}
+/*jyCv-baseLeft-----end*/
+/*3*/
+/*jyCv-baseLeft*/
+.jyCv-baseLeft .public_parts_03.baseItem dt::before{background-color:#fff !important;}
+.jyCv-baseLeft .public_parts_03.baseItem dt span{color:#fff !important;}
+.jyCv-baseLeft .public_parts_03.baseItem dt a{color:#fff !important; border-color:#fff !important;}
+.jyCv-baseLeft .public_parts_03.baseItem dt span::before,
+.jyCv-baseLeft .public_parts_03.baseItem dt span::after{background-position-x:-454px !important;}
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseLeft .public_parts_03.baseItem dt span{background-color:#0b70bd;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseLeft .public_parts_03.baseItem dt span{background-color:#254665;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseLeft .public_parts_03.baseItem dt span{background-color:#589bf7;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseLeft .public_parts_03.baseItem dt span{background-color:#ff7171;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseLeft .public_parts_03.baseItem dt span{background-color:#37b754;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseLeft .public_parts_03.baseItem dt span{background-color:#292929;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseLeft .public_parts_03.baseItem dt span{background-color:#ee7000;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseLeft .public_parts_03.baseItem dt span{background-color:#a29177;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseLeft .public_parts_03.baseItem dt span{background-color:#da180f;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseLeft .public_parts_03.baseItem dt span{background-color:#6b4b24;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseLeft .public_parts_03.baseItem dt span{background-color:#048BB3;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseLeft .public_parts_03.baseItem dt span{background-color:#5974D4;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseLeft .public_parts_03.baseItem dt span{background-color:#9D57CA;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseLeft .public_parts_03.baseItem dt span{background-color:#d4ba38;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseLeft .public_parts_03.baseItem dt span{background-color:#69cc41;}
+/*jyCv-baseLeft-----end*/
+/*4*/
+/*jyCv-baseLeft*/
+.jyCv-baseLeft .public_parts_04.baseItem dt span{color:#fff !important;}
+.jyCv-baseLeft .public_parts_04.baseItem dt a{color:#fff !important; background-position-x:-509px !important;}
+/*jyCv-baseLeft-----end*/
+/*5*/
+/*jyCv-baseLeft*/
+.jyCv-baseLeft .public_parts_05.baseItem dt::before{border-color:#fff !important;}
+.jyCv-baseLeft .public_parts_05.baseItem dt span{color:#fff !important;}
+.jyCv-baseLeft .public_parts_05.baseItem dt span::before{border-color:#fff !important;}
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseLeft .public_parts_05.baseItem dt span{background-color:#0b70bd;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseLeft .public_parts_05.baseItem dt span{background-color:#254665;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseLeft .public_parts_05.baseItem dt span{background-color:#589bf7;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseLeft .public_parts_05.baseItem dt span{background-color:#ff7171;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseLeft .public_parts_05.baseItem dt span{background-color:#37b754;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseLeft .public_parts_05.baseItem dt span{background-color:#292929;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseLeft .public_parts_05.baseItem dt span{background-color:#ee7000;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseLeft .public_parts_05.baseItem dt span{background-color:#a29177;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseLeft .public_parts_05.baseItem dt span{background-color:#da180f;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseLeft .public_parts_05.baseItem dt span{background-color:#6b4b24;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseLeft .public_parts_05.baseItem dt span{background-color:#048BB3;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseLeft .public_parts_05.baseItem dt span{background-color:#5974D4;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseLeft .public_parts_05.baseItem dt span{background-color:#9D57CA;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseLeft .public_parts_05.baseItem dt span{background-color:#d4ba38;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseLeft .public_parts_05.baseItem dt span{background-color:#69cc41;}
+/*jyCv-baseLeft-----end*/
+/*6*/
+/*jyCv-baseLeft*/
+.jyCv-baseLeft .public_parts_06.baseItem dt::before{border-color:#fff !important;}
+.jyCv-baseLeft .public_parts_06.baseItem dt span{color:#fff !important;}
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseLeft .public_parts_06.baseItem dt span{background-color:#0b70bd;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseLeft .public_parts_06.baseItem dt span{background-color:#254665;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseLeft .public_parts_06.baseItem dt span{background-color:#589bf7;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseLeft .public_parts_06.baseItem dt span{background-color:#ff7171;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseLeft .public_parts_06.baseItem dt span{background-color:#37b754;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseLeft .public_parts_06.baseItem dt span{background-color:#292929;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseLeft .public_parts_06.baseItem dt span{background-color:#ee7000;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseLeft .public_parts_06.baseItem dt span{background-color:#a29177;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseLeft .public_parts_06.baseItem dt span{background-color:#da180f;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseLeft .public_parts_06.baseItem dt span{background-color:#6b4b24;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseLeft .public_parts_06.baseItem dt span{background-color:#048BB3;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseLeft .public_parts_06.baseItem dt span{background-color:#5974D4;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseLeft .public_parts_06.baseItem dt span{background-color:#9D57CA;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseLeft .public_parts_06.baseItem dt span{background-color:#d4ba38;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseLeft .public_parts_06.baseItem dt span{background-color:#69cc41;}
+/*jyCv-baseLeft-----end*/
+/*7*/
+/*jyCv-baseLeft*/
+.jyCv-baseLeft .public_parts_07.baseItem dt::before{border-color:#fff !important;}
+.jyCv-baseLeft .public_parts_07.baseItem dt span{color:#fff !important;}
+.jyCv-baseLeft .public_parts_07.baseItem dt span::after,
+.jyCv-baseLeft .public_parts_07.baseItem dt span::before{background-position-x:-316px !important;}
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseLeft .public_parts_07.baseItem dt span{background-color:#0b70bd;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseLeft .public_parts_07.baseItem dt span{background-color:#254665;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseLeft .public_parts_07.baseItem dt span{background-color:#589bf7;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseLeft .public_parts_07.baseItem dt span{background-color:#ff7171;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseLeft .public_parts_07.baseItem dt span{background-color:#37b754;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseLeft .public_parts_07.baseItem dt span{background-color:#292929;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseLeft .public_parts_07.baseItem dt span{background-color:#ee7000;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseLeft .public_parts_07.baseItem dt span{background-color:#a29177;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseLeft .public_parts_07.baseItem dt span{background-color:#da180f;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseLeft .public_parts_07.baseItem dt span{background-color:#6b4b24;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseLeft .public_parts_07.baseItem dt span{background-color:#048BB3;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseLeft .public_parts_07.baseItem dt span{background-color:#5974D4;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseLeft .public_parts_07.baseItem dt span{background-color:#9D57CA;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseLeft .public_parts_07.baseItem dt span{background-color:#d4ba38;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseLeft .public_parts_07.baseItem dt span{background-color:#69cc41;}
+/*jyCv-baseLeft-----end*/
+/*8*/
+/*jyCv-baseLeft*/
+.jyCv-baseLeft .public_parts_08.baseItem dt::before{border-color:#fff !important;}
+.jyCv-baseLeft .public_parts_08.baseItem dt span{color:#fff !important;}
+.jyCv-baseLeft .public_parts_08.baseItem dt span::before{background-color:#fff !important;}
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseLeft .public_parts_08.baseItem dt span{background-color:#0b70bd;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseLeft .public_parts_08.baseItem dt span{background-color:#254665;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseLeft .public_parts_08.baseItem dt span{background-color:#589bf7;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseLeft .public_parts_08.baseItem dt span{background-color:#ff7171;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseLeft .public_parts_08.baseItem dt span{background-color:#37b754;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseLeft .public_parts_08.baseItem dt span{background-color:#292929;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseLeft .public_parts_08.baseItem dt span{background-color:#ee7000;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseLeft .public_parts_08.baseItem dt span{background-color:#a29177;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseLeft .public_parts_08.baseItem dt span{background-color:#da180f;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseLeft .public_parts_08.baseItem dt span{background-color:#6b4b24;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseLeft .public_parts_08.baseItem dt span{background-color:#048BB3;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseLeft .public_parts_08.baseItem dt span{background-color:#5974D4;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseLeft .public_parts_08.baseItem dt span{background-color:#9D57CA;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseLeft .public_parts_08.baseItem dt span{background-color:#d4ba38;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseLeft .public_parts_08.baseItem dt span{background-color:#69cc41;}
+/*jyCv-baseLeft-----end*/
+/*9*/
+/*jyCv-baseLeft*/
+.jyCv-baseLeft .public_parts_09.baseItem dt span{color:#fff !important;}
+.jyCv-baseLeft .public_parts_09.baseItem dt a{background-color:#fff !important;}
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseLeft .public_parts_09.baseItem dt a{color:#0b70bd;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseLeft .public_parts_09.baseItem dt a{color:#254665;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseLeft .public_parts_09.baseItem dt a{color:#589bf7;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseLeft .public_parts_09.baseItem dt a{color:#ff7171;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseLeft .public_parts_09.baseItem dt a{color:#37b754;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseLeft .public_parts_09.baseItem dt a{color:#292929;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseLeft .public_parts_09.baseItem dt a{color:#ee7000;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseLeft .public_parts_09.baseItem dt a{color:#a29177;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseLeft .public_parts_09.baseItem dt a{color:#da180f;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseLeft .public_parts_09.baseItem dt a{color:#6b4b24;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseLeft .public_parts_09.baseItem dt a{color:#048BB3;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseLeft .public_parts_09.baseItem dt a{color:#5974D4;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseLeft .public_parts_09.baseItem dt a{color:#9D57CA;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseLeft .public_parts_09.baseItem dt a{color:#d4ba38;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseLeft .public_parts_09.baseItem dt a{color:#69cc41;}
+/*jyCv-baseLeft-----end*/
+/*10*/
+/*jyCv-baseLeft*/
+.jyCv-baseLeft .public_parts_10.baseItem dt::before{border-color:#fff !important;}
+.jyCv-baseLeft .public_parts_10.baseItem dt span{color:#fff !important;}
+.jyCv-baseLeft .public_parts_10.baseItem dt span::before{background-color:#fff !important;}
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseLeft .public_parts_10.baseItem dt span{background-color:#0b70bd;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseLeft .public_parts_10.baseItem dt span{background-color:#254665;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseLeft .public_parts_10.baseItem dt span{background-color:#589bf7;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseLeft .public_parts_10.baseItem dt span{background-color:#ff7171;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseLeft .public_parts_10.baseItem dt span{background-color:#37b754;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseLeft .public_parts_10.baseItem dt span{background-color:#292929;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseLeft .public_parts_10.baseItem dt span{background-color:#ee7000;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseLeft .public_parts_10.baseItem dt span{background-color:#a29177;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseLeft .public_parts_10.baseItem dt span{background-color:#da180f;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseLeft .public_parts_10.baseItem dt span{background-color:#6b4b24;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseLeft .public_parts_10.baseItem dt span{background-color:#048BB3;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseLeft .public_parts_10.baseItem dt span{background-color:#5974D4;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseLeft .public_parts_10.baseItem dt span{background-color:#9D57CA;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseLeft .public_parts_10.baseItem dt span{background-color:#d4ba38;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseLeft .public_parts_10.baseItem dt span{background-color:#69cc41;}
+/*jyCv-baseLeft-----end*/
+/*11*/
+/*jyCv-baseLeft*/
+.jyCv-baseLeft .public_parts_11.baseItem dt::before{border-color:#fff !important;}
+.jyCv-baseLeft .public_parts_11.baseItem dt span{color:#fff !important;}
+.jyCv-baseLeft .public_parts_11.baseItem dt span::before{background-color:#fff !important;}
+/*jyCv-baseLeft-----end*/
+/*12*/
+/*jyCv-baseLeft*/
+.jyCv-baseLeft .public_parts_12.baseItem dt::before{border-color:#fff !important;}
+.jyCv-baseLeft .public_parts_12.baseItem dt span{color:#fff !important;}
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseLeft .public_parts_12.baseItem dt span{background-color:#0b70bd;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseLeft .public_parts_12.baseItem dt span{background-color:#254665;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseLeft .public_parts_12.baseItem dt span{background-color:#589bf7;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseLeft .public_parts_12.baseItem dt span{background-color:#ff7171;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseLeft .public_parts_12.baseItem dt span{background-color:#37b754;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseLeft .public_parts_12.baseItem dt span{background-color:#292929;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseLeft .public_parts_12.baseItem dt span{background-color:#ee7000;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseLeft .public_parts_12.baseItem dt span{background-color:#a29177;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseLeft .public_parts_12.baseItem dt span{background-color:#da180f;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseLeft .public_parts_12.baseItem dt span{background-color:#6b4b24;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseLeft .public_parts_12.baseItem dt span{background-color:#048BB3;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseLeft .public_parts_12.baseItem dt span{background-color:#5974D4;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseLeft .public_parts_12.baseItem dt span{background-color:#9D57CA;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseLeft .public_parts_12.baseItem dt span{background-color:#d4ba38;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseLeft .public_parts_12.baseItem dt span{background-color:#69cc41;}
+/*jyCv-baseLeft-----end*/
+/*13*/
+/*jyCv-baseLeft*/
+.jyCv-baseLeft .public_parts_13.baseItem dt::before{border-color:#fff !important;}
+.jyCv-baseLeft .public_parts_13.baseItem dt span{color:#fff !important;}
+.jyCv-baseLeft .public_parts_13.baseItem dt a{background-position-x:-454px !important;}
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseLeft .public_parts_13.baseItem dt a{color:#0b70bd;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseLeft .public_parts_13.baseItem dt a{color:#254665;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseLeft .public_parts_13.baseItem dt a{color:#589bf7;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseLeft .public_parts_13.baseItem dt a{color:#ff7171;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseLeft .public_parts_13.baseItem dt a{color:#37b754;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseLeft .public_parts_13.baseItem dt a{color:#292929;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseLeft .public_parts_13.baseItem dt a{color:#ee7000;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseLeft .public_parts_13.baseItem dt a{color:#a29177;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseLeft .public_parts_13.baseItem dt a{color:#da180f;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseLeft .public_parts_13.baseItem dt a{color:#6b4b24;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseLeft .public_parts_13.baseItem dt a{color:#048BB3;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseLeft .public_parts_13.baseItem dt a{color:#5974D4;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseLeft .public_parts_13.baseItem dt a{color:#9D57CA;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseLeft .public_parts_13.baseItem dt a{color:#d4ba38;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseLeft .public_parts_13.baseItem dt a{color:#69cc41;}
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseLeft .public_parts_13.baseItem dt span{background-color:#0b70bd;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseLeft .public_parts_13.baseItem dt span{background-color:#254665;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseLeft .public_parts_13.baseItem dt span{background-color:#589bf7;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseLeft .public_parts_13.baseItem dt span{background-color:#ff7171;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseLeft .public_parts_13.baseItem dt span{background-color:#37b754;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseLeft .public_parts_13.baseItem dt span{background-color:#292929;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseLeft .public_parts_13.baseItem dt span{background-color:#ee7000;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseLeft .public_parts_13.baseItem dt span{background-color:#a29177;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseLeft .public_parts_13.baseItem dt span{background-color:#da180f;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseLeft .public_parts_13.baseItem dt span{background-color:#6b4b24;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseLeft .public_parts_13.baseItem dt span{background-color:#048BB3;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseLeft .public_parts_13.baseItem dt span{background-color:#5974D4;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseLeft .public_parts_13.baseItem dt span{background-color:#9D57CA;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseLeft .public_parts_13.baseItem dt span{background-color:#d4ba38;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseLeft .public_parts_13.baseItem dt span{background-color:#69cc41;}
+/*jyCv-baseLeft-----end*/

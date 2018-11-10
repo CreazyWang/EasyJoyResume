@@ -1,0 +1,64 @@
+.jyCv-resume{background:#fff;}
+
+.jyCv-baseLeft .baseItem-null{display:none;}
+
+.jyCv-baseTop,.jyCv-baseLeft,.jyCv-baseRight{padding:0 56px; background: inherit;}
+.jyCv-baseTop{position:relative; margin:0 0 30px 0; padding-top:44px;}
+
+/*基本信息*/
+
+.infoItem.template_css dl dt{display:block !important;}
+.bInfoItem.template_css dl{padding:0;}
+.infoItem.template_css dl{padding-bottom:20px;}
+.bInfoItem.template_css .info-list{position:relative;display:inline-block;margin-right:20px;}
+.bInfoItem.template_css .info-list .jyfont{display:none;}
+
+
+.nameItem.template_css .name-con .name{color:#222; display:inline-block; margin-right: 5px;}
+.nameItem.template_css .name-con .resume_tag{display:inline-block; height:45px; line-height:47px;}
+.nameItem.template_css .name-con .resume_tag span{border-color:#404552; color:#404552;}
+
+.socialItem.template_css{margin-top: 10px;}
+.socialItem.template_css .social-list a{background:transparent url(../images/social/j17_social.png) no-repeat 0 0; border:1px solid #cecece;}
+
+.homeItem.template_css .home-list{width:auto; display:inline-block;}
+
+.inteItem.template_css .inte-list a.jyfont{display:none;}
+
+.baseItem.template_css dt{margin-bottom:10px;}
+.baseItem.template_css dl dt span{color:#222;}
+.baseItem.template_css dl dt a.jyfont,.infoItem.template_css dl dt a.jyfont{display:none;}
+
+.baseItem.template_css .dd-title span.time{position:relative; width:129px;float:right;margin:0;text-align:right;}
+.baseItem.template_css .dd-title span.company{width: 180px;}
+.baseItem.template_css .dd-title span.post{width: 280px;}
+
+/*作品展示*/
+.workItem .work-list{width:48%; margin-right:22px;border:1px solid #e9e9e9;}
+.workItem .work-list .work-img{width:100%; overflow:hidden;}
+.workItem .work-list .work-img img{display:block; width:100%;}
+.workItem .work-list:nth-of-type(even){margin-right:0;}
+
+
+/*职业技能*/
+.jyCv-baseLeft .skillItem .skill-list{margin-right:60px;}
+.jyCv-baseLeft .skillItem .skill-list:nth-child(2n+1){margin-right:60px !important;}
+.jyCv-baseStyle[data_color] .skillItem.public_parts_08 .skill-slider span::before,
+.jyCv-baseStyle[data_color] .skillItem.public_parts_11 .skill-slider span::before,
+.jyCv-baseStyle[data_color] .skillItem.template_css .skill-slider span::before{background-color:#fff;}
+
+.jyCv-baseStyle[data_color="j1"] .moduleItem.template_css dl dt span,.jyCv-baseStyle[data_color="j1"] .nameItem.template_css .name-con .name{color:#0b70bd;}
+.jyCv-baseStyle[data_color="j2"] .moduleItem.template_css dl dt span,.jyCv-baseStyle[data_color="j2"] .nameItem.template_css .name-con .name{color:#254665;}
+.jyCv-baseStyle[data_color="j3"] .moduleItem.template_css dl dt span,.jyCv-baseStyle[data_color="j3"] .nameItem.template_css .name-con .name{color:#589bf7;}
+.jyCv-baseStyle[data_color="j4"] .moduleItem.template_css dl dt span,.jyCv-baseStyle[data_color="j4"] .nameItem.template_css .name-con .name{color:#ff7171;}
+.jyCv-baseStyle[data_color="j5"] .moduleItem.template_css dl dt span,.jyCv-baseStyle[data_color="j5"] .nameItem.template_css .name-con .name{color:#37b754;}
+.jyCv-baseStyle[data_color="j6"] .moduleItem.template_css dl dt span,.jyCv-baseStyle[data_color="j6"] .nameItem.template_css .name-con .name{color:#292929;}
+.jyCv-baseStyle[data_color="j7"] .moduleItem.template_css dl dt span,.jyCv-baseStyle[data_color="j7"] .nameItem.template_css .name-con .name{color:#ee7000;}
+.jyCv-baseStyle[data_color="j8"] .moduleItem.template_css dl dt span,.jyCv-baseStyle[data_color="j8"] .nameItem.template_css .name-con .name{color:#a29177;}
+.jyCv-baseStyle[data_color="j9"] .moduleItem.template_css dl dt span,.jyCv-baseStyle[data_color="j9"] .nameItem.template_css .name-con .name{color:#da180f;}
+.jyCv-baseStyle[data_color="j10"] .moduleItem.template_css dl dt span,.jyCv-baseStyle[data_color="j10"] .nameItem.template_css .name-con .name{color:#6b4b24;}
+.jyCv-baseStyle[data_color="j11"] .moduleItem.template_css dl dt span,.jyCv-baseStyle[data_color="j11"] .nameItem.template_css .name-con .name{color:#048BB3;}
+.jyCv-baseStyle[data_color="j12"] .moduleItem.template_css dl dt span,.jyCv-baseStyle[data_color="j12"] .nameItem.template_css .name-con .name{color:#5974D4;}
+.jyCv-baseStyle[data_color="j13"] .moduleItem.template_css dl dt span,.jyCv-baseStyle[data_color="j13"] .nameItem.template_css .name-con .name{color:#9D57CA;}
+.jyCv-baseStyle[data_color="j14"] .moduleItem.template_css dl dt span,.jyCv-baseStyle[data_color="j14"] .nameItem.template_css .name-con .name{color:#d4ba38;}
+.jyCv-baseStyle[data_color="j15"] .moduleItem.template_css dl dt span,.jyCv-baseStyle[data_color="j15"] .nameItem.template_css .name-con .name{color:#69cc41;}

@@ -1,0 +1,168 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html style="background:#fff;">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="keywords" content="简悦登录,简悦注册">
+    <meta name="description" content="简悦登录和注册">
+    <meta name="renderer" content="webkit">
+    <title>登录和注册 - 简悦简历</title>
+    <link href="~/Content/editresume/base.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.0.js"></script>
+    <script src="~/Scripts/utils.js"></script>
+    <script src="~/Scripts/common_ext.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/layer.js"></script>
+    <link href="~/Scripts/skin/layer.css" rel="stylesheet" />
+    <script src="~/Scripts/pswd/jsbn.js"></script>
+    <script src="~/Scripts/pswd/prng4.js"></script>
+    <script src="~/Scripts/pswd/rng.js"></script>
+    <script src="~/Scripts/pswd/rsa.js"></script>
+    <script src="~/Scripts/pswd/base64.js"></script>
+    <script src="~/Scripts/plugin/modal/modal.js"></script>
+    <script src="~/Scripts/login.js"></script>
+</head>
+<body style="background:#fff;">
+
+    <div class="login-reg-top">
+        <div class="g-w1240">
+            <h1 class="login-logo">
+                <a href="/" target="_blank">
+                    <img src="~/images/login/login_logo.png" width="" height="45">
+                </a>
+            </h1>
+            <div class="wx-service-box">加简悦微信服务号<span><img src="~/images/login/qrcode_jy500.png" width="146"></span></div>
+        </div>
+    </div>
+    <div id="mark_mask" style="display:none;position:fixed;top:40px;left:0;z-index:99999999;height:1000px;width:100%;background:rgba(0,0,0,0.4);"></div>
+
+
+    <div class="login-reg-bg clearfix">
+        <div class="g-w1240"> 
+            <!--账户登录-->
+            <div class="modal lrModal wylrModal" id="zhloginModal" style="display:block;">
+                <div class="modal-dialog zhlogin show-swal2">
+                    <div class="modal-content">
+                        <div class="hd">
+                        <h2>账号登录</h2>
+                        </div>
+                        <div class="cd">
+                            <form class="zhlogin-form" method="POST" action="/login/submit/" id="loginForm">
+                                <input name="service" value="" type="hidden">
+                                <div class="valid-msg" style="display:none"><p class="error incorrect_username">你输入的密码与账号名不匹配，是否<a href="http://www.500d.me/password/findpswd/" target="_blank"> 忘记密码?</a></p><p class="error null_tips" style="display:none">请输入登录账号和密码</p></div>
+                                <div class="field username-field"><label title="手机号 / 邮箱"></label><input name="username" placeholder="手机号 / 邮箱" value="sblujiang@outlook.com" type="text"></div>
+                                <div class="field pwd-field"><label title="密码"></label><input name="password" placeholder="密码" type="password"></div>
+                                <div class="submit"><button type="button"><input class="loading1 spin" data_track="PC-通用-登陆注册页-账号登陆-账号登陆-登陆" style="display:none">登录</button></div>
+                            </form>
+                        </div>
+                        <div class="bd">
+                            <a class="zc right" href="/register">注册</a>
+                            <a class="wj right">忘记密码？</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--找回密码-->
+            <div class="modal lrModal wylrModal" id="zhpasswordModal" style="display:none;">
+                <div class="modal-dialog zhpwd show-swal2">
+                    <div class="modal-content">
+                        <div class="hd"><h2>找回密码</h2></div>
+                        <div class="cd">
+                            <form class="zhlogin-form" id="zhpwdForm">
+                                <input name="captchaId" value="a9b568c1-1abb-4d47-93e1-07647cce0393" type="hidden">
+                                <input name="mid" value="SMS_61910002" type="hidden">
+                                <div class="field username-field">
+                                    <label title="手机号 / 邮箱">用户名：</label>
+                                    <input placeholder="请输入你的注册手机号/邮箱" autocomplete="off" name="username" type="text">
+                                    <div class="valid-error"><p class="error">请输入正确的手机号或邮箱</p></div>
+                                </div>
+                                <div class="field code-field">
+                                    <label title="验证码：">验证码：</label>
+                                    <input placeholder="请输入验证码" name="captchaCode" id="captchaCode" type="text"><img class="codeimg captchaImage" src="/common/GetValidateCode/?captchaId=a9b568c1-1abb-4d47-93e1-07647cce0393">
+                                    <div class="valid-error"><p class="error">请输入正确的验证码</p></div>
+                                </div>
+                                <div class="submit">
+                                <button type="button" disabled data_type="page">
+                                    <input class="loading1 spin" style="display:none" >找回密码</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="bd">
+                            <a class="zh">账号登录</a>
+                            <a class="zc right" href="/register">注册</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        $(function () {
+            $('#wxloginModal iframe').height(160);
+            $('#wxloginModal iframe').width(160);
+
+            $("#zhloginModal .other a,.lrModal .bd .wx").click(function () {
+                $("#zhpasswordModal").css('display', 'none');
+                $("#wxloginModal").css('display', 'block');
+                $("#zhloginModal").css('display', 'none');
+            });
+            $("#wxloginModal .other a,.lrModal .bd .zh").click(function () {
+                $("#zhpasswordModal").css('display', 'none');
+                $("#zhloginModal").css('display', 'block');
+                $("#wxloginModal").css('display', 'none');
+            });
+            $(".lrModal .bd .wj").click(function () {
+                $("#zhpasswordModal").css('display', 'block');
+                $("#zhloginModal").css('display', 'none');
+                $("#wxloginModal").css('display', 'none');
+            });
+            $(".lrModal .bd .yx").click(function () {
+                $("#regModal").css('display', 'none');
+                $("#regemailModal").css('display', 'block');
+            });
+            $(".lrModal .bd .sj").click(function () {
+                $("#regModal").css('display', 'block');
+                $("#regemailModal").css('display', 'none');
+            });
+            // 自动填写用户名
+            if (getCookie("rememberEmail") != null) {
+                $("#loginForm input[name='username']").val(getCookie("rememberEmail"));
+                $("#loginForm input[name='password']").focus();
+            } else {
+                $("#loginForm input[name='username']").focus();
+            }
+            if (getCookie("rememberMobile") != null) {
+                $("#loginForm input[name='username']").val(getCookie("rememberMobile"));
+                $("#loginForm input[name='password']").focus();
+            } else {
+                $("#loginForm input[name='username']").focus();
+            }
+        });
+    </script>
+
+    <a title="有事找我" class="service1" rel="nofollow" target="_blank" href="http://help.jy500.cn/"><span>客服在线时间：9:00-18:00</span></a>
+
+    <div class="jl-index_bottom1" style="position:fixed;width: 100%;bottom: 0px;z-index: 10000;">
+        <div class="g-w1240">
+            <p class="p_copy">Copyright © 2017-2018.<a href="http://www.jy500.cn/">www.jy500.cn</a> . All Rights Reserved.</p>
+            <p class="p_foot_bar">
+                <a target="_blank" href="/member/" rel="nofollow">个人中心</a> -
+                <a target="_blank" href="/common/joinus/" rel="nofollow">加入我们</a> -
+                <a target="_blank" href="/help/" rel="nofollow">帮助中心</a> -
+                <a target="_blank" href="/sitemap.html">网站地图</a> -
+                <a target="_blank" href="http://www.miitbeian.gov.cn">鲁ICP备18026596号</a>
+            </p>
+        </div>
+    </div>
+
+
+</body>
+</html>

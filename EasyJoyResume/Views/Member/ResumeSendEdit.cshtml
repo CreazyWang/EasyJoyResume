@@ -1,0 +1,442 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>简历投递 - 简悦</title>
+    <link href="~/Content/common/common.css" rel="stylesheet" />
+    <link href="~/Content/member/member.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery-1.8.0.js" type="text/javascript"></script>
+    <script src="../../Scripts/utils.js" type="text/javascript"></script>
+    <script src="../../Scripts/common_ext.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.validate.js" type="text/javascript"></script>
+    <script src="../../Scripts/pswd/jsbn.js" type="text/javascript"></script>
+    <script src="../../Scripts/pswd/prng4.js" type="text/javascript"></script>
+    <script src="../../Scripts/pswd/rng.js" type="text/javascript"></script>
+    <script src="../../Scripts/pswd/rsa.js" type="text/javascript"></script>
+    <script src="../../Scripts/pswd/base64.js" type="text/javascript"></script>
+    <script src="/../Scripts/layer.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../../Scripts/skin/layer.css" id="layui_layer_skinlayercss" style="">
+    <script src="../../Scripts/plugin/modal/modal.js"></script>
+    <script src="../../Scripts/login.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.lazyload.min.js"></script>
+    <!--新增 member.js-->
+    <script src="~/Scripts/member/member.js"></script>
+
+</head>
+<body class="jl-member-bg">
+    <div class="jl-header">
+        <div class="jl-logo">
+            <h1><a href="/">简悦</a></h1>
+        </div>
+        <div class="jl-touxiang" id="userHead">
+            <a class="jl-tx-img" id="user_center" href="/Member/Myresume/">
+                <i style="display: none;"></i>
+                <img src="/../images/0.png" alt="" width="48" height="48">
+                <span>个人中心</span>
+            </a>
+            <div class="jl-user-info" style="display: none;">
+                <span class="triangle-up"></span>
+                <div class="user-bd">
+                    <ul class="user-ul-l">
+                        <li class="sz"><a href="/Member/Myresume/">我的简历</a></li>
+                        <li class="dd"><a href="/Member/Order/">订单管理</a></li>
+                        <li class="gj"><a href="/Member/ResumeSendEdit">简历投递</a></li>
+                        <li class="sc"><a href="/Member/Set/">账号设置</a></li>
+                        <li class="tc"><a href="#" id="user_logout">安全退出</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="jl-login">
+            <a style="display:none;" id="login" class="jl-login-a">登录&nbsp;/&nbsp;注册</a>
+        </div>
+        <div class="jl-nav">
+            <ul>
+                <li class="nav-li"><a href="/CvResume/CvTemplate">在线制作</a></li>
+                <li class="nav-li"><a href="/Article">简历技巧</a></li>
+                @*<li class="nav-li other-nav-li">
+                        <a href="javascript:;"></a>
+                        <div class="jl-ej-nav">
+                            <ul>
+                                <li><a href="/common/joinus/">咨询客服</a></li>
+                                <li><a href="/common/joinus/">关于我们</a></li>
+                            </ul>
+                        </div>
+                    </li>*@
+            </ul>
+        </div>
+    </div>
+    <div id="mark_mask" style="display:none;position:fixed;top:40px;left:0;z-index:99999999;height:1000px;width:100%;background:rgba(0,0,0,0.4);"></div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            common.main.loginMsg();
+        });
+    </script>
+    <div class="jl-member g-w1240  clearfix">
+        <div class="jl-member-ld">
+            <div class="member-nav">
+                <ul>
+                    <li class="jl"><a href="/member/myresume/"><i></i><span>我的简历</span></a></li>
+                    <li class="dd"><a href="/member/order/"><i></i><span>我的订单</span></a></li>
+                    <li class="gj current"><a href="/member/ResumeSendEdit"><i></i><span>简历投递</span></a></li>
+                </ul>
+            </div>
+            <div class="member-associator">
+                <div class="info clearfix">
+                    <div class="headimg left">
+                        <img id="changehead" src="~/images/0.png" width="48" height="48" />
+                    </div>
+                    <div class="member-hy left">
+                        <p>
+                            <span class="unvip"><i></i>免费会员</span>
+                            <a class="huiyuan-upload">升级会员</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="member-set">
+                <div class="title">用户ID：<s>jy3670436</s><a class="set right" id="member_set_btn" data_track="PC-个人中心-其他页通用-右侧升级充值框-账户概览-账户设置" href="/Member/Set/">设置</a></div>
+                <ul class="clearfix">
+                    <li class="email">
+                        <p>邮箱：<span>17705455529</span></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="jl-member-rd" style="height: 856px;">
+            <div class="resume_send_edit">
+                <div class="edit_header">
+                    <div class="resume_select " data_track="PC-ZX6.2.1-个人中心-投递编辑页-顶部-左上角-选择投递的简历">
+                        <span>勿删谢谢</span>
+                        <ul class="select_box">
+                            <li data-resume="5996800">勿删谢谢</li>
+                            <li data-resume="4466523">曹宇个人简历</li>
+                            <li data-resume="3578522">茅佳雨 江苏科技大学</li>
+                        </ul>
+                    </div>
+                    <button class="send " data_track="PC-ZX6.2.1-个人中心-投递编辑页-顶部-右上角-投递简历">投递简历</button>
+                </div>
+
+                <div class="edit_contain">
+                    <ul class="letter_header">
+                        <li>
+                            <span>收 件 人</span>
+                            <input name="recipients" placeholder="请输入邮箱地址">
+                            <span>发 件 人</span>
+                            <div class="sender"><input name="addresser" placeholder="请填写发件人" value="18838988680@163.com"></div>
+                        </li>
+                        <li  data_track="PC-ZX6.2.1-个人中心-投递编辑页-编辑区-左侧-填写标题">
+                            <span>标  题</span>
+                            <div class="resume_title">
+                                <div data-name="post" placeholder="岗位" contenteditable="true">测试</div>_<div data-name="name" placeholder="姓名" contenteditable="true">王浩</div>_<div data-name="experience" placeholder="工作经验" contenteditable="true"></div>_<div data-name="phone" placeholder="电话" contenteditable="true">18838988680</div>
+                            </div>
+                        </li>
+                        <li  data_track="PC-ZX6.2.1-个人中心-投递编辑页-编辑区-左侧-填写公司">
+                            <span>公司名称</span>
+                            <input name="location" placeholder="请填写你投递的公司名称" maxlength="20">
+                        </li>
+                    </ul>
+                    <div class="letter_content">
+                        <div class="content_textarea " data_track="PC-ZX6.2.1-个人中心-投递编辑页-编辑区-左侧-编辑修改内容" contenteditable="true">
+                            <div style="margin:0; font-size:14px; color:#686868; word-wrap:break-word; font-style:initial; text-decoration:none">
+                                <p style="margin:0; font-size:14px; color:#686868; word-wrap:break-word; font-style:initial; text-decoration:none"><i id="companyName" class="int" style="font-weight:bold; font-style:initial;">[单位名称]</i>招聘负责人，您好！</p>
+                                <br>
+                                <p style="margin:0; text-indent:2em; font-size:14px; color:#686868; word-wrap:break-word; font-style:initial; text-decoration:none">我叫<span id="memberName" class="int" style="font-weight: 500;">王浩</span>，获悉贵司正在招聘<span id="postName" class="int" style="font-weight: 500;">测试</span>，阅读完招聘条件后，感觉我的经历与贵司要求契合度比较高，我对该岗位非常感兴趣并且相信自己可以胜任，因此冒昧向您发起求职申请。</p>
+                                <p class="placeholder" style="margin:0; text-indent:2em; font-size:14px; color:#686868; word-wrap:break-word; font-style:initial; text-decoration:none" placeholder="">【如果你的经历比较丰富，可以在此加一些补充描述如：我于XX年毕业于XX学校，已从事X年XX岗位，具有丰富的XX经验，能够独立解决问题，本人学习积极，具有良好的沟通能力，非常乐于接受新事物的挑战。】</p>
+                                <img style="display:block; width:0; height:0;">
+                                <p style="margin:0; text-indent:2em; line-height:25px; font-size:14px; color:#686868; word-wrap:break-word; font-style:initial; text-decoration:none;">期待有机会通过面试加入你们一起成长，祝工作顺利！</p>
+                            </div>
+                        </div>
+                        <input id="resumeId" type="hidden" value="5996800">
+                        <ul id="foot_msg" style="min-height:30px; margin: 30px 0 47px; padding: 24px 0 0; border-top: 1px dashed #e5e5e5;">
+                            <li class="" id="foot_name" style="list-style: none;">
+                                <span style="height:35px; line-height:28px; color:#999; font-weight:bold;" data-name="王浩">王浩</span>
+                            </li>
+                            <li class="" id="foot_mobile" style="list-style: none;">
+                                <i style="display: inline-block; margin: 0 8px -2px 0; width:11px; height: 14px; background: url(http://static.500d.me/resources/500d/member/images/sendResume.png?v=9030) -215px -6px no-repeat;"></i>
+                                <span style="height:25px; line-height:25px; color:#999;">手  机：</span>
+                                <span style="height:25px; line-height:25px; color:#999;" data-mobile="18838988680">18838988680</span>
+                            </li>
+                            <li class="" id="foot_email" style="list-style: none;">
+                                <i style="display: inline-block; margin: 0 8px -1px 0; width: 12px; height: 10px; background: url(http://static.500d.me/resources/500d/member/images/sendResume.png?v=9030) -236px -8px no-repeat;"></i>
+                                <span style="height:25px; line-height:25px; color:#999;">邮  箱：</span>
+                                <span style="height:25px; line-height:25px; color:#999;" data-email="18838988680@163.com">18838988680@163.com</span>
+                            </li>
+                            <li class="" id="foot_city" style="list-style: outside none none; display: none;">
+                                <i style="display: inline-block; margin: 0 8px -1px 0; width:10px; height:14px; background:url(http://static.500d.me/resources/500d/member/images/sendResume.png?v=9030) -258px -6px no-repeat;"></i>
+                                <span style="height:25px; line-height:25px; color:#999;">所 在 地：</span>
+                                <span style="height:25px; line-height:25px; color:#999;">[object Object]</span>
+                            </li>
+                            <li class="" id="foot_url" style="list-style: none;">
+                                <i style="display: inline-block; margin: 0 8px -1px 0; width:10px; height:13px; background:url(http://static.500d.me/resources/500d/member/images/sendResume.png?v=9030) -278px -5px no-repeat;"></i>
+                                <span style="height:25px; line-height:25px; color:#999;">我的简历：</span>
+                                <span style="height:25px; line-height:25px; color:#999;"><a href="http://www.500d.me/cvresume/3472629450/" style="height:25px; line-height:25px; color:#1e9fff;" target="_blank">http://www.500d.me/cvresume/3472629450/</a></span>
+                            </li>
+                            <li class="" id="foot_download" style="list-style: none;">
+                                <i style="display: inline-block; margin: 0 8px -1px 0; width:12px; height:12px; background:url(http://static.500d.me/resources/500d/member/images/sendResume.png?v=9030) -216px -29px no-repeat;"></i>
+                                <span style="height:25px; line-height:25px; color:#999;">附  件：</span>
+                                <span style="height:25px; line-height:25px; color:#999;"><a href="http://download.500d.me/cvresume/pdf_download/500d_5996800_449_1097704_20181106222552.pdf?downmsg=27e74485e84110465588db6d9471cf33" style="height:25px; line-height:25px; color:#686868; text-decoration:underline;">勿删谢谢.pdf</a></span>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--  投递交互  -->
+            <div class="unify_masking"></div>
+            <div class="unify_loading send">
+                <div>
+                    <img src="~/images/loading-4.gif" />
+                    <p>投递中...</p>
+                </div>
+            </div>
+            <!--  投递弹框  -->
+            <div class="modal fade send_modal delete_modal normal" id="send-modal">
+                <div class="modal-dialog">
+                    <div class="modal-content msg-content show-swal4">
+                        <div class="modal-header">
+                            <button type="button" class="close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <span class="title">确定投递当前已编辑的信息？</span>
+                            <span class="tips">请检查确认投递信息无误</span>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-dismiss="modal" aria-hidden="true" class="button cancel " data_track="PC-ZX6.2.1-个人中心-投递编辑页-投递弹窗-底部-取消">取消</button>
+                            <button type="button" class="button submit save_opt " data_track="PC-ZX6.2.1-个人中心-投递编辑页-投递弹窗-底部-确认投递">确认投递</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade send_modal delete_modal normal create_modal" id="noresume-modal">
+                <div class="modal-dialog">
+                    <div class="modal-content msg-content show-swal4">
+                        <div class="modal-header">
+                            <button type="button" class="close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <span class="title">你还没有创建简历哦</span>
+                            <span class="tips">你可以通过下方按钮创建简历</span>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="button submit save_opt">创建简历</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  投递成功  -->
+            <div class="send_resume_success">
+                <div class="success_contain">
+                    <div class="contain_head">
+                        <p>投递成功</p>
+                        <span>若HR查看了简历，我们将通过五百丁官方微信号推送消息给你</span>
+                    </div>
+                    <div class="contain_foot">
+                        <a  data_track="PC-CV6.6.1-通用-简历投递成功页-底部-底部-查看投递详情">查看投递详情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--右边导航条显示在线客服，帮助中心，返回顶部这三个按钮-->
+    <!--回到顶部-->
+    <script>
+        $(document).ready(function () {
+            common.main.gotop();
+        });
+    </script>
+    <div class="jl-index_bottom1">
+        <div class="g-w1240">
+            <p class="p_copy">Copyright © 2018-@DateTime.Now.Year jy500.cn. All Rights Reserved. </p>
+            <p class="p_foot_bar">
+                <a href="/common/joinus/" target="_blank">关于我们</a>&nbsp;&#45;&nbsp;
+                <a href="/common/joinus/" target="_blank">加入我们</a>&nbsp;&#45;&nbsp;
+                <a href="/common/joinus/" target="_blank">联系我们</a>&nbsp;&#45;&nbsp;
+                <a href="/help/" target="_blank">帮助中心</a>&nbsp;&#45;&nbsp;
+                <a href="/sitemap.html" target="_blank">网站地图</a>
+            </p>
+            </p>
+        </div>
+    </div>
+
+    <!--账户登录-->
+    <div class="modal lrModal" id="zhloginModal">
+        <div class="modal-dialog zhlogin show-swal2">
+            <div class="modal-content">
+                <div class="hd">
+                    <h2>账号登录</h2>
+                </div>
+            </div>
+            <div class="cd">
+                <form class="zhlogin-form" method="POST" action="/login/submit/" id="loginForm">
+                    <input type="hidden" name="service" value="">
+                    <div class="valid-msg" style="display:none">
+                        <p class="error incorrect_username">你输入的密码与账号名不匹配，是否<a href="#" data-toggle="modal" data-target="#zhpasswordModal" data-dismiss="modal" aria-hidden="true"> 忘记密码?</a></p>
+                        <p class="error null_tips" style="display:none">请输入登录账号和密码</p>
+                    </div>
+                    <div class="field username-field">
+                        <label title="手机号 / 邮箱"></label>
+                        <input type="text" name="username" placeholder="手机号 / 邮箱">
+                    </div>
+                    <div class="field pwd-field">
+                        <label title="密码"></label>
+                        <input type="password" name="password" placeholder="密码">
+                    </div>
+                    <div class="submit">
+                        <button type="button">
+                            <input class="loading1 spin " style="display:none">
+                            登录
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="bd">
+                <a class="zc right" href="#" data-toggle="modal" data-target="#regemailModal" data-dismiss="modal" aria-hidden="true">邮箱注册</a>
+                <a class="wj right " href="#" data-toggle="modal" data-target="#zhpasswordModal" data-dismiss="modal" aria-hidden="true">忘记密码？</a>
+            </div>
+        </div>
+    </div>
+    <!--邮箱注册-->
+    <div class="modal lrModal" id="regemailModal">
+        <div class="modal-dialog reg show-swal2">
+            <div class="modal-content">
+                <div class="hd">
+                    <h2>邮箱注册</h2>
+                    <div class="other-yzc ">已注册<a href="#" data-toggle="modal" data-target="#zhloginModal" data-dismiss="modal" aria-hidden="true"> 登录</a></div>
+                </div>
+                <div class="cd">
+                    <form class="reg-form" id="regEmailForm" action="/register/submit/" method="POST">
+                        <input name="captchaId" type="hidden" value="">
+                        <div class="field phone-field">
+                            <label title="邮箱 ">邮箱</label>
+                            <input id="emailNum" type="email" name="email" autocomplete="off" placeholder="请输入你的邮箱地址 ">
+                            <div class="valid-tips">
+                                <p class="tips">验证完后，你可以用该邮箱登录和找回密码</p>
+                            </div>
+                            <div class="valid-error">
+                                <p class="error"></p>
+                            </div>
+                        </div>
+                        <div class="field pwd-field">
+                            <label title="密码">设置密码</label>
+                            <input type="password" name="password" autocomplete="off" placeholder="密码">
+                            <div class="valid-tips">
+                                <p class="tips">只能使用字母、数字、下划线，6-20个字符</p>
+                            </div>
+                            <div class="valid-error">
+                                <p class="error"></p>
+                            </div>
+                        </div>
+                        <div class="field code-field">
+                            <label title="验证码">验证码</label>
+                            <input type="text" placeholder="请输入验证码" name="captchaCode">
+                            <img class="codeimg captchaImage" src="">
+                            <div class="valid-error">
+                                <p class="error">请输入正确的验证码</p>
+                            </div>
+                        </div>
+                        <div class="submit">
+                            <button type="button">
+                                <input class="loading1 spin " style="display:none">
+                                注册
+                            </button>
+                        </div>
+                        <div class="agreement_field">点击 [ 注册 ] 按钮，即代表你同意<a href="http://static.500d.me/resources/html/member/agreement.html" target="_blank">《简悦用户协议》</a></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--找回密码-->
+    <div class="modal lrModal" id="zhpasswordModal">
+        <div class="modal-dialog zhpwd show-swal2">
+            <div class="modal-content">
+                <div class="hd">
+                    <h2>找回密码</h2>
+                </div>
+                <div class="cd">
+                    <form class="zhlogin-form" id="zhpwdForm">
+                        <input name="captchaId" type="hidden" value="">
+                        <input name="mid" type="hidden" value="SMS_61910002">
+                        <div class="field username-field">
+                            <label title="手机号 / 邮箱">用户名：</label>
+                            <input type="text" placeholder="请输入你的注册手机号/邮箱" autocomplete="off" name="username">
+                            <div class="valid-error">
+                                <p class="error">请输入正确的手机号或邮箱</p>
+                            </div>
+                        </div>
+                        <div class="field code-field">
+                            <label title="验证码：">验证码：</label>
+                            <input type="text" placeholder="请输入验证码" name="captchaCode" autocomplete="off">
+                            <img class="codeimg captchaImage" src="">
+                            <div class="valid-error">
+                                <p class="error">请输入正确的验证码</p>
+                            </div>
+                        </div>
+                        <div class="submit">
+                            <button type="button">
+                                <input class="loading1 spin " style="display:none" />
+                                提交
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="bd">
+                    <a class="wx login_wx" href="#" data-toggle="modal" data-target="#zhloginModal" data-dismiss="modal" aria-hidden="true">账号登录</a>
+                    <a class="zc right " href="#" data-toggle="modal" data-target="#regemailModal" data-dismiss="modal" aria-hidden="true">邮箱注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--验证邮箱身份-->
+    <div class="modal lrModal" id="yzemailModal">
+        <div class="modal-dialog zhpwd show-swal2">
+            <div class="modal-content">
+                <div class="hd">
+                    <h2>验证邮箱</h2>
+                </div>
+                <div class="cd">
+                    <form>
+                        <p>亲爱的用户，邮件发送完成，请登录邮箱进行验证</p>
+                        <div class="yz">已发送邮件至：<i>service@500d.me</i><a data-toggle="modal" data-target="#zhpasswordModal" data-dismiss="modal" aria-hidden="true">修改邮箱</a></div>
+                        <div class="submit">
+                            <button type="button" id="forward_validate_email">
+                                <input class="loading1 spin" style="display:none" />
+                                前往邮箱验证
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="zhemailtips">
+                    <i>如果没有收到验证邮件，可能是：</i><br>
+                    1.邮件被外星人劫持到垃圾箱了~<br>
+                    2.请检查邮箱地址是否正确~
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        /***
+         * 展示登录框
+         */
+        function show_login_modal() {
+            $("#zhloginModal").modal("show");
+        }
+    </script>
+    <script>
+        $(function () {
+            common.main.send_resume();
+            member.event.send_edit_event();
+            $('.select_box li:eq(0)').trigger('click');
+        })
+    </script>
+
+    <div class="gotop" style="display: block;"></div>
+</body>
+</html>

@@ -1,0 +1,892 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html class="jl-member-bg">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>个人中心-我的简历 - 简悦</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="../../Content/editresume/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Content/editresume/base.css" rel="stylesheet" />
+    <link href="../../Content/common/common.css" rel="stylesheet" />
+    <link href="../../Content/style.css" rel="stylesheet" />
+    <link href="../../Content/layer.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery-1.8.0.js" type="text/javascript"></script>
+    <script src="../../Scripts/utils.js" type="text/javascript"></script>
+    <script src="../../Scripts/common_ext.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.validate.js" type="text/javascript"></script>
+    <script src="../../Scripts/pswd/jsbn.js" type="text/javascript"></script>
+    <script src="../../Scripts/pswd/prng4.js" type="text/javascript"></script>
+    <script src="../../Scripts/pswd/rng.js" type="text/javascript"></script>
+    <script src="../../Scripts/pswd/rsa.js" type="text/javascript"></script>
+    <script src="../../Scripts/pswd/base64.js" type="text/javascript"></script>
+    <script src="/../Scripts/layer.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../../Scripts/skin/layer.css" id="layui_layer_skinlayercss" style=""> 
+    <script src="../../Scripts/plugin/modal/modal.js"></script>
+    <script src="../../Scripts/login.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.lazyload.min.js"></script>
+    <script src="../../Scripts/plugin/zclip/jquery.zclip.min.js"></script>
+    <script src="../../Scripts/jquery.qrcode.min.js"></script>
+</head>
+<body class="jl-member-bg">
+    <div id="mark_mask" style="display:none;position:fixed;top:40px;left:0;z-index:99999999;height:1000px;width:100%;background:rgba(0,0,0,0.4);"></div>
+    <!--删除提示框-->
+    <div class="modal fade promptModal" id="delModal">
+        <div class="modal-dialog">
+            <div class="modal-content clearfix">
+                <div class="left">
+                    <img src="~/images/editresume/error.png" />
+                </div>
+                <div class="right text">
+                    <p>简历删除后将无法恢复</p>
+                    <div class="mbtn"><button class="reset" id="cofr_delBtn" type="reset">确定</button><button type="submit" data-dismiss="modal" aria-hidden="true">取消</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--简历设置提示框   -->
+    <div class="modal fade setResumeModal" id="setResumeModal" is_update_num="0">
+        <div class="modal-dialog">
+            <div class="modal-content clearfix">
+                <ul>
+                    <li>
+                        <h2 class="mc">简历名称</h2>
+                        <input type="text" class="mc-input" id="webresumeTitle" resumeid="0" maxlength="15">
+                    </li>
+                    <li>
+                        <h2 class="ym">个性简历域名</h2>
+                        <span class="ym-span"><font>http://www.500d.me/resume/</font><input type="text" class="ym-input jy-vip-lock " data-show-vip-type="resume" data_track="PC-个人中心-我的简历功能-在线简历-在线简历-设置-编辑域名" data_auth="set_domain" id="set-visitid">/</span>
+                        <button class="dBtn copy_url_btn " data_track="PC-个人中心-我的简历功能-在线简历-在线简历-设置-复制" style="display:inline;">复制</button>
+                        <p>使用网页版简历，效率更高，赶快复制上面的链接发送给HR吧</p>
+                    </li>
+                    <li>
+                        <h2 class="ys">隐私设置</h2>
+                        <div class="fradio">
+                            <input type="radio" name="visitType" id="openType" value="open"><label>开放查看</label>
+                            <span>外部人士通过个性域名可查看简历内容，适合正在找工作时的状态</span>
+                        </div>
+                        <div class="fradio">
+                            <input type="radio" name="visitType" id="privaryType" value="privary"><label>不开放</label>
+                            <span>如果您暂时不需要使用网页版简历，可以将简历状态设为不开放</span>
+                        </div>
+                        <div class="fradio">
+                            <input type="radio" name="visitType" id="passwordType" value="password"><label>密码查看</label>
+                            <span>您可以设置密码，外部人士必须输入密码才能查看您简历</span>
+                            <input class="password" type="text" id="inputpassword" placeholder="请设置6位数密码">
+                        </div>
+                    </li>
+                </ul>
+                <button class="dBtn " data_track="PC-个人中心-我的简历功能-在线简历-在线简历-设置-确定" id="privarySumBtn">确定</button>
+            </div>
+        </div>
+    </div>
+    <!--简历复制错误提示-->
+    <div class="modal fade importRsuccModal reset" id="importResetModal3">
+        <div class="modal-dialog">
+            <div class="modal-content clearfix">
+                <a class="close_ right" data-dismiss="modal" aria-hidden="true"></a>
+                <div class="img"> 
+                    <img src="~/images/editresume/kt2.jpg" /> 
+                </div>
+                <div class="content">
+                    <h2>简历复制失败</h2>
+                    <p class="tips_show">简历超过最大创建数<br>请升级会员或删除部分简历后重新复制。</p>
+                </div>
+                <div class="bd">
+                    <a href="http://www.500d.me/order/vip_member/" target="_blank">升级会员</a><a href="http://www.500d.me/member/myresume/" target="_blank">去删除</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="jl-header">
+        <div class="jl-logo">
+            <h1><a href="/">简悦</a></h1>
+        </div>
+        <div class="jl-touxiang" id="userHead">
+            <a class="jl-tx-img" id="user_center" href="/Member/Myresume/">
+                <i style="display: none;"></i>
+                <img src="/../images/0.png" alt="" width="48" height="48">
+                <span>个人中心</span>
+            </a>
+            <div class="jl-user-info" style="display: none;">
+                <span class="triangle-up"></span>
+                <div class="user-bd">
+                    <ul class="user-ul-l">
+                        <li class="sz"><a href="/Member/Myresume/">我的简历</a></li>
+                        <li class="dd"><a href="/Member/Order/">订单管理</a></li>
+                        <li class="gj"><a href="/Member/ResumeSendEdit">简历投递</a></li>
+                        <li class="sc"><a href="/Member/Set/">账号设置</a></li>
+                        <li class="tc"><a href="#" id="user_logout">安全退出</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="jl-login">
+            <a style="display:none;" id="login" class="jl-login-a">登录&nbsp;/&nbsp;注册</a>
+        </div>
+        <div class="jl-nav">
+            <ul>
+                <li class="nav-li"><a href="/CvResume/CvTemplate">在线制作</a></li>
+                <li class="nav-li"><a href="/Article">简历技巧</a></li>
+                @*<li class="nav-li other-nav-li">
+                        <a href="javascript:;"></a>
+                        <div class="jl-ej-nav">
+                            <ul>
+                                <li><a href="/common/joinus/">咨询客服</a></li>
+                                <li><a href="/common/joinus/">关于我们</a></li>
+                            </ul>
+                        </div>
+                    </li>*@
+            </ul>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            common.main.loginMsg();
+
+        });
+    </script>
+    <div class="jl-member g-w1240 clearfix">
+
+        <div class="jl-member-ld">
+            <div class="member-nav">
+                <ul>
+                    <li class="jl current"><a href="/member/myresume/"><i></i><span>我的简历</span></a></li>
+                    <li class="dd"><a href="/member/order/"><i></i><span>我的订单</span></a></li>
+                    <li class="gj"><a href="/member/ResumeSendEdit"><i></i><span>简历投递</span></a></li>
+                </ul> 
+            </div>
+            <div class="member-associator">
+                <div class="info clearfix">
+                    <div class="headimg left">
+                        <img id="changehead" src="~/images/0.png" width="48" height="48" />
+                    </div>
+                    <div class="member-hy left">
+                        <p>
+                            <span class="unvip"><i></i>免费会员</span>
+                            <a class="huiyuan-upload">升级会员</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="member-set">
+                <div class="title">用户ID：<s>jy3670436</s><a class="set right" id="member_set_btn" href="/Member/Set/">设置</a></div>
+                <ul class="clearfix">
+                    <li class="email">
+                        <p>邮箱：<span>17705455529@qq.com</span> </p>
+                    </li>
+                </ul>
+            </div> 
+        </div>
+        <div class="jl-member-rd">
+            <div class="jl-member-resume clearfix">
+                <div class="member-resume-nav">
+                    <ul class="clearfix">
+                        <li class="current">
+                            <div class="item clearfix">
+                                <div class="text">
+                                    <h3>在线简历(<i id="web_size">1</i>)</h3>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="member-resume-con">
+                    <ul>
+                        <li class="current">
+                            <div class="zxmbDiv">
+                                <div class="zxjl-ul clearfix">
+                                    <div class="first item">
+                                        <div class="inner"><a class="open_create_resume_panel"></a></div>
+                                    </div>
+
+                                    <div class="item sort doc_resume" date_time="20180804224930">
+                                        <div class="inner">
+                                            <s class="bq"></s>
+                                            <div class="resume_content">
+                                                <a class="img cv-edit wd" href="/cvresume/edit/?itemid=206&amp;resumeId=6036868"></a> 
+                                            </div>
+                                            <div class="text">
+                                                <div>
+                                                    <s class="resume_title" data_num="0">我的简历-20180804</s>
+                                                    <a class="down_btn " data_track="PC-个人中心-我的简历页-在线简历展示-在线简历-下载" data-href="http://download.500d.me/cvresume/pdf_download/500d_6036868_206_3670436_20181106204450.pdf?downmsg=95ac05e6c1e380b5d109002fc629c34f" target="_blank"></a>
+                                                     <div class="set-btn  " data_track="PC-个人中心-我的简历页-在线简历展示-在线简历-设置">
+                                                        <div class="set-box">
+                                                            <div class="set-box-inner">
+                                                                <div class="set-box-list sz"><a class="cv-set"   title="设置简历" data_num="0" data_id="6036868" data_title="我的简历-20180804" data_visi_id="4302095086" data_visitype="open" data_visitpwd=""><i></i>设置</a></div>
+                                                                 <div class="set-box-list fx"><a class="cv-share"  title="分享简历" data_id="6036868" data_visi_id="4302095086" data_visitype="open" data_visitpwd=""><i></i>分享</a></div>
+                                                                 <div class="set-box-list sc"><a class="del_cvresume" data_id="6036868"><i></i>删除</a></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <i>3个月前 </i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!--右边导航条显示在线客服，帮助中心，返回顶部这三个按钮-->
+    <!--回到顶部-->
+    <script>
+        $(document).ready(function () {
+            common.main.gotop();
+        });
+    </script>
+    <!--右边导航条显示在线客服，帮助中心，返回顶部这三个按钮-->
+    <!--回到顶部-->
+    <script>
+        $(document).ready(function () {
+            common.main.gotop();
+        });
+    </script>
+    <div class="jl-index_bottom1">
+        <div class="g-w1240">
+            <p class="p_copy">Copyright © 2018-@DateTime.Now.Year jy500.cn. All Rights Reserved. </p>
+            <p class="p_foot_bar">
+                <a href="/common/joinus/" target="_blank">关于我们</a>&nbsp;&#45;&nbsp;
+                <a href="/common/joinus/" target="_blank">加入我们</a>&nbsp;&#45;&nbsp;
+                <a href="/common/joinus/" target="_blank">联系我们</a>&nbsp;&#45;&nbsp;
+                <a href="/help/" target="_blank">帮助中心</a>&nbsp;&#45;&nbsp;
+                <a href="/sitemap.html" target="_blank">网站地图</a>
+            </p>
+            </p>
+        </div>
+    </div>
+
+    <!--账户登录-->
+    <div class="modal lrModal" id="zhloginModal">
+        <div class="modal-dialog zhlogin show-swal2">
+            <div class="modal-content">
+                <div class="hd">
+                    <h2>账号登录</h2>
+                </div>
+            </div>
+            <div class="cd">
+                <form class="zhlogin-form" method="POST" action="/login/submit/" id="loginForm">
+                    <input type="hidden" name="service" value="">
+                    <div class="valid-msg" style="display:none">
+                        <p class="error incorrect_username">你输入的密码与账号名不匹配，是否<a href="#" data-toggle="modal" data-target="#zhpasswordModal" data-dismiss="modal" aria-hidden="true"> 忘记密码?</a></p>
+                        <p class="error null_tips" style="display:none">请输入登录账号和密码</p>
+                    </div>
+                    <div class="field username-field">
+                        <label title="手机号 / 邮箱"></label>
+                        <input type="text" name="username" placeholder="手机号 / 邮箱">
+                    </div>
+                    <div class="field pwd-field">
+                        <label title="密码"></label>
+                        <input type="password" name="password" placeholder="密码">
+                    </div>
+                    <div class="submit">
+                        <button type="button">
+                            <input class="loading1 spin " style="display:none">
+                            登录
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="bd">
+                <a class="zc right" href="#" data-toggle="modal" data-target="#regemailModal" data-dismiss="modal" aria-hidden="true">邮箱注册</a>
+                <a class="wj right " href="#" data-toggle="modal" data-target="#zhpasswordModal" data-dismiss="modal" aria-hidden="true">忘记密码？</a>
+            </div>
+        </div>
+    </div>
+    <!--邮箱注册-->
+    <div class="modal lrModal" id="regemailModal">
+        <div class="modal-dialog reg show-swal2">
+            <div class="modal-content">
+                <div class="hd">
+                    <h2>邮箱注册</h2>
+                    <div class="other-yzc ">已注册<a href="#" data-toggle="modal" data-target="#zhloginModal" data-dismiss="modal" aria-hidden="true"> 登录</a></div>
+                </div>
+                <div class="cd">
+                    <form class="reg-form" id="regEmailForm" action="/register/submit/" method="POST">
+                        <input name="captchaId" type="hidden" value="">
+                        <div class="field phone-field">
+                            <label title="邮箱 ">邮箱</label>
+                            <input id="emailNum" type="email" name="email" autocomplete="off" placeholder="请输入你的邮箱地址 ">
+                            <div class="valid-tips">
+                                <p class="tips">验证完后，你可以用该邮箱登录和找回密码</p>
+                            </div>
+                            <div class="valid-error">
+                                <p class="error"></p>
+                            </div>
+                        </div>
+                        <div class="field pwd-field">
+                            <label title="密码">设置密码</label>
+                            <input type="password" name="password" autocomplete="off" placeholder="密码">
+                            <div class="valid-tips">
+                                <p class="tips">只能使用字母、数字、下划线，6-20个字符</p>
+                            </div>
+                            <div class="valid-error">
+                                <p class="error"></p>
+                            </div>
+                        </div>
+                        <div class="field code-field">
+                            <label title="验证码">验证码</label>
+                            <input type="text" placeholder="请输入验证码" name="captchaCode">
+                            <img class="codeimg captchaImage" src="">
+                            <div class="valid-error">
+                                <p class="error">请输入正确的验证码</p>
+                            </div>
+                        </div>
+                        <div class="submit">
+                            <button type="button">
+                                <input class="loading1 spin " style="display:none">
+                                注册
+                            </button>
+                        </div>
+                        <div class="agreement_field">点击 [ 注册 ] 按钮，即代表你同意<a href="http://static.500d.me/resources/html/member/agreement.html" target="_blank">《简悦用户协议》</a></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--找回密码-->
+    <div class="modal lrModal" id="zhpasswordModal">
+        <div class="modal-dialog zhpwd show-swal2">
+            <div class="modal-content">
+                <div class="hd">
+                    <h2>找回密码</h2>
+                </div>
+                <div class="cd">
+                    <form class="zhlogin-form" id="zhpwdForm">
+                        <input name="captchaId" type="hidden" value="">
+                        <input name="mid" type="hidden" value="SMS_61910002">
+                        <div class="field username-field">
+                            <label title="手机号 / 邮箱">用户名：</label>
+                            <input type="text" placeholder="请输入你的注册手机号/邮箱" autocomplete="off" name="username">
+                            <div class="valid-error">
+                                <p class="error">请输入正确的手机号或邮箱</p>
+                            </div>
+                        </div>
+                        <div class="field code-field">
+                            <label title="验证码：">验证码：</label>
+                            <input type="text" placeholder="请输入验证码" name="captchaCode" autocomplete="off">
+                            <img class="codeimg captchaImage" src="">
+                            <div class="valid-error">
+                                <p class="error">请输入正确的验证码</p>
+                            </div>
+                        </div>
+                        <div class="submit">
+                            <button type="button">
+                                <input class="loading1 spin " style="display:none" />
+                                提交
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="bd">
+                    <a class="wx login_wx" href="#" data-toggle="modal" data-target="#zhloginModal" data-dismiss="modal" aria-hidden="true">账号登录</a>
+                    <a class="zc right " href="#" data-toggle="modal" data-target="#regemailModal" data-dismiss="modal" aria-hidden="true">邮箱注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--验证邮箱身份-->
+    <div class="modal lrModal" id="yzemailModal">
+        <div class="modal-dialog zhpwd show-swal2">
+            <div class="modal-content">
+                <div class="hd">
+                    <h2>验证邮箱</h2>
+                </div>
+                <div class="cd">
+                    <form>
+                        <p>亲爱的用户，邮件发送完成，请登录邮箱进行验证</p>
+                        <div class="yz">已发送邮件至：<i>service@500d.me</i><a data-toggle="modal" data-target="#zhpasswordModal" data-dismiss="modal" aria-hidden="true">修改邮箱</a></div>
+                        <div class="submit">
+                            <button type="button" id="forward_validate_email">
+                                <input class="loading1 spin" style="display:none" />
+                                前往邮箱验证
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="zhemailtips">
+                    <i>如果没有收到验证邮件，可能是：</i><br>
+                    1.邮件被外星人劫持到垃圾箱了~<br>
+                    2.请检查邮箱地址是否正确~
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        /***
+         * 展示登录框
+         */
+        function show_login_modal() {
+            $("#zhloginModal").modal("show");
+        }
+    </script>
+
+    <div id="qrcode" class="hidden"></div>
+    <script>
+        $(function () {
+            common.main.create_resume();
+            //简历滚动加载
+            var li = $(".member-resume-nav ul li").eq(0);
+            var loading = true;
+            var pageNumber = 2;
+            $(window).on("scroll", function () {
+                var $this = $(this),
+                    viewH = $(this).height(),//可见高度
+                    scrollTop = $(this).scrollTop();//滚动高度
+                height = $(document).height();//文档高度
+                if (li.hasClass("current")) {
+                    if (5 + scrollTop >= height - viewH) {
+                        if (loading) {
+                            loading = false;
+                            $.get("/member/resume_list/", { "pageNumber": pageNumber }, function (result) {
+                                if (result == "" || result == null || result.indexOf("div") == -1) {
+                                    //layer.msg("没有更多了");
+                                } else {
+                                    $(".zxjl-ul").append(result);
+                                    loading = true;
+                                    pageNumber++;
+                                }
+                            })
+                        }
+                    }
+                }
+            });
+            var webresumeSize = 0;
+            var membe_vip = "novip"
+
+            $(".member-resume-nav ul li").click(function () {
+                var num = $(this).index();
+                $(this).addClass("current").siblings().removeClass("current");
+                $(".member-resume-con ul li").eq(num).addClass("current").siblings().removeClass("current");
+            });
+
+            //简历排序
+            var div = $('.zxjl-ul .sort').toArray().sort(function (a, b) {
+                return parseInt($(b).attr("date_time")) - parseInt($(a).attr("date_time"))
+            });
+            $(div).appendTo('.zxjl-ul ');
+            //简历设置
+            function oldSet(target) {//旧版设置
+                $('#setResumeModal .ym-span font').text('http://www.500d.me/resume/');
+                $('#setResumeModal').attr("is_update_num", $(target).attr("data_num"));
+                $('#setResumeModal').modal('show');
+                var data_id = $(target).attr("data_id");
+                $("#webresumeTitle").attr("resumeId", data_id);
+                $("#webresumeTitle").val($(target).attr("data_title"));
+                $("#set-visitid").val($(target).attr("data_visi_id"));
+                var visitype = $(target).attr("data_visitype");
+                if (visitype == "privary") {
+                    $("#privaryType").prop("checked", true);
+                    $("#openType").prop("checked", false);
+                } else {
+                    $("#privaryType").prop("checked", false);
+                    $("#openType").prop("checked", true);
+                }
+                //复制功能
+                $('.copy_url_btn').zclip({
+                    path: 'http://static.500d.me/resources/500d/js/zclip/ZeroClipboard.swf',
+                    copy: function () {//复制内容
+                        var copy_url = "http://www.500d.me/resume/" + $("#set-visitid").val() + "/"
+                        return copy_url;
+                    },
+                    afterCopy: function () {//复制成功
+                        var url_visitid = $("#set-visitid").val();
+                        if (url_visitid == null || url_visitid == "") {
+                            layer.msg("请先设置个性域名");
+                        } else {
+                            layer.msg("复制成功");
+                        }
+
+                    }
+                });
+            }
+            function newSet(target) {//新版设置
+                $('#setResumeModal .ym-span font').text('http://www.500d.me/cvresume/');
+                $('#setResumeModal').attr("is_update_num", $(target).attr("data_num"));
+                $("#webresumeTitle").attr("resumeId", $(target).attr("data_id"));
+                $("#webresumeTitle").val($(target).attr("data_title"));
+                $("#set-visitid").val($(target).attr("data_visi_id"));
+                var visitype = $(target).attr("data_visitype");
+                $(".fradio input[type='checkbox']").prop("checked", false);
+                $("#inputpassword").css('display', 'none');
+                if (visitype == "privary") {
+                    $("#privaryType").prop("checked", true);
+                } else if (visitype == "password") {
+                    $("#passwordType").prop("checked", true);
+                    $("#inputpassword").val($(target).attr("data_visitpwd"))
+                    $("#inputpassword").css('display', 'block');
+                } else {
+                    $("#openType").prop("checked", true);
+                }
+                $('#setResumeModal').modal('show');
+                //复制功能
+                $('.copy_url_btn').zclip({
+                    path: 'http://static.500d.me/resources/500d/js/zclip/ZeroClipboard.swf',
+                    copy: function () {//复制内容
+                        var copy_url = "http://www.500d.me/cvresume/" + $("#set-visitid").val() + "/"
+                        return copy_url;
+                    },
+                    afterCopy: function () {//复制成功
+                        var url_visitid = $("#set-visitid").val();
+                        if (url_visitid == null || url_visitid == "") {
+                            layer.msg("请先设置个性域名");
+                        } else {
+                            layer.msg("复制成功");
+                        }
+                    }
+                });
+            }
+            $(".jl-member-resume .set,.jl-member-resume .cv-set").click(function () {
+                if ($(this).attr("data_type") == "old_resume") {
+                    $("#passwordType").parent().hide();
+                    $('#setResumeModal').attr("is_new", "false");
+                    oldSet(this);
+                } else {
+                    $("#passwordType").parent().show();
+                    $('#setResumeModal').attr("is_new", "true");
+                    newSet(this);
+                }
+            });
+            //密码访问点击出现密码输入框
+            $('.fradio input:radio[name="visitType"]').click(function () {
+                if ($("#passwordType").is(":checked")) {
+                    $("#passwordType").siblings(".password").css('display', 'block');
+                } else {
+                    $("#passwordType").siblings(".password").css('display', 'none');
+                }
+            });
+            //简历分享功能
+            $(".jl-member-resume .cv-share").click(function () {
+                var $t = $(this);
+                common.main.resume_share($t.attr("data_id"), $t.attr("data_visi_id"), $t.attr("data_visitype"), $t.attr("data_visipwd"), function (type, password) {
+                    $t.attr("data_visitype", type);
+                    $t.attr("data_visipwd", password);
+                });
+            });
+            // 旧版简历分享
+            $(".jl-member-resume .share").click(function () {
+                var $html = '<p class="share_header">将链接通过QQ、微信等任何方式发给相关人即可查看简历</p>' +
+                    '<div class="share_body">' +
+                    '<input type="text" class="share_url" readonly="readonly" value="" />' +
+                    '<button type="button" class="share_button copyUrl">复制链接</button>' +
+                    '</div>' +
+                    '<p>注意：请确认本简历的访问权限为「所有人」或「密码访问」，否则外部人士将无法查看。</p>';
+                common.main.resume_confirm({
+                    title: "分享简历",
+                    tips_modal_class: "share_resume_modal",
+                    modal_class: "share_content",
+                    content_html: $html
+                });
+                // 分享链接
+                var share_url = location.origin + "/resume/" + $(this).attr("data_visi_id") + "/";
+                $(".share_resume_modal .share_body .share_url").val(share_url);
+                // 复制链接
+                $(".share_resume_modal .copyUrl").on("click", function () {
+                    var str = $(".share_resume_modal .share_url").val();
+                    common.main.set_copyToClipBoard(str);
+                    layer.msg("复制成功！");
+                });
+            });
+            //个性域名
+            $("#resumeUrl").click(function () {
+                var resumeid = $("#webresumeTitle").attr("resumeId");
+                if (resumeid == null || resumeid == "" || resumeid == 0) {
+                    layer.msg("不存在对应的简历，请刷新重试");
+                }
+                chcekVisitid(resumeid);
+            });
+            //非VIP时个性域名提示
+            $(".vip_visitid_tips").click(function () {
+                layer.msg("修改个性域名需会员资格");
+            });
+            //简历设置保存
+            function oldPrivarySumBtn() {//旧版简历设置保存
+                var resumeid = $("#webresumeTitle").attr("resumeId");
+                if (resumeid == null || resumeid == "" || resumeid == 0) {
+                    layer.msg("不存在对应的简历，请刷新重试");
+                }
+                //判断个性域名可以提交
+                var checkFlag = chcekVisitid(resumeid);
+                if (checkFlag != null && checkFlag == false) {
+                    return false;
+                }
+                var visitType = $("input[name=visitType]:checked").val();
+                if (!visitType || visitType == "") {
+                    layer.msg("请选择隐私设置类型！");
+                    return false;
+                }
+                var title = $("#webresumeTitle").val();
+                if (title == null || title == "") {
+                    layer.msg("请填写简历名称！");
+                    return false;
+                }
+                if (!/^[a-zA-Z0-9_\-\u4e00-\u9fa5]+$/.test(title)) {
+                    layer.msg("简历标题只允许大小写字母、数字、中文、下划线、减号");
+                    return;
+                }
+                //设置简历信息保密程度
+                $.post("/editresume/webresume/submit/", { "id": resumeid, "visitType": visitType, "title": title }, function (message) {
+                    if (message.type == "error" || message.type == "warn") {
+                        layer.msg(message.content);
+                    } else {
+                        $('#setResumeModal').modal('hide');
+                        //设置成功，更新内容
+                        var is_update_num = $('#setResumeModal').attr("is_update_num");
+                        var $is_update_btn = $('a.set[data_num="' + is_update_num + '"]');
+                        var visitid = $("#set-visitid").val();
+                        $is_update_btn.attr("data_title", title);
+                        $is_update_btn.attr("data_visi_id", visitid)
+                        $is_update_btn.attr("data_visitype", visitType);
+                        $is_update_btn.closest("div.set-btn").siblings().find("s").text(title);  //更新显示的标题
+                        //打点
+                        if (visitType == "privary") {
+                            
+                        } else {
+                            
+                        }
+                    }
+                });
+            }
+            function newPrivarySumBtn() {//新版简历设置保存
+                var resumeid = $("#webresumeTitle").attr("resumeId");
+                if (resumeid == null || resumeid == "" || resumeid == 0) {
+                    layer.msg("不存在对应的简历，请刷新重试");
+                }
+                //判断个性域名可以提交
+                var checkFlag = chcekVisitid(resumeid);
+                if (checkFlag != null && checkFlag == false) {
+                    return false;
+                }
+                var visitType = $("input[name=visitType]:checked").val();
+                if (!visitType || visitType == "") {
+                    layer.msg("请选择隐私设置类型！");
+                    return false;
+                }
+                var visitpwd = $("#inputpassword").val();
+                if (visitType == "password") {
+                    if (visitpwd == null || visitpwd == "") {
+                        layer.msg("密码不能为空！");
+                        return false;
+                    }
+                }
+                var title = $("#webresumeTitle").val();
+                if (title == null || title == "") {
+                    layer.msg("请填写简历名称！");
+                    return false;
+                }
+                if (!/^[a-zA-Z0-9_\-\u4e00-\u9fa5]+$/.test(title)) {
+                    layer.msg("简历标题只允许大小写字母、数字、中文、下划线、减号");
+                    return;
+                }
+                //设置简历信息保密程度
+                $.post("/cvresume/setting/", { "id": resumeid, "visitType": visitType, "visitpwd": visitpwd, "title": title }, function (message) {
+                    if (message.type == "error" || message.type == "warn") {
+                        layer.msg(message.content);
+                    } else {
+                        $('#setResumeModal').modal('hide');
+                        //设置成功，更新内容
+                        var is_update_num = $('#setResumeModal').attr("is_update_num");
+                        var $is_update_btn = $('a.cv-set[data_num="' + is_update_num + '"]');
+                        $('.resume_title[data_num="' + is_update_num + '"]').text(title);
+                        $is_update_btn.attr("data_title", title);
+                        $is_update_btn.attr("data_visitype", visitType);
+                        $is_update_btn.attr("data_visitpwd", visitpwd);
+                        //打点
+                        if (visitType == "privary") {
+                            
+                        } else if (visitType == "password") {
+                            
+                        } else {
+                            
+                        }
+                    }
+                });
+            }
+            $("#privarySumBtn").click(function () {
+                var isNew = $('#setResumeModal').attr("is_new");
+                if (isNew == "false") {
+                    oldPrivarySumBtn();
+                } else {
+                    newPrivarySumBtn();
+                }
+            });
+            //visitid检查
+            function oldChcekVisitid(resumeId) {//旧版visitid检查
+                var visitid = $("#set-visitid").val();
+                var visitidRegex = /^[0-9a-z]{4,20}$/;
+                if (!visitid || !visitidRegex.test(visitid)) {
+                    layer.msg("请填写4-20位的英文字母或数字的地址");
+                    return false;
+                }
+                var flag = true;
+                $.ajax({
+                    url: "/resume/visitid/submit/?v=" + Math.random(),
+                    async: false,
+                    data: { "id": resumeId, "visitid": visitid },
+                    dataType: "json",
+                    success: function (message) {
+                        if (message.type == "error") {
+                            layer.msg(message.content);
+                            flag = false;
+                        } else {
+                            layer.msg("设置成功");
+                            flag = true;
+                        }
+                    }
+                });
+                return flag;
+            }
+            function newChcekVisitid(resumeId) {//新版visitid检查
+                var visitid = $("#set-visitid").val();
+                var visitidRegex = /^[0-9a-z]{4,20}$/;
+                if (!visitid || !visitidRegex.test(visitid)) {
+                    layer.msg("请填写4-20位的英文字母或数字的地址");
+                    return false;
+                }
+                var flag = true;
+                $.ajax({
+                    url: "/cvresume/set_visitid/?v=" + Math.random(),
+                    type: "POST",
+                    async: false,
+                    data: {
+                        "resumeid": resumeId,
+                        "visitid": visitid
+                    },
+                    dataType: "json",
+                    success: function (message) {
+                        if (message.type == "error") {
+                            layer.msg(message.content);
+                            flag = false;
+                        } else {
+                            layer.msg("设置成功");
+                            flag = true;
+                        }
+                    }
+                });
+                return flag;
+            }
+            function chcekVisitid(resumeId) {
+                var isNew = $('#setResumeModal').attr("is_new");
+                if (isNew == "false") {
+                    return oldChcekVisitid(resumeId);
+                } else {
+                    return newChcekVisitid(resumeId);
+                }
+            }
+            $(".favorDelete").click(function () {
+                var $this = $(this);
+                var id = $this.attr("data-id");
+                $.ajax({
+                    url: "/member/favorite/delete/",
+                    type: "POST",
+                    data: { id: id },
+                    dataType: "json",
+                    cache: false,
+                    success: function (data) {
+                        if (data.type == "success") {
+                            $this.parent().remove();
+                            layer.msg(data.content);
+                            $("#fav_size").html($('#fav_size').eq(0).text() - 1);
+                            var fav_size = $('#fav_size').eq(0).text();
+                            if (fav_size == "0") {
+                                location.reload();
+                            }
+                        }
+                    }
+                });
+            });
+            //hr删除
+            $(".favorHrDelete").click(function () {
+                var $this = $(this);
+                var id = $this.attr("data-id");
+                $.ajax({
+                    url: "/member/favorite/hr/delete/",
+                    type: "POST",
+                    data: { id: id },
+                    dataType: "json",
+                    cache: false,
+                    success: function (data) {
+                        if (data.type == "success") {
+                            $this.parent().remove();
+                            layer.msg(data.content);
+                            $("#fav_hr_size").html($('#fav_hr_size').eq(0).text() - 1);
+                            var fav_size = $('#fav_hr_size').eq(0).text();
+                            if (fav_size == "0") {
+                                location.reload();
+                            }
+                        }
+                    }
+                });
+            });
+            $(".wdmbDiv .mb-nav li").click(function () {
+                var num = $(this).index();
+                $(".wdmbDiv .mb-con li").eq(num).css('display', 'block').siblings().css('display', 'none');
+                $(this).addClass('current').siblings().removeClass('current');
+            });
+            $("#setBtn").click(function () {
+                $('#setResumeModal').modal('show');
+            });
+            //手机简历列表二维码
+            $(".wap_view_qrcode").click(function () {
+                var visit_url = $(this).attr("data_url");
+                //判断是否vip
+                var is_vip_falg = true;
+                if (is_vip_falg) {
+                    $("#preview_qrcode_image").html("");//清楚生成的二维码
+                    //生成简历二维码
+                    $("#preview_qrcode_image").qrcode({
+                        width: 200, //宽度
+                        height: 200, //高度
+                        text: visit_url//任意内容
+                    });
+                    $("#preview_qrcode_tips").modal("show");
+                }
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            common.main.init_authority_lock();//权限初始化
+        });
+    </script>
+
+    <script>
+        $('.cv-copy').on('click', function () {
+            var copyUrl = $(this).attr('href');
+            location.href = "" + copyUrl;
+        });
+    </script>
+    <script>
+        $('.qh').on('click', function () {
+            var editType = $(this).find('s').attr('class');
+            var resumeId = $(this).attr('resume_id');//简历ID
+            var docItemId = $(this).attr('doc_item_id');//文档编辑模板ID
+            var wapItemId = $(this).attr('wap_item_id');//手机编辑模板ID
+            var editPath = '/cvresume/edit/?'
+            if (editType.indexOf("web") != -1) {  //文档编辑
+                editPath += ('itemid=' + docItemId);
+                $(this).closest('div.item').removeClass("wap_resume");
+                $(this).closest('div.item').addClass("doc_resume");
+            } else {  //手机编辑
+                editPath += ('itemid=' + wapItemId);
+                $(this).closest('div.item').removeClass("doc_resume");
+                $(this).closest('div.item').addClass("wap_resume");
+            }
+            editPath += ("&resumeId=" + resumeId);
+            //更新链接的路径
+            $(this).closest('div.item').find('a.cv-edit').attr("href", editPath);
+            $(this).closest('div.item').find('.wxapp_ewm a').attr("href", editPath);
+        });
+    </script>
+    <div class="gotop" style="display: none;"></div>
+</body>
+</html>
