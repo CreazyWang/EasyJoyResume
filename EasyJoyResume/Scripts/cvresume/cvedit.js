@@ -79,7 +79,7 @@ cvmutual.main = {
 		// 简历分享
 		cvmutual.main.resume_share();
 		// 跟换模板
-		cvmutual.main.resume_select_template();
+		cvmutual.main.resume_SelectTemplate();
 		// 下载
 		cvmutual.main.resume_download();
 		// 内容模板数据放入localstroage
@@ -434,7 +434,7 @@ cvmutual.main = {
       	});
 
 		//在线编辑 6.2.0 隐私设置
-		$(".resume_authority_modal .authority_list").click(function(){
+        $(".resume_authority_modal .authority_list").click(function () { 
             $(this).addClass("checked").siblings().removeClass("checked");
             $(".resume_access_authority .authority_tips").text('"' +$(this).find(".authority_title").text() + '"')
 			if($(this).index() != 1){
@@ -747,11 +747,11 @@ cvmutual.main = {
              },2000);
         });
 	},
-	resume_select_template:function(){
+	resume_SelectTemplate:function(){
         function reload_template_list(){
             var current_resume_type=$("#current_resume_type").val();
             var current_resume_bank_type=$("#current_resume_bank_type").val();
-            $.get("/cvresume/select_template/",{"type":current_resume_type,"resumeBankType":current_resume_bank_type,"pageNumber":select_template_page},function(result){
+            $.get("/cvresume/SelectTemplate/",{"type":current_resume_type,"resumeBankType":current_resume_bank_type,"pageNumber":SelectTemplate_page},function(result){
                 if(result!=null&&""!=result.trim()){
                 	$(result).appendTo($(".change_template .resume_template"));
                     loading_template = false;
@@ -761,7 +761,7 @@ cvmutual.main = {
                 }
             });
         }
-		 var select_template_page=1;  //页码
+		 var SelectTemplate_page=1;  //页码
 		 var tagId, loading_template = false;
 		$(document).on('click',"#change_temlate_btn:not(.jy-vip-lock)",function(e){
 			// 1判断是否存在模板节点
@@ -775,7 +775,7 @@ cvmutual.main = {
 			e.stopPropagation();
 		});
         // 模板项点击跳转
-		$(document).on("click","#changeResumeModal .select_template",function(){
+		$(document).on("click","#changeResumeModal .SelectTemplate",function(){
 			common.main.resumeOperationLogUpload(cvresume.info.resumeid,"changemoban","","");//日志上报
 			var id=$(this).attr("data-itemid");
 			location.href="/cvresume/edit/?itemid="+id+"&resumeId="+cvresume.info.resumeid+"&language="+cvresume.info.language;
@@ -866,7 +866,7 @@ cvmutual.main = {
 				// 查看我的简历
 				$.ajax({
 		             type: "GET",
-		             url: "/cvresume/select_resume/",
+		             url: "/cvresume/SelectResume/",
 		             success: function(result){
 		            	 if(result.indexOf("li")!=-1){
 		            		 $("#my_resume_list").closest("div").find(".wdjl-null").hide();
@@ -1273,7 +1273,7 @@ cvmutual.main = {
                     $(".progress").width($width);
                 }
             },30);
-            $(".liveupdate span").css("color","#00c190").text("正在保存...");
+            $(".liveupdate span").css("color","#254665").text("正在保存...");
         }else if(a == "success"){
             clearInterval(cvmutual.main.set_intervalProgress);
             cvmutual.main.set_intervalProgress = setInterval(function(){
@@ -1288,7 +1288,7 @@ cvmutual.main = {
                     $(".progress").width($width);
                 }
             },1);
-            $(".liveupdate span").css("color","#00c190");
+            $(".liveupdate span").css("color","#254665");
         }else if(a == "fail"){
             clearInterval(cvmutual.main.set_intervalProgress);
 			$(".progress").width(0);
@@ -4113,7 +4113,7 @@ cvmutual.main = {
 			}
 		}
 	},
-	init_default_resume:function(){// 获取初始化的resume结构
+    init_default_resume:function(){// 获取初始化的resume结构
 		var resume=JSON.parse('{"resume_language":"zh","resume_set":{"color":"j2","font":"yahei","fontSize":"14","padding":"1.5","fontType":"0"},"modul_show":{"letterShow":false,"coverShow":false,"headShow":true,"contactShow":false,"resume_head":{"isShow":true,"isTitleShow":true,"isTimeShow":true,"isContentShow":true,"title":"头像","key":"resume_head"},"base_info":{"isShow":true,"isTitleShow":true,"isTimeShow":true,"isContentShow":true,"title":"基本信息","key":"base_info"},"base_home":{"isShow":false,"isTitleShow":true,"isTimeShow":true,"isContentShow":true,"title":"个人主页","key":"base_home"},"base_social":{"isShow":false,"isTitleShow":true,"isTimeShow":true,"isContentShow":true,"title":"社交账号","key":"base_social"},"resume_skill":{"isShow":true,"isTitleShow":true,"isTimeShow":true,"isContentShow":true,"title":"技能特长","key":"resume_skill"},"resume_hobby":{"isShow":true,"isTitleShow":true,"isTimeShow":true,"isContentShow":true,"title":"兴趣爱好","key":"resume_hobby"},"resume_job_preference":{"isShow":true,"isTitleShow":true,"isTimeShow":true,"isContentShow":true,"title":"求职意向","key":"resume_job_preference"},"resume_edu":{"isShow":true,"isTitleShow":true,"isTimeShow":true,"isContentShow":true,"title":"教育背景","key":"resume_edu"},"resume_work":{"isShow":true,"isTitleShow":true,"isTimeShow":true,"isContentShow":true,"title":"工作经验","key":"resume_work"},"resume_internship":{"isShow":true,"isTitleShow":true,"isTimeShow":true,"isContentShow":true,"title":"实习经验","key":"resume_internship"},"resume_volunteer":{"isShow":true,"isTitleShow":true,"isTimeShow":true,"isContentShow":true,"title":"志愿者经历","key":"resume_volunteer"},"resume_project":{"isShow":true,"isTitleShow":true,"isTimeShow":true,"isContentShow":true,"title":"项目经验","key":"resume_project"},"resume_honor":{"isShow":true,"isTitleShow":true,"isTimeShow":true,"isContentShow":true,"title":"荣誉奖项","key":"resume_honor"},"resume_summary":{"isShow":true,"isTitleShow":true,"isTimeShow":true,"isContentShow":true,"title":"自我评价","key":"resume_summary"},"resume_portfolio":{"isShow":true,"isTitleShow":true,"isTimeShow":true,"isContentShow":true,"title":"作品展示","key":"resume_portfolio"},"resume_recoment":{"isShow":true,"isTitleShow":true,"isTimeShow":true,"isContentShow":true,"title":"推荐信","key":"resume_recoment"},"resume_qrcode":{"isShow":true,"isTitleShow":true,"isTimeShow":true,"isContentShow":true,"title":"二维码","key":"resume_qrcode"}},"iconFontMap":{"resume_head":"","base_info":"","birth":"","city":"","mobile":"","email":"","jobYear":"","sex":"","education":"","nation":"","marriageStatus":"","politicalStatus":"","height":"","weight":"","base_home":"","base_social":"","resume_skill":"","resume_hobby":"","resume_name":"","resume_job_preference":"","jobFunction":"","jobType":"","jobCity":"","jobSalary":"","jobTime":"","resume_edu":"","resume_work":"","resume_internship":"","resume_volunteer":"","resume_project":"","resume_honor":"","resume_summary":"","resume_portfolio":"","resume_recoment":"","resume_qrcode":""},"resume_cover":[],"resume_head":"http://static.test.com/resources/500d/cvresume/images/1.jpg","resume_base_info":{"customMsg":[],"customWebsite":[]},"resume_job_preference":{},"resume_skill":[],"resume_hobby":[],"resume_edu":[],"resume_work":[],"resume_internship":[],"resume_volunteer":[],"resume_project":[],"resume_portfolio":{"img":[],"link":[]},"custom":[],"sort":{"left":["resume_head","base_info","base_home","base_social","resume_skill","resume_hobby"],"top":[],"right":["resume_name","resume_job_preference","resume_edu","resume_work","resume_internship","resume_volunteer","resume_project","resume_honor","resume_summary","resume_portfolio","resume_recoment","resume_qrcode"],"bottom":[]},"resume_contact":{},"resume_qrcode":{"qrcodeTips":"感谢您的阅读，扫一扫查看我的手机简历"}}');
 		return resume;
 	},

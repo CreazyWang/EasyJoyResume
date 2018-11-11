@@ -6,12 +6,10 @@
     /*url('../../editresume/fonts/iconfont.eot?t=1505371295141') format('truetype'), !* chrome, firefox, opera, Safari, Android, iOS 4.2+*!*/
     /*url('../../editresume/fonts/iconfont.eot?t=1505371295141#iconfontjy') format('svg'); !* iOS 4.1- *!*/
 /*}*/
-@font-face {font-family: "iconfontjy";
-    src: url('../../editresume/fonts/iconfont.eot?t=1506061844313');
-    src: url('../../editresume/fonts/iconfont.eot?t=1506061844313#iefix') format('embedded-opentype'),
-    url('../../editresume/fonts/iconfont.woff?t=1506061844313') format('woff'),
-    url('../../editresume/fonts/iconfont.ttf?t=1506061844313') format('truetype'),
-    url('../../editresume/fonts/iconfont.svg?t=1506061844313#iconfontjy') format('svg');
+@font-face {
+    font-family: "iconfontjy";
+    src: url('../../fonts/editresume/iconfont.eot');
+    src: url('../../fonts/editresume/iconfont.eot#iefix') format('embedded-opentype'), url('../../fonts/editresume/iconfont.woff') format('woff'), url('../../fonts/editresume/iconfont.ttf') format('truetype'), url('../../fonts/editresume/iconfont.svg#iconfontjy') format('svg');
 }
 .jyfont{font-family:iconfontjy;font-size:16px;}
 /*字体图标设置 end*/
@@ -33,7 +31,7 @@
 .smallmodal .modal-content{position:fixed; top:50%; left: 50%; background:#fff;}
 .smallmodal .modal-content ,.defaultmodal.modal .portfolio-content{width: 400px; margin-left: -200px;}
 .smallmodal .modal-header .close,.hrevalmodal .modal-header .close{opacity: 1;cursor: pointer; display: inline-block; width: 15px; height: 15px; position: absolute; top: 12px; right: 20px; background: url(../../cvresume/images/Modal-sprite.png) -5px -5px no-repeat; border: none;padding: 0;}
-.smallmodal .modal-header,.hrevalmodal .modal-header{padding: 0px;color: white;background-color: #00c190;width: 100%;height: 38px;line-height: 38px;padding-left: 20px;border: none;}
+.smallmodal .modal-header,.hrevalmodal .modal-header{padding: 0px;color: white;background-color: #1e9fff;width: 100%;height: 38px;line-height: 38px;padding-left: 20px;border: none;}
 .smallmodal .modal-header span,.hrevalmodal .modal-header span{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;-khtml-user-select:none;user-select:none; font-size: 16px;color: white;}
 
 /*提示弹框*/
@@ -42,7 +40,7 @@
 .smallmodal .tips-modal-content .modal-header{height: 33px; background: white;}
 .smallmodal .tips-modal-content .close{width: 13px; height: 13px; background: url("../../cvresume/images/Modal-sprite.png") -54px -297px no-repeat; top: 10px; right: 9px; }
 .smallmodal .tips-modal-content .modal-body{padding: 15px 20px 30px;color: #757575;}
-.smallmodal .tips-modal-content .tips-title{display: block; text-align: left; font-size: 16px; color: #00c190; margin-bottom: 12px;}
+.smallmodal .tips-modal-content .tips-title{display: block; text-align: left; font-size: 16px; color: #1e9fff; margin-bottom: 12px;}
 .smallmodal .tips-modal-content .delete-tips{display: block; text-align: left; font-size: 14px; color: #898989;}
 .smallmodal .tips-modal-content .modal-footer{position: relative; text-align: right; padding-right: 15px;}
 
@@ -58,8 +56,8 @@
 .smallmodal .shareContent, .defaultmodal .recommendContent{width: 100%; margin-top: 18px; position: relative;}
 .smallmodal .shareContent span, .defaultmodal .recommendContent span{display: inline-block; width: 208px; height: 30px; line-height: 30px; border: 1px solid #d4dbe0; background-color: #ebebeb; color: #989797; border-top-left-radius: 2px; border-bottom-left-radius: 2px; padding: 0px 5px; font-size: 12px;}
 .smallmodal .shareContent input{display: inline-block; width: 82px; height: 30px; line-height: 30px; border:1px solid #d4dbe0; border-left: none; border-top-right-radius: 2px; border-bottom-right-radius: 2px; position: absolute; top: 0px; left: 208px; padding-left: 10px; font-size:12px;}
-.smallmodal .shareContent input:focus{border: 1px solid #00c190}
-.smallmodal .shareContent .shareUrl, .defaultmodal .recommendContent .shareUrl{width: 66px; height: 30px; line-height: 30px; font-size:12px; text-align: center; text-decoration: none; color: white; background-color: #00c190; border-radius: 2px; position: absolute; top: 0; right: 0;}
+.smallmodal .shareContent input:focus{border: 1px solid #1e9fff}
+.smallmodal .shareContent .shareUrl, .defaultmodal .recommendContent .shareUrl{width: 66px; height: 30px; line-height: 30px; font-size:12px; text-align: center; text-decoration: none; color: white; background-color: #1e9fff; border-radius: 2px; position: absolute; top: 0; right: 0;}
 
 /*输入访问密码*/
 .smallmodal .password-content{top:50%; margin-top:-82.5px;}
@@ -70,7 +68,7 @@
 .smallmodal .password-content .button{border-radius: 15px;}
 .smallmodal .password-content  .button + .button{margin-left: 8px;}
 .smallmodal .button:hover{opacity: 0.8;}
-.smallmodal .submit{background-color: #00c190; color: white; border:none;}
+.smallmodal .submit{background-color: #1e9fff; color: white; border:none;}
 .smallmodal .cancel{border: 1px solid #d3d6d5; color: #737373; background-color: white;}
 .smallmodal .password-content .successPanel{position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: white; padding-top: 20px; display: none;}
 .smallmodal .password-content .successPanel span{display: block; width: 32px; height: 32px; margin: 0 auto; background: url("../../cvresume/images/Modal-sprite.png") -53px -210px no-repeat;}
@@ -98,14 +96,14 @@
 .smallmodal .delete-content .modal-header, .smallmodal .releaseResume-content .modal-header{height: 33px; background: white;}
 .smallmodal .delete-content .close,  .smallmodal .releaseResume-content .close{width: 13px; height: 13px; background: url("../../cvresume/images/Modal-sprite.png") -54px -297px no-repeat; top: 10px; right: 9px; }
 .smallmodal .delete-content .modal-body{padding: 4px 20px 10px 70px;height: 90px;background: url(../../cvresume/images/tips.jpg) no-repeat 20px -5px;}
-.smallmodal .delete-content .delete-title{display: block; text-align: left; font-size: 16px; color: #00c190; margin-bottom: 12px;}
+.smallmodal .delete-content .delete-title{display: block; text-align: left; font-size: 16px; color: #1e9fff; margin-bottom: 12px;}
 .smallmodal .delete-content .delete-tips{display: block; text-align: left; font-size: 12px; color: #898989;}
 .smallmodal .delete-content .modal-footer{position: relative; text-align: right; padding-right: 15px;}
 .smallmodal .delete-content .neverNotfy{display: block; width: 77px; height: 15px; line-height: 15px; position: absolute; bottom: 24px; left: 15px; color: #919191; cursor: pointer;}
 .smallmodal .delete-content .neverNotfy>input{opacity: 0; }
 .smallmodal .delete-content .neverNotfy>span{padding-left: 20px; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; -khtml-user-select: none; user-select: none; position: absolute; top: 0; left: 0;}
 .smallmodal .delete-content .neverNotfy>span:after{content: ""; display: inline-block; width: 14px; height: 14px; border: 1px solid #d4d4d4;position: absolute; top: 0; left: 0;}
-.smallmodal .delete-content .checkedNotfy:checked +  span:after{border-color: #00c190; background: url("../../cvresume/images/Modal-sprite.png") -51px -267px no-repeat;}
+.smallmodal .delete-content .checkedNotfy:checked +  span:after{border-color: #1e9fff; background: url("../../cvresume/images/Modal-sprite.png") -51px -267px no-repeat;}
 /*调整modal弹窗*/
 .smallmodal .delete-content.hr_detail_tipModal .modal-header .close{top:20px; right:20px;}
 .smallmodal .delete-content.hr_detail_tipModal .modal-body{height:97px; padding:25px 50px 0 70px; background-position: 17px 14px;}
@@ -115,19 +113,19 @@
 .smallmodal .downloadPDF-content .modal-body{padding: 25px 0 42px 0}
 .smallmodal .downloadPDF-content .modal-footer{padding: 0 0 13px 17px;}
 .smallmodal .downloadPDF-content .download-bg{width: 129px; height: 95px; margin: 0 auto 15px; background: url("../../cvresume/images/Modal-sprite.png") -233px -5px no-repeat;}
-.smallmodal .downloadPDF-content .panelTitle{display: block; text-align: center; color: #00c190; font-size: 17px; margin-bottom: 10px;}
+.smallmodal .downloadPDF-content .panelTitle{display: block; text-align: center; color: #1e9fff; font-size: 17px; margin-bottom: 10px;}
 .smallmodal .downloadPDF-content .panelTips{display: block; text-align: center; color: #898989;}
 .smallmodal .downloadPDF-content .neverNotfy{display: block; width: 77px; height: 15px; line-height: 15px; color: #919191; position: relative; cursor: pointer;}
 .smallmodal .downloadPDF-content .neverNotfy>input{opacity: 0; }
 .smallmodal .downloadPDF-content .neverNotfy>span{padding-left: 20px; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; -khtml-user-select: none; user-select: none; position: absolute; top: 0; left: 0;}
 .smallmodal .downloadPDF-content .neverNotfy>span:after{content: ""; display: inline-block; width: 14px; height: 14px; border: 1px solid #d4d4d4;position: absolute; top: 0; left: 0;}
-.smallmodal .downloadPDF-content .PDFcheckedNotfy:checked + span:after{border-color: #00c190; background: url("../../cvresume/images/Modal-sprite.png") -51px -267px no-repeat;}
+.smallmodal .downloadPDF-content .PDFcheckedNotfy:checked + span:after{border-color: #1e9fff; background: url("../../cvresume/images/Modal-sprite.png") -51px -267px no-repeat;}
 
 /*简历发布成功*/
 .smallmodal .releaseResume-content{width: 350px; position: fixed; top: 80px; left: 70px; margin-left: 0px; overflow: inherit;}
 .smallmodal .releaseResume-content:after{content: ''; display: inline-block; width: 12px; height: 12px; background-color: white; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); position: absolute; top:-6px; left:50px;}
 .smallmodal .releaseResume-content .modal-header{border-top-left-radius: 4px; border-top-right-radius: 4px;}
-.smallmodal .releaseResume-content .releaseTitle{display: block; text-align: center; font-size: 17px; color: #00c190; margin-bottom: 5px;}
+.smallmodal .releaseResume-content .releaseTitle{display: block; text-align: center; font-size: 17px; color: #1e9fff; margin-bottom: 5px;}
 .smallmodal .releaseResume-content .releaseTips{display: block; text-align: center; font-size: 12px; color: #898989;}
 .smallmodal .releaseResume-content .imgExplain{display: block; margin: 20px auto 30px; width: 120px; padding-top: 78px; background: url("../../cvresume/images/Modal-sprite.png") -242px -129px no-repeat;}
 .smallmodal .releaseResume-content .imgExplain>span{display: block; width: 100%; height: 26px; line-height: 26px; border: 1px solid #48d1b3; font-size: 12px; text-align: center; color: #6a6b6b;}
@@ -148,7 +146,7 @@
 .smallmodal .vip-content .tips-content{color: #898989;background: url(../../cvresume/images/vip_tips.jpg) no-repeat center 30px;text-align: center;display: block;height: 260px;padding-top: 210px;}
 .smallmodal .vip-content .modal-header .close{top: 17px;}
 .smallmodal .vip-content .button{ border-radius: 4px; border: none;width: 100px; height: 40px;margin-left: 15px;cursor: pointer;}
-.smallmodal .vip-content .button.submit{background-color: #00c190; color: white;}
+.smallmodal .vip-content .button.submit{background-color: #1e9fff; color: white;}
 .smallmodal .vip-content .button.cancel{background-color: #ededed; color: #8b8b8b;}
 .smallmodal .vip-content .button:hover{opacity: 0.8;}
 .smallmodal .vip-content .modal-footer{width: 100%;padding: 0px 0;text-align: center;position: relative;border: none;}
@@ -322,14 +320,14 @@ a.huiyuan-upload:hover{opacity: 0.8;}
 .upvipModal i{font-style:normal !important;}
 .upvipModal .modal-dialog{position:fixed;width:100%;height:100%;}
 .upvipModal .modal-content{background: #fff;position: absolute;width: 600px;height: 400px;top: 50%;left: 50%;margin-top: -230px;margin-left: -300px;overflow: visible;}
-.upvipModal .title{height: 50px;line-height: 50px;background: #00c190;color: #ffffff;font-size: 16px;font-weight: bold;padding: 0 0 0 18px;}
+.upvipModal .title{height: 50px;line-height: 50px;background: #1e9fff;color: #ffffff;font-size: 16px;font-weight: bold;padding: 0 0 0 18px;}
 .upvipModal .title span{color: inherit}
 .upvipModal .close{width: 30px;height: 30px;background: url(../../images/member/jl_member_sp.png) no-repeat 9px -1678px;display: block;float: right;opacity: 1;margin-top: 8px;margin-right: 8px;}
 .upvipModal .con{padding: 20px 20px;}
 .upvipModal .info{color: #8f9090;}
 .upvipModal .info span{float: left;font-size: 12px;width: 560px;height: 40px;}
 .upvipModal .info span i{color: #1E9FFF;}
-.upvipModal .info span s{color: #00c190;}
+.upvipModal .info span s{color: #1e9fff;}
 .upvipModal .hy-check{/* overflow: hidden; */margin: 10px 0 20px 0;width: 100%;float: left;}
 .upvipModal .hy-check ul{}
 .upvipModal .hy-check ul li{position: relative;float: left;cursor: pointer;margin-right: 36px;width: 176px;height: 66px;border: 1px solid #c4c4c4;color: #414141;text-align: center;font-size: 14px;position: relative;padding-top: 20px;}
@@ -351,7 +349,7 @@ a.huiyuan-upload:hover{opacity: 0.8;}
 .upvipModal ul li{overflow: hidden;position: relative;}
 .upvipModal ul li span{opacity: 0;text-align: left;position: absolute;background: #fff;bottom: 118px;left: -1px;width: 320px;border: 1px solid #1E9FFF;font-size: 12px;border-radius: 4px;color: #9ea7b4;box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);transition: all 0.3s;}
 .upvipModal ul li span:before{position: absolute;content: "";bottom: -12px;left: 10px;width: 30px;height: 14px;background: url(../../../500d/images/comfirm/comfirm_sp.png) no-repeat -131px 2px;}
-.upvipModal ul li span h3{background: #d9fff5;color: #00c190;font-size: 14px;padding-left: 30px;height: 30px;line-height: 30px;}
+.upvipModal ul li span h3{background: #d9fff5;color: #1e9fff;font-size: 14px;padding-left: 30px;height: 30px;line-height: 30px;}
 .upvipModal ul li span s{display: inline-block;position: absolute;}
 .upvipModal ul li span h3 s.icon{width: 24px;height: 22px;background: url(../../../500d/images/comfirm/comfirm_sp.png) no-repeat 2px 4px;top: 4px;left: 5px;}
 .upvipModal ul li span p{padding: 10px 2px 14px 10px;}

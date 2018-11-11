@@ -892,7 +892,7 @@ html.jy_cvresume_edit body {
     display: inline-block;
     height: 30px;
     margin-right: 10px;
-    padding-right: 25px;
+    padding-right: 20px;
     border: 1px dashed transparent;
     cursor: pointer;
 }
@@ -3362,7 +3362,7 @@ html.jy_cvresume_edit body {
             margin: 0 auto;
             margin-top: 12px;
             height: 100%;
-            background: url(../images/member_zxwd.jpg) center 2px no-repeat;
+            background: url(../../images/cvresume/member_zxwd.jpg) center 2px no-repeat;
             background-size: contain;
         }
 
@@ -3404,7 +3404,7 @@ html.jy_cvresume_edit body {
     }
 
         .litemodal .wdjl-con ul li .img .hover-div a.btn:hover {
-            background-color: #0bd6a4;
+            background-color: #4BB2FE;
         }
 
     .litemodal .wdjl-con ul li .text {
@@ -3932,7 +3932,7 @@ html.jy_cvresume_edit body {
     display: block;
 }
 
-.resume_template .template_masking .select_template {
+.resume_template .template_masking .SelectTemplate {
     display: block;
     width: 60px;
     height: 30px;
@@ -4023,7 +4023,7 @@ html.jy_cvresume_edit body {
 }
 
     .modal .modal-content .modal-body .wormItem input, .modal .modal-content .modal-body .wormItem div {
-        border-color: #00c190
+        border-color: #1e9fff
     }
 
 .modal .wormItem:before, .defaultmodal .addedSkill .unSelect:before {
@@ -4331,12 +4331,12 @@ html.jy_cvresume_edit body {
     }
 
         .defaultmodal .inte-content .leftSelect > li:hover {
-            background-color: #00c190;
+            background-color: #1e9fff;
             color: white;
         }
 
     .defaultmodal .inte-content .leftSelect .leftclick {
-        background-color: #00c190;
+        background-color: #1e9fff;
         color: white;
     }
 
@@ -4380,7 +4380,7 @@ html.jy_cvresume_edit body {
         position: absolute;
         bottom: 0;
         right: 50px;
-        background: #00c190;
+        background: #1e9fff;
         color: white;
         cursor: pointer;
     }
@@ -4983,11 +4983,11 @@ html.jy_cvresume_edit body {
 
 .defaultmodal .modal-item .select > li:hover {
     background-color: #f4f4f4;
-    color: #00c190;
+    color: #1e9fff;
 }
 
 .defaultmodal .modal-item .select > li[data-click=selected] {
-    color: #00c190;
+    color: #1e9fff;
     background-color: #f4f4f4;
 }
 
@@ -5074,12 +5074,12 @@ html.jy_cvresume_edit body {
     }
 
         .base_info_modal .msg-content .leftSelect > li:hover {
-            background-color: #00c190;
+            background-color: #1e9fff;
             color: white;
         }
 
     .base_info_modal .msg-content .leftSelect .leftclick {
-        background-color: #00c190;
+        background-color: #1e9fff;
         color: white;
     }
 
@@ -5123,7 +5123,7 @@ html.jy_cvresume_edit body {
         position: absolute;
         bottom: 0;
         right: 50px;
-        background: #00c190;
+        background: #1e9fff;
         color: white;
         cursor: pointer;
     }
@@ -5360,7 +5360,7 @@ html.jy_cvresume_edit body {
     }
 
     .skill-content .addedSkill .unSelect {
-        border-color: #00c190;
+        border-color: #1e9fff;
     }
 
 /*编辑兴趣爱好*/
@@ -5529,7 +5529,7 @@ html.jy_cvresume_edit body {
 /*常见问题*/
 .r-questionbar:hover .question-content {
     width: 230px;
-    border: 1px solid #00c190;
+    border: 1px solid #1e9fff;
 }
 
 .question-content {
@@ -5552,7 +5552,7 @@ html.jy_cvresume_edit body {
         line-height: 38px;
         padding-left: 20px;
         position: relative;
-        background-color: #00c190;
+        background-color: #1e9fff;
         color: white;
         font-size: 16px;
         -webkit-user-select: none;
@@ -5586,7 +5586,7 @@ html.jy_cvresume_edit body {
             }
 
                 .question-content .question-body > li > a:hover {
-                    color: #00c190;
+                    color: #1e9fff;
                 }
 
     .question-content .question-footer {
@@ -5601,7 +5601,7 @@ html.jy_cvresume_edit body {
             height: 40px;
             line-height: 40px;
             color: white;
-            background-color: #00c190;
+            background-color: #1e9fff;
             border-radius: 4px;
             cursor: pointer;
         }
@@ -5686,8 +5686,8 @@ html.jy_cvresume_edit body {
 }
 
 .defaultmodal .portfolio-content .underlinebtn {
-    color: #00c190;
-    border-bottom-color: #00c190;
+    color: #1e9fff;
+    border-bottom-color: #1e9fff;
 }
 
 .defaultmodal .portfolio-preview .imgPreview {
@@ -5866,7 +5866,7 @@ html.jy_cvresume_edit body {
             display: block;
             width: 112px;
             height: 112px;
-            border: 1px solid #00c190;
+            border: 1px solid #1e9fff;
             border-radius: 4px;
             margin: 0 auto;
         }
@@ -5882,7 +5882,7 @@ html.jy_cvresume_edit body {
 
     .defaultmodal .recommend-content .ewmTips {
         display: block;
-        color: #00c190;
+        color: #1e9fff;
         text-align: center;
         margin: 4px 0 0;
     }
@@ -5891,7 +5891,7 @@ html.jy_cvresume_edit body {
         margin-top: 10px;
         height: 48px;
         line-height: 48px;
-        color: #00c190;
+        color: #1e9fff;
         background-color: #fffce4;
         padding-left: 43px;
         position: relative;
@@ -6037,7 +6037,7 @@ html.jy_cvresume_edit body {
         }
 
 .tips-modal-content .checkedNotfy:checked + span:after {
-    border-color: #00c190;
+    border-color: #1e9fff;
     background: url(../../images/cvresume/Modal-sprite.png) -51px -267px no-repeat;
 }
 /*6.5.0 更换模块样式弹框end*/
@@ -6758,7 +6758,7 @@ html.jy_cvresume_edit body {
         }
 
 .change_content_confirm .checkedNotfy:checked + span:after {
-    border-color: #00c190;
+    border-color: #1e9fff;
     background: url(../../images/cvresume/Modal-sprite.png) -51px -267px no-repeat;
 }
 /*空状态*/

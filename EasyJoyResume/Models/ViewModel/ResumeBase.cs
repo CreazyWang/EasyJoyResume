@@ -499,13 +499,14 @@ namespace EasyJoyResume.Models.ViewModel
         {
         }
 
-        public custom(string key, bool isTitleShow, bool isTimeShow, bool isContentShow, string title, string content)
+        public custom(string key, bool isTitleShow, bool isTimeShow, bool isContentShow, string title, string font, string content)
         {
             this.key = key;
             this.isTitleShow = isTitleShow;
             this.isTimeShow = isTimeShow;
             this.isContentShow = isContentShow;
             this.title = title;
+            this.font = font;
             this.content = content;
         }
 
@@ -513,7 +514,8 @@ namespace EasyJoyResume.Models.ViewModel
         public bool isTitleShow { get; set; } 
         public bool isTimeShow { get; set; } 
         public bool isContentShow { get; set; } 
-        public string title { get; set; } 
+        public string title { get; set; }
+        public string font { get; set; }
         public string content { get; set; }
     }
     public class sort

@@ -3226,7 +3226,7 @@ common.main = {
             $("#create_resume_panel").find(".first_filter_list").html(job_function_list.one);
             $("#create_resume_panel").find(".second_filter_list").html(job_function_list.two);
             //模板列表渲染
-            $.get("/cvresume/createcv_select_template/",{"resumeBankType":"doc"},function(result){
+            $.get("/cvresume/createcv_SelectTemplate/",{"resumeBankType":"doc"},function(result){
                 if(result!==""){
                     $(".template_content_list").html(result);
                     $(".template_content_list .template_card").each(function(index){
@@ -3241,9 +3241,9 @@ common.main = {
 		            	$("#create_resume_panel .template_card").eq(0).addClass("checkmark");
 		            }
                     // 语言设置
-                    $("#create_resume_panel .select_resume_lang .selected_name").attr("data-value", opt.lang);
-                    var set_lang = $("#create_resume_panel .select_resume_lang .select_option li[data-value='" + opt.lang + "']").text();
-                    $("#create_resume_panel .select_resume_lang .selected_name span").text(set_lang);
+                    $("#create_resume_panel .SelectResume_lang .selected_name").attr("data-value", opt.lang);
+                    var set_lang = $("#create_resume_panel .SelectResume_lang .select_option li[data-value='" + opt.lang + "']").text();
+                    $("#create_resume_panel .SelectResume_lang .selected_name span").text(set_lang);
                     // 身份设置
                     $("#create_resume_panel .select_identity_type .selected_name").attr("data-value", opt.identity);
                     var set_identity = $("#create_resume_panel .select_identity_type .select_option li[data-value='" + opt.identity + "']").text();
@@ -3466,7 +3466,7 @@ common.main = {
 		    $(document).off("click", "#create_resume_panel .start_edit_btn");
         	$(document).on("click", "#create_resume_panel .start_edit_btn", function(){
         		
-        		var resume_lang = $("#create_resume_panel .select_resume_lang .selected_name").attr("data-value"),
+        		var resume_lang = $("#create_resume_panel .SelectResume_lang .selected_name").attr("data-value"),
         			identity_type = $("#create_resume_panel .select_identity_type .selected_name").attr("data-value"),
         			itemid = $("#create_resume_panel .template_card.checkmark").attr("data_itemid"),
         			job = $("#create_resume_panel input[name='job_name']").val(),

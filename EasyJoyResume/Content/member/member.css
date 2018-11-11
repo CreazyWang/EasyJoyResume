@@ -426,7 +426,7 @@
 .city_select_list #input_city::-moz-placeholder{color:#d6d6d6; font-size:12px; }
 .city_select_list #input_city::-webkit-input-placeholder{color:#d6d6d6; font-size:12px; }
 .city_select_list #input_city:-ms-input-placeholder{color:#d6d6d6; font-size:12px; }
-.city_selector #defined_city{position:absolute; bottom:0; right:50%; margin:0 -18px 4px 0; background:#00c190; color:white; cursor:pointer;}
+.city_selector #defined_city{position:absolute; bottom:0; right:50%; margin:0 -18px 4px 0; background:#1e9fff; color:white; cursor:pointer;}
 /*薪资范围*/
 .price_list .list_content{border:none; font-size:0;}
 .edit_list.price_list .list_content input{display:inline-block; width:110px; height:40px; line-height:40px; padding:0; border:1px solid #d4dbe0; font-size:14px; color:#5d6876; text-align:center;}
@@ -632,16 +632,16 @@
 .delete_modal .modal-content .modal-header, .delete_modal .releaseResume-content .modal-header{height:33px; background:white;}
 .delete_modal .modal-content .close,  .delete_modal .releaseResume-content .close{top:19x; right:9px; width:13px; height:13px; background:url(../../cvresume/images/Modal-sprite.png) -54px -297px no-repeat;}
 .delete_modal .modal-content .modal-body{height:90px; padding:4px 20px 10px 70px; background:url(../../cvresume/images/tips.jpg) no-repeat 20px 3px;}
-.delete_modal .modal-content .title{display:block; margin-bottom:12px; font-size:16px; color:#00c190; text-align:left;}
+.delete_modal .modal-content .title{display:block; margin-bottom:12px; font-size:16px; color:#1e9fff; text-align:left;}
 .delete_modal .modal-content .tips{display:block; font-size:14px; color:#999999; text-align:left;}
 .delete_modal .modal-content .modal-footer{position:relative; width:100%; padding:20px 15px 20px 0; border:none; text-align:right;}
 .delete_modal .modal-content .neverNotfy{position:absolute; bottom:24px; left:15px; display:block; width:77px; height:15px; line-height:15px; color:#919191; cursor:pointer;}
 .delete_modal .modal-content .neverNotfy>input{opacity:0;}
 .delete_modal .modal-content .neverNotfy>span{position:absolute; top:0; left:0; padding-left:20px; -moz-user-select:none; -webkit-user-select:none; -ms-user-select:none; -khtml-user-select:none; user-select:none;}
 .delete_modal .modal-content .neverNotfy>span:after{content:""; position:absolute; top:0; left:0; display:inline-block; width:14px; height:14px; border:1px solid #d4d4d4;}
-.delete_modal .modal-content .checkedNotfy:checked +  span:after{border-color:#00c190; background:url(../../cvresume/images/Modal-sprite.png) -51px -267px no-repeat;}
+.delete_modal .modal-content .checkedNotfy:checked +  span:after{border-color:#1e9fff; background:url(../../cvresume/images/Modal-sprite.png) -51px -267px no-repeat;}
 .delete_modal button{height: 30px; padding: 0 10px; border-radius: 4px; cursor: pointer; font-family: inherit;}
-.delete_modal .submit{border:none; background-color:#00c190; color:white;}
+.delete_modal .submit{border:none; background-color:#1e9fff; color:white;}
 .delete_modal .cancel{border:1px solid #d3d6d5; background-color:white; color:#737373;}
 
 .delete_modal.normal .modal-content{height:250px;}

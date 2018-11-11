@@ -1,21 +1,21 @@
 ﻿@{
     Layout = "~/Views/Shared/_LayoutResumeEdit.cshtml";
-    EasyJoyResume.Models.ViewModel.ResumeEdit Resume = ViewBag.ResumeEdit; 
+    EasyJoyResume.Models.ViewModel.resume_base Resume = ViewBag.ResumeBase; 
 }
 <div class="jyCv-baseStyle"
      id="resume_base"
-     data_color=@Resume.data_color
-     data_font_name=@Resume.data_font_name
-     data_font_size=@Resume.data_font_size
-     data_line_height=@Resume.data_line_height
-     data_font_type=@Resume.data_font_type
-     resume_sort=@Resume.resume_sort
-     wap_resume_sort=@Resume.wap_resume_sort
-     template_set=@Resume.template_set
+     data_color=@Resume.resume_set.color
+     data_font_name=@Resume.resume_set.font
+     data_font_size=@Resume.resume_set.fontSize
+     data_line_height=@Resume.resume_set.padding
+     data_font_type=@Resume.resume_set.fontType
+     resume_sort=@Resume.sort
+     wap_resume_sort=""
+     template_set=""
      data_itemid=@ViewBag.ItemId
-     data_modal_margin=@Resume.data_modal_margin>
+     data_modal_margin=@Resume.resume_set.margin>
     <!--封面模块-->
-    <div class="jyCv-cover @Resume.coverModel.CoverShow" id="resume_cover">
+    <div class="jyCv-cover @ViewBag.coverShow " id="resume_cover">
         <div class="coverItem  moduleItem">
             <div class="baseItem-toolbar">
                 <span class="edit"></span>
@@ -39,7 +39,7 @@
                 <dt><div data-textlang="cover" contenteditable="false">封面</div></dt>
                 <dd>
                     <div class="cover-con">
-                        @foreach (var item in Resume.coverModel.ResumeCover)
+                        @foreach (var item in Resume.resume_cover)
                         {
                             <div class="cover-list cover-name moduleItemList">
                                 <a class="jyfont divIconFont">@item.icon</a>
@@ -53,13 +53,13 @@
         </div>
     </div>
     <!--自荐书模块-->
-    <div class="jyCv-letter @Resume.letterModel.LetterShow" id="resume_letter">
+    <div class="jyCv-letter @ViewBag.letterShow" id="resume_letter">
         <div class="letterItem moduleItem">
             <dl>
                 <dt><div data-textlang="letter" contenteditable="false">自荐信</div></dt>
                 <dd>
                     <div data-placeholder="在这里添加描述" contenteditable="true">
-                        @Html.Raw(Resume.letterModel.LetterContent)
+                        @Html.Raw(Resume.resume_letter)
                     </div>
                 </dd>
             </dl>

@@ -143,7 +143,7 @@ html,body{min-width:1240px; }
 .resume_authority_modal .authority_list .authority_title, .resume_authority_modal .authority_list .authority_text{display:inline-block; height:12px; line-height:12px; font-size:14px; color:#969fac;}
 .resume_authority_modal .authority_list .authority_title{width:134px; color:#1E9FFF;}
 .resume_authority_modal .authority_list .authority_title i{position:absolute; top:10px; left:28px; display:inline-block; width:14px; height:14px; border:1px solid #cacaca; border-radius:7px; background-color:#f2f1f2;}
-.resume_authority_modal .authority_list.checked .authority_title i:after{content:""; position:absolute; top:3px; left:3px; display:inline-block; width:6px; height:6px; border-radius:3px; background-color:#00c190;}
+.resume_authority_modal .authority_list.checked .authority_title i:after{content:""; position:absolute; top:3px; left:3px; display:inline-block; width:6px; height:6px; border-radius:3px; background-color:#1e9fff;}
 .resume_authority_modal .authority_list:nth-child(2){height:34px; overflow:hidden;}
 .resume_authority_modal .authority_list:nth-child(2).checked{height:86px;}
 .resume_authority_modal .authority_list .visit_password{height:50px; padding:10px 0 10px 28px; background-color:#f6f6f6;}
@@ -186,7 +186,22 @@ div[contenteditable]:focus:before,.moduleItemList span:focus:before,.r-itembar u
 .move-downup a:hover{opacity:0.8;}
 .baseItem dl dd .dd-content:first-child:nth-last-child(1) .move-downup .delete{display:none; }
 .baseItem dl dd .dd-content:first-child:nth-last-child(1) .move-downup{height:55px; }
-.baseItem-null{float:left; position:relative; z-index:2; display:block; height:30px; line-height:30px; width:100%; border:1px dashed #d6d6d6; background-color:rgba(0, 192, 145, 0.04); font-size:14px; color:#989898; text-align:center; cursor:pointer; user-select:none;}
+.baseItem-null {
+    float: left;
+    position: relative;
+    z-index: 2;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    border: 1px dashed #d6d6d6;
+    background-color: rgba(30, 159, 255,0.04);
+    font-size: 14px;
+    color: #989898;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
 .baseItem-null .baseItem-nullcon{height:28px; line-height:28px;}
 .baseItem-null:hover{opacity:0.8;}
 .baseItem-null i{width:25px; height:25px; display:inline-block; position:relative; top:2px; background-position:-133px -791px; text-indent:-999em; }

@@ -237,22 +237,26 @@ td, th{display: table-cell; vertical-align: inherit;}
 .smallmodal .modal-content{top:50%; left:50%;}
 .smallmodal .modal-content ,.defaultmodal.modal .portfolio-content{width:400px; margin-left:-200px;}
 .smallmodal .modal-header .close,.hrevalmodal .modal-header .close{position:absolute; top:12px; right:20px; display:inline-block; width:15px; height:15px; padding:0; border:none; background:url(../../images/cvresume/Modal-sprite.png?v=9021) -5px -5px no-repeat; opacity:1; cursor:pointer;}
-.smallmodal .modal-header,.hrevalmodal .modal-header{width:100%; height:38px; line-height:38px; padding:0 0 0 20px; border:none; background-color:#00c190; color:white;}
+.smallmodal .modal-header,.hrevalmodal .modal-header{width:100%; height:38px; line-height:38px; padding:0 0 0 20px; border:none; background-color:#1e9fff; color:white;}
 .smallmodal .modal-header span,.hrevalmodal .modal-header span{font-size:16px; color:white; -moz-user-select:none; -webkit-user-select:none; -ms-user-select:none; -khtml-user-select:none; user-select:none;}
 .smallmodal .delete-content{top:50%; margin-top:-100px;}
 .smallmodal .delete-content{position:fixed; width:350px; height:200px; margin-left:-175px; background:#fff; overflow:hidden;}
 .smallmodal .delete-content .modal-header, .smallmodal .releaseResume-content .modal-header{height:33px; background:white;}
 .smallmodal .delete-content .close,  .smallmodal .releaseResume-content .close{top:10px; right:9px; width:13px; height:13px; background:url(../../images/cvresume/Modal-sprite.png?v=9021) -54px -297px no-repeat;}
-.smallmodal .delete-content .modal-body{height:90px; padding:4px 20px 10px 70px; background:url(../images/tips.jpg) no-repeat 20px -5px;}
-.smallmodal .delete-content .delete-title{display:block; margin-bottom:12px; font-size:16px; color:#00c190; text-align:left;}
+    .smallmodal .delete-content .modal-body {
+        height: 90px;
+        padding: 4px 20px 10px 70px;
+        background: url(../../images/common/tips.jpg) no-repeat 20px -5px;
+    }
+.smallmodal .delete-content .delete-title{display:block; margin-bottom:12px; font-size:16px; color:#1e9fff; text-align:left;}
 .smallmodal .delete-content .delete-tips{display:block; font-size:12px; color:#898989; text-align:left;}
 .smallmodal .delete-content .modal-footer{position:relative; padding-right:15px; text-align:right;}
 .smallmodal .delete-content .neverNotfy{position:absolute; bottom:24px; left:15px; display:block; width:77px; height:15px; line-height:15px; color:#919191; cursor:pointer;}
 .smallmodal .delete-content .neverNotfy>input{opacity:0;}
 .smallmodal .delete-content .neverNotfy>span{position:absolute; top:0; left:0; padding-left:20px; -moz-user-select:none; -webkit-user-select:none; -ms-user-select:none; -khtml-user-select:none; user-select:none;}
 .smallmodal .delete-content .neverNotfy>span:after{content:""; position:absolute; top:0; left:0; display:inline-block; width:14px; height:14px; border:1px solid #d4d4d4;}
-.smallmodal .delete-content .checkedNotfy:checked +  span:after{border-color:#00c190; background:url(../../images/cvresume/Modal-sprite.png?v=9021) -51px -267px no-repeat;}
-.smallmodal .submit{border:none; background-color:#00c190; color:white;}
+.smallmodal .delete-content .checkedNotfy:checked +  span:after{border-color:#1e9fff; background:url(../../images/cvresume/Modal-sprite.png?v=9021) -51px -267px no-repeat;}
+.smallmodal .submit{border:none; background-color:#1e9fff; color:white;}
 .smallmodal .cancel{border:1px solid #d3d6d5; background-color:white; color:#737373;}
 
 .smallmodal .pay_tips_modal_content{z-index: 9999; width: 444px; height: 244px; text-align: center; position: fixed; top: 50%; left: 50%; margin-top: -122px; margin-left: -222px; border-radius: 4px; background: #fff;}
@@ -927,7 +931,7 @@ td, th{display: table-cell; vertical-align: inherit;}
 .smallmodal .vip-content .tips-content{display:block; height:260px; padding-top:210px; background:url(../../cvresume/images/vip_tips.jpg) no-repeat center 30px; color:#898989; text-align:center;}
 .smallmodal .vip-content .modal-header .close{top:17px;}
 .smallmodal .vip-content .button{width:100px; height:40px; margin-left:15px; border:none; border-radius:4px; cursor:pointer;}
-.smallmodal .vip-content .button.submit{background-color:#00c190; color:white;}
+.smallmodal .vip-content .button.submit{background-color:#1e9fff; color:white;}
 .smallmodal .vip-content .button.cancel{background-color:#ededed; color:#8b8b8b;}
 .smallmodal .vip-content .button:hover{opacity:0.8;}
 .smallmodal .vip-content .modal-footer{position:relative; width:100%; padding:0 0; border:none; text-align:center;}
@@ -939,14 +943,14 @@ td, th{display: table-cell; vertical-align: inherit;}
 .upvipModal i{font-style:normal !important;}
 .upvipModal .modal-dialog{position:fixed; width:100%; height:100%;}
 .upvipModal .modal-content{position:absolute; top:50%; left:50%; width:600px; height:400px; margin-top:-230px; margin-left:-300px; background:#fff; overflow:visible;}
-.upvipModal .title{height:50px; line-height:50px; padding:0 0 0 18px; background:#00c190; color:#ffffff; font-size:16px; font-weight:bold;}
+.upvipModal .title{height:50px; line-height:50px; padding:0 0 0 18px; background:#1e9fff; color:#ffffff; font-size:16px; font-weight:bold;}
 .upvipModal .title span{color:inherit}
 .upvipModal .close{float:right; display:block; width:30px; height:30px; margin-top:8px; margin-right:8px; background:url(../../images/member/jl_member_sp.png) no-repeat 9px -1678px; opacity:1;}
 .upvipModal .con{padding:20px 20px;}
 .upvipModal .info{color:#8f9090;}
 .upvipModal .info span{float:left; width:560px; height:40px; font-size:12px;}
 .upvipModal .info span i{color:#1E9FFF;}
-.upvipModal .info span s{color:#00c190;}
+.upvipModal .info span s{color:#1e9fff;}
 .upvipModal .hy-check{margin:10px 0 20px 0; width:100%; float:left;}
 .upvipModal .hy-check ul li{float:left; position:relative; width:176px; height:66px; padding-top:20px; margin-right:36px; border:1px solid #c4c4c4; color:#414141; text-align:center; font-size:14px; cursor:pointer;}
 .upvipModal .hy-check ul li i{color:#ff1010;}
@@ -967,7 +971,7 @@ td, th{display: table-cell; vertical-align: inherit;}
 .upvipModal ul li{position:relative; overflow:hidden;}
 .upvipModal ul li span{position:absolute; bottom:118px; left:-1px; width:320px; border:1px solid #1E9FFF; border-radius:4px; background:#fff; font-size:12px; color:#9ea7b4; box-shadow:0 2px 5px 0 rgba(0,0,0,0.2); transition:all 0.3s; opacity:0; text-align:left;}
 .upvipModal ul li span:before{content:""; position:absolute; bottom:-12px; left:10px; width:30px; height:14px; background:url(../../../500d/images/comfirm/comfirm_sp.png) no-repeat -131px 2px;}
-.upvipModal ul li span h3{height:30px; line-height:30px; padding-left:30px; background:#d9fff5; color:#00c190; font-size:14px;}
+.upvipModal ul li span h3{height:30px; line-height:30px; padding-left:30px; background:#d9fff5; color:#1e9fff; font-size:14px;}
 .upvipModal ul li span s{position:absolute; display:inline-block;}
 .upvipModal ul li span h3 s.icon{top:4px; left:5px; width:24px; height:22px; background:url(../../../500d/images/comfirm/comfirm_sp.png) no-repeat 2px 4px;}
 .upvipModal ul li span p{padding:10px 2px 14px 10px;}
@@ -1000,7 +1004,7 @@ td, th{display: table-cell; vertical-align: inherit;}
 .smallmodal .tips-modal-content .modal-header{height:33px; background:white;}
 .smallmodal .tips-modal-content .close{top:20px; right:20px; width:13px; height:13px; background:url("../../cvresume/images/Modal-sprite.png?v=7073") -54px -297px no-repeat;}
 .smallmodal .tips-modal-content .modal-body{padding:15px 20px 30px; font-size:14px; color:#757575;}
-.smallmodal .tips-modal-content .tips-title{display:block; margin-bottom:12px; text-align:left; font-size:16px; color:#00c190;}
+.smallmodal .tips-modal-content .tips-title{display:block; margin-bottom:12px; text-align:left; font-size:16px; color:#1e9fff;}
 .smallmodal .tips-modal-content .delete-tips{display:block; text-align:left; font-size:14px; color:#898989;}
 .smallmodal .tips-modal-content .modal-footer{position:relative; padding-right:15px; text-align:right;}
 

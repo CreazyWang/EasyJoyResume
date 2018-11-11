@@ -945,7 +945,7 @@ member.event ={
         	//发起ajax请求
             $.ajax({
                 type:"GET",
-                url:"/member/resume_send_records/select_resume_content/",
+                url:"/member/resume_send_records/SelectResume_content/",
                 data : {id:_resume_id},
                 success:function(data){
                     if(data.type != "success"){
