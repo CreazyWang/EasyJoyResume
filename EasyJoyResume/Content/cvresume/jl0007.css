@@ -1,0 +1,78 @@
+.jyCv-baseTop{position:relative; width:100%; height:240px; padding:50px 80px 30px; text-align:center;}
+.jyCv-baseLeft{display:none;}
+.jyCv-baseRight{padding:0 80px; background-color:#fff;}
+.jyCv-baseRight .baseItem.template_css dl dt{position:relative; margin-bottom:15px; text-align:center;}
+.jyCv-baseRight .baseItem.template_css dl dt a.jyfont{display:none;}
+.jyCv-baseRight .baseItem.template_css dl dt span{float:none; display:inline-block; padding:0 40px; line-height:36px; color:#333; border-radius:40px; background-color:#f0f2f5;}
+.jyCv-baseRight .baseItem.template_css dl dt::before{content:""; position:absolute; top:19px; left:0; width:100%; height:1px; background-color:#f0f2f5;}
+
+/* 头像 */
+.headItem.template_css{position:absolute; top:30px; right:60px;}
+/* 名字 */
+.nameItem.template_css{display:inline-block;}
+.nameItem.template_css.current{background-color:rgba(0,0,0,0.1);}
+.nameItem.template_css dl{padding-top:0; color:#fff;}
+.nameItem.template_css .name-con .name{line-height:1.1; margin-bottom:22px; text-align:center;}
+
+/* 基本信息 */
+.infoItem.template_css{position:absolute; top:160px; right:230px; left:80px; text-align:center;}
+.infoItem.template_css.current{background-color:#fff;}
+.infoItem.template_css dl{padding:10px 0 5px;}
+.infoItem.template_css .info-list{position:relative;display:inline-block;margin: 0 5px; color:#666;}
+.infoItem.template_css .info-list .jyfont{display:none;}
+.infoItem.template_css .info-list:before{top: 5px;right: -10px;position:absolute;content:"";width:1px;border-left:1px solid #888;height: 14px;}
+
+/* 时间模块 */
+.baseItem.template_css .dd-title span.time,
+.baseItem.template_css .dd-title span.company,
+.baseItem.template_css .dd-title span.post{float:left; width: 33.33%; margin:0; font-weight:bold; color:#666;}
+.baseItem.template_css .dd-title span.time{text-align:left;}
+.baseItem.template_css .dd-title span.company{text-align:center;}
+.baseItem.template_css .dd-title span.post{text-align:right;}
+
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseTop{background:url(../../images/cvresume/jl0007/j1_head_bg.png) no-repeat center top;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseTop{background:url(../../images/cvresume/jl0007/j2_head_bg.png) no-repeat center top;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseTop{background:url(../../images/cvresume/jl0007/j3_head_bg.png) no-repeat center top;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseTop{background:url(../../images/cvresume/jl0007/j4_head_bg.png) no-repeat center top;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseTop{background:url(../../images/cvresume/jl0007/j5_head_bg.png) no-repeat center top;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseTop{background:url(../../images/cvresume/jl0007/j6_head_bg.png) no-repeat center top;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseTop{background:url(../../images/cvresume/jl0007/j7_head_bg.png) no-repeat center top;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseTop{background:url(../../images/cvresume/jl0007/j8_head_bg.png) no-repeat center top;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseTop{background:url(../../images/cvresume/jl0007/j9_head_bg.png) no-repeat center top;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseTop{background:url(../../images/cvresume/jl0007/j10_head_bg.png) no-repeat center top;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseTop{background:url(../../images/cvresume/jl0007/j11_head_bg.png) no-repeat center top;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseTop{background:url(../../images/cvresume/jl0007/j12_head_bg.png) no-repeat center top;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseTop{background:url(../../images/cvresume/jl0007/j13_head_bg.png) no-repeat center top;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseTop{background:url(../../images/cvresume/jl0007/j14_head_bg.png) no-repeat center top;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseTop{background:url(../../images/cvresume/jl0007/j15_head_bg.png) no-repeat center top;}
+
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseRight .baseItem.template_css dl dt span,
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseRight .baseItem.template_css dl dt::before{background-color:#e5f4ff;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseRight .baseItem.template_css dl dt span,
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseRight .baseItem.template_css dl dt::before{background-color:#e9ecef;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseRight .baseItem.template_css dl dt span,
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseRight .baseItem.template_css dl dt::before{background-color:#eef5fe;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseRight .baseItem.template_css dl dt span,
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseRight .baseItem.template_css dl dt::before{background-color:#fff1f1;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseRight .baseItem.template_css dl dt span,
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseRight .baseItem.template_css dl dt::before{background-color:#ebf8ee;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseRight .baseItem.template_css dl dt span,
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseRight .baseItem.template_css dl dt::before{background-color:#e9e9e9;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseRight .baseItem.template_css dl dt span,
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseRight .baseItem.template_css dl dt::before{background-color:#fdf0e5;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseRight .baseItem.template_css dl dt span,
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseRight .baseItem.template_css dl dt::before{background-color:#f6f4f1;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseRight .baseItem.template_css dl dt span,
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseRight .baseItem.template_css dl dt::before{background-color:#fbe7e7;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseRight .baseItem.template_css dl dt span,
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseRight .baseItem.template_css dl dt::before{background-color:#f0ede9;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseRight .baseItem.template_css dl dt span,
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseRight .baseItem.template_css dl dt::before{background-color:#e5f3f7;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseRight .baseItem.template_css dl dt span,
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseRight .baseItem.template_css dl dt::before{background-color:#eef1fb;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseRight .baseItem.template_css dl dt span,
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseRight .baseItem.template_css dl dt::before{background-color:#f5eefa;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseRight .baseItem.template_css dl dt span,
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseRight .baseItem.template_css dl dt::before{background-color:#fbf8eb;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseRight .baseItem.template_css dl dt span,
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseRight .baseItem.template_css dl dt::before{background-color:#f0faec;}

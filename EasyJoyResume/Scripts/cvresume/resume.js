@@ -46,12 +46,12 @@ cvresume.main = {
         });
         //设置访问类别
         $("#resume_authority_modal .authority_list:not(li:eq(1))").click(function () {
-            if (cvresume.main.is_empty(cvresume.info.resumeid)) {
+            if (false /*cvresume.main.is_empty(cvresume.info.resumeid)*/) {
                 layer.msg("没有登录");
             } else {
                 var data_type = $(this).attr("data-type");
                 if (!cvresume.main.is_empty(data_type)) {
-                    $.post("/cvresume/set_visit_type/", { "visitType": data_type, "resumeid": cvresume.info.resumeid }, function (message) {
+                    $.post("/cvresume/SetVisitType/", { "visitType": data_type, "resumeid": cvresume.info.resumeid }, function (message) {
                         if (message.type == "success") {
                             $("#edit_resume_sharebtn").attr("data-visittype", data_type)
                         }
@@ -64,7 +64,7 @@ cvresume.main = {
             //设置密码访问类别
             var data_type = $("#resume_authority_modal .authority_list:nth-child(1)").attr("data_type");
             if (!cvresume.main.is_empty(data_type)) {
-                $.post("/cvresume/set_visit_type/", { "visitType": data_type, "resumeid": cvresume.info.resumeid }, function (message) {
+                $.post("/cvresume/SetVisitType/", { "visitType": data_type, "resumeid": cvresume.info.resumeid }, function (message) {
                     $("#edit_resume_sharebtn").attr("data-visittype", data_type)
                 });
             }
@@ -81,7 +81,7 @@ cvresume.main = {
                 layer.msg("密码只允许输入数字！");
                 return;
             }
-            $.post("/cvresume/set_visit_password/", { "password": password, "resumeid": cvresume.info.resumeid }, function (message) {
+            $.post("/cvresume/SetVisitPassword/", { "password": password, "resumeid": cvresume.info.resumeid }, function (message) {
                 if (message.type == "success") {
                     layer.msg("密码设置成功~");
                     $("#resume_authority_modal").modal("hide");
@@ -147,7 +147,7 @@ cvresume.main = {
         });
         //恢复简历提示
         //发布(保存->简历->历史记录)
-        $(document).on("click", ".publish a:not(.wbd-vip-lock)", function () {
+        $(document).on("click", ".publish a:not(.jy-vip-lock)", function () {
             var resume_title = $("#resumeName").find("input").val();
             var uri_resume_title = decodeURI(common.main.getUrlParamsValue("title"));
             if ($("html").hasClass("ie9")) {
@@ -191,7 +191,7 @@ cvresume.main = {
             cvresume.main.resume_save();
         });
         // .save_opt
-        $(document).on("click", ".save_opt:not(.wbd-vip-lock)", function () {
+        $(document).on("click", ".save_opt:not(.jy-vip-lock)", function () {
             //简繁体切换标识
             var _id = $(this).attr("id");
             if (_id == "jian") {
@@ -204,7 +204,7 @@ cvresume.main = {
             cvresume.main.delay_resume_save();
         });
         //判断简历类型
-        if ($(".wbdCv-container").hasClass("mobile")) {
+        if ($(".jyCv-container").hasClass("mobile")) {
             cvresume.info.resume_type = "手机";
         }
         //发布页切换简历类型点击事件
@@ -235,7 +235,7 @@ cvresume.main = {
     },
     template_set: function (settings, resumeid) {//模板配置渲染
         if (settings) {
-            var _classStr = "#resume_base .wbdCv-base";
+            var _classStr = "#resume_base .jyCv-base";
             $(cvresume.info.sortPosition).each(function (i, item) {//遍历方位
                 var pos_set = settings[item.toLocaleLowerCase()];
                 $(pos_set.reverse()).each(function (j, jtem) {//reverse()素组翻转
@@ -438,7 +438,7 @@ cvresume.main = {
                     if (cvresume.main.isJsonFormat(message.content)) {//首次保存
                         var msg_content = cvresume.main.strToJson(message.content);
                         cvresume.main.resume_draw(msg_content.itemid, msg_content.resumeid, msg_content.memberid, msg_content.visitid);
-                        var data_url = wbdcnf.base + '/cvresume/edit/?itemid=' + msg_content.itemid + '&resumeId=' + msg_content.resumeid;
+                        var data_url = jycnf.base + '/cvresume/edit/?itemid=' + msg_content.itemid + '&resumeId=' + msg_content.resumeid;
                         history.pushState(null, "简历首次保存", data_url);
                         //编辑器切换地址
                         $(".wapresume .tips a[href]").attr("href", $(".wapresume .tips a[href]").attr("href") + '&resumeId=' + msg_content.resumeid);
@@ -1070,7 +1070,7 @@ cvresume.main = {
     },
     get_resume_sort: function (resume) {//模块排序
         var sort = {};
-        var _classStr = "#resume_base .wbdCv-base";
+        var _classStr = "#resume_base .jyCv-base";
         $(cvresume.info.sortPosition).each(function (index, item) {
             var arr = [];
             $($(_classStr + item + " .resume_sort")).each(function (index, ele) {
@@ -1112,7 +1112,7 @@ cvresume.main = {
     },
     resume_sort: function (sort) {//简历初始排序(sort:排序配置)
         if (sort) {
-            var _classStr = "#resume_base .wbdCv-base";
+            var _classStr = "#resume_base .jyCv-base";
             $(cvresume.info.sortPosition).each(function (i, item) {//遍历方位
                 var pos = sort[item.toLocaleLowerCase()];
                 $(pos.reverse()).each(function (j, jtem) {//遍历各方位的id，reverse()素组翻转
@@ -1192,15 +1192,15 @@ cvresume.main = {
         $(".baseItem-null").attr("style", "display:none;");//自定义框隐藏
         $("#resume_contact").find("div[contenteditable]:gt(0)").attr("contenteditable", "true");//联系我可编辑状态
 
-        if ($(".wbdCv-container").hasClass("mobile") || $(".wbdCv-baseStyle").parents('.mobile').length > 0) {
+        if ($(".jyCv-container").hasClass("mobile") || $(".jyCv-baseStyle").parents('.mobile').length > 0) {
 
         } else {
             var nowPageSize = 0; // 当前页数
             var resumePageHeight = 1160;// 每页高度
             var resumePageHtml = '<div class="page_tips"><span></span></div>';
-            var resumeHeight = $(".wbdCv-resume").css({ "height": "auto", "min-height": 1160 }).outerHeight();
+            var resumeHeight = $(".jyCv-resume").css({ "height": "auto", "min-height": 1160 }).outerHeight();
             var pageSize = Math.ceil(resumeHeight / resumePageHeight);
-            $(".wbdCv-resume").css("height", resumePageHeight * pageSize);
+            $(".jyCv-resume").css("height", resumePageHeight * pageSize);
             if (pageSize != nowPageSize) {
                 nowPageSize = pageSize;
                 $("div.page_tips").remove();
@@ -1208,7 +1208,7 @@ cvresume.main = {
                     var pageBreakObj = $(resumePageHtml);
                     pageBreakObj.css({ "top": (index * resumePageHeight) - 16 + "px" });
                     pageBreakObj.find('span').text('第' + index + '页');
-                    $(".wbdCv-resume").append(pageBreakObj);
+                    $(".jyCv-resume").append(pageBreakObj);
                 }
             }
         }
@@ -1315,7 +1315,7 @@ cvresume.main = {
                 var _oldVisitid = cvresume.info.visitid;
                 cvresume.info.visitid = visitid;
                 if (location.href.indexOf("/cvresume/" + _oldVisitid + "/") != -1) {//发布页修改浏览器地址
-                    history.pushState(null, "个性域名修改", wbdcnf.base + "/cvresume/" + cvresume.info.visitid + "/");
+                    history.pushState(null, "个性域名修改", jycnf.base + "/cvresume/" + cvresume.info.visitid + "/");
                 }
                 layer.msg("修改成功~");
             } else {
@@ -1381,14 +1381,14 @@ cvresume.main = {
         //3获取图片base64编码
         var iamge_data = $qrCodeImage.children("canvas")[0].toDataURL("image/png");
         //4上传图片并返回连接
-        $.post(wbdcnf.base + '/file/upload/cropper_image/', { "token": getCookie("token"), "cropper_image": iamge_data.toString() }, function (result) {
+        $.post(jycnf.base + '/file/upload/cropper_image/', { "token": getCookie("token"), "cropper_image": iamge_data.toString() }, function (result) {
             if (result.type == 'error') {
                 message["type"] = "error";
                 message["content"] = result.content;
                 return message;
             } else {
                 //调用更新接口
-                $.post(wbdcnf.base + '/cvresume/setResumeQrCodeImg/' + resumeid + '/', { "token": getCookie("token"), "qrcodeImg": result.content }, function (message) {
+                $.post(jycnf.base + '/cvresume/setResumeQrCodeImg/' + resumeid + '/', { "token": getCookie("token"), "qrcodeImg": result.content }, function (message) {
                     if (message.type == "success") {
                         $resume_qrcode.attr("src", result.content);
                         message["type"] = "success";

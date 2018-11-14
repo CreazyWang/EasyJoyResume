@@ -35,7 +35,7 @@
     <script src="~/Scripts/cvresume/cvedit.js"></script>
     <script src="~/Scripts/cvresume/resume.js"></script>
     <link href="~/Content/cvresume/@ViewBag.ResumeCss" rel="stylesheet" />
-    <script src="~/Scripts/cvresume/jquery.autocompleter.js"></script>
+    <script src="~/Scripts/cvresume/jquery.autocompleter.js"></script> 
     <script src="~/Scripts/cvresume/school.js"></script>
     <script src="~/Scripts/jquery.qrcode.min.js"></script>
     <script src="~/Scripts/jquery.lazyload.min.js"></script>
@@ -268,8 +268,7 @@
             </div>
         </div>
     </div>
-    <div class="experItem baseItem timeItem moduleItem resume_sort template_css" id="add_resume_time" data-pates="template_css" style="display: none;">
-
+    <div class="experItem baseItem timeItem moduleItem resume_sort template_css" id="add_resume_time" data-pates="template_css" style="display: none;"> 
         <div class="baseItem-toolbar">
             <span class="edit ">
             </span><span class="handle ui-sortable-handle  vertical">
@@ -294,8 +293,7 @@
                 <span><div class="resume_lang module_item_title" for-key="resume_work" data-placeholder="工作经历" data-textlang="exper" contenteditable="false">工作经历</div></span>
             </dt>
             <dd class="clearfix">
-                <div class="dd-content moduleItemList">
-
+                <div class="dd-content moduleItemList"> 
                     <div class="move-downup">
                         <a class="up save_opt "></a>
                         <a class="down save_opt "></a>
@@ -409,7 +407,6 @@
                         <div class="icon-search"><input type="text" id="icon_search_value" placeholder="搜索你想要的图标..."></div>
                         <div class="icon-list">
                             <ul id="resume_icon_list"></ul>
-
                         </div>
                     </div>
                 </div>
@@ -542,82 +539,39 @@
             </div>
         </div>
         <!--模块管理弹框-->
-        <div class="litemodal left_editor_modal" id="resume_modal_manager">
-            <div class="modal-dialog show-swal1">
-                <div class="modal-content">
-                    <div class="r-itembar r-basebar">
-                        <div class="title"><span class="close"><i></i>缩起</span></div>
-                        <div class="showcon itemcon">
-                            <ul id="showul">
-                                <li class="jbxx"><i class="icon"></i><span class="name" data-placeholder="基本信息">基本信息</span><a style="display: none;" title="隐藏此模块" for-id="base_info"></a><s>必填</s></li>
-                                <li class="qzyx"><i class="icon"></i><span class="name" data-placeholder="求职意向">求职意向</span><a class="save_opt" title="隐藏此模块" for-id="resume_job_preference"></a></li>
-                                <li class="jybj"><i class="icon"></i><span class="name" data-placeholder="教育背景">教育背景</span><a class="save_opt" title="隐藏此模块" for-id="resume_edu"></a></li>
-                                <li class="gzjy"><i class="icon"></i><span class="name" data-placeholder="工作经验">工作经验</span><a class="save_opt" title="隐藏此模块" for-id="resume_work"></a></li>
-
-
-
-                                <li class="zwpj"><i class="icon"></i><span class="name" data-placeholder="自我评价">自我评价</span><a class="save_opt" title="隐藏此模块" for-id="resume_summary"></a></li>
-
-                                <li class="xqah"><i class="icon"></i><span class="name" data-placeholder="个人标签">个人标签</span><a class="save_opt" title="隐藏此模块" for-id="resume_hobby"></a></li>
-                                <li class="zyjn"><i class="icon"></i><span class="name" data-placeholder="技能特长">技能特长</span><a class="save_opt" title="隐藏此模块" for-id="resume_skill"></a></li>
-
-
-
-
-                            </ul>
-                        </div>
-                        <div class="hidecon itemcon">
-                            <div class="addother-btn"><span class="name">添加其它模块</span></div>
-                            <ul id="hideul">
-                                <li style="height: 2px;margin: 0px;"></li>
-                                <!-- 新增添加自定义模块 -->
-                                <li class="fm"><i class="icon"></i><span class="name" data-placeholder="封面">封面</span><a class="save_opt  jy-vip-lock" data-show-vip-type="resume" data_auth="cover" title="显示此模块" for-id="resume_cover"></a></li>
-                                <li class="zjx"><i class="icon"></i><span class="name" data-placeholder="自荐信">自荐信</span><a class="save_opt jy-vip-lock" data-show-vip-type="resume" data_auth="letter" title="显示此模块" for-id="resume_letter"></a></li>
-                                <li class="sxjy"><i class="icon"></i><span class="name" data-placeholder="实习经验">实习经验</span><a class="save_opt" title="显示此模块" for-id="resume_internship"></a></li>
-                                <li class="zyjy"><i class="icon"></i><span class="name" data-placeholder="志愿者经验">志愿者经历</span><a class="save_opt" title="显示此模块" for-id="resume_volunteer"></a></li>
-                                <li class="xmjy"><i class="icon"></i><span class="name" data-placeholder="项目经历">项目经验</span><a class="save_opt" title="显示此模块" for-id="resume_project"></a></li>
-                                <li class="jxry"><i class="icon"></i><span class="name" data-placeholder="奖项荣誉">荣誉奖项</span><a class="save_opt" title="显示此模块" for-id="resume_honor"></a></li>
-                                <li class="zpzs"><i class="icon"></i><span class="name" data-placeholder="作品展示">作品展示</span><a class="save_opt" title="显示此模块" for-id="resume_portfolio"></a></li>
-                                <li class="ewm"><i class="icon"></i><span class="name" data-placeholder="二维码">二维码</span><a class="save_opt" title="显示此模块" for-id="resume_qrcode"></a></li>
-                                <li class="add_custom">
-                                    <i class="icon"></i>
-                                    <span class="name" data-placeholder="自定义模块">自定义模块</span>
-                                    <a class="save_opt" title="隐藏此模块" for-id=""></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @RenderSection("ResumeModalManager", true)
         <!--简历权限弹框-->
         <div class="modal fade smallmodal" id="resume_authority_modal" aria-hidden="false">
             <div class="modal-dialog">
                 <div class="modal-content resume_authority_modal show-swal2">
                     <div class="modal-header">
-                        <button type="button" class="close"></button>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
                         <span class="modal-title">简历访问权限</span>
                     </div>
                     <div class="modal-body">
                         <ul class="resume_authority">
-                            <li class="authority_list checked ">
+                            <li class="authority_list checked" data-type="open">
                                 <div><span class="authority_title"><i></i>所有人</span><span class="authority_text">通过链接地址即可访问</span></div>
                             </li>
                             <li class="authority_list" data-type="mmfw">
                                 <div>
-                                    <span class="authority_title"><i></i>密码访问</span><span class="authority_text">仅能通过密码访问</span>
+                                    <span class="authority_title"><i></i>密码访问</span>
+                                    <span class="authority_text">仅能通过密码访问</span>
                                 </div>
-                                <div class="visit_password"><input type="text" placeholder="密码格式仅限6位纯数字" id="visitPassword" maxlength="6" class="panelInput"><button type="button" class="button submit">确定</button></div>
+                                <div class="visit_password">
+                                    <input type="text" placeholder="密码格式仅限6位纯数字" id="visitPassword" maxlength="6" class="panelInput" value="">
+                                    <button type="button" class="button submit" id="visitPasswordSubBtn">确定</button>
+                                </div>
                             </li>
                             <li class="authority_list" data-type="privary">
                                 <div>
-                                    <span class="authority_title"><i></i>仅自己</span><span class="authority_text">仅自己可以打开简历</span>
+                                    <span class="authority_title"><i></i>仅自己</span>
+                                    <span class="authority_text">仅自己可以打开简历</span>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
         <!--我的简历-->
@@ -653,7 +607,7 @@
             <div class="modal-dialog">
                 <div class="modal-content msg-content show-swal2">
                     <div class="modal-header">
-                        <button type="button" class="close"></button>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
                         <span class="modal-title">编辑基本信息</span>
                     </div>
                     <div class="modal-body">
@@ -743,7 +697,7 @@
                                 </div>
                             </div>
                             <div class="modal-item defindItem">
-                                <a href="javascript:;" class="openDefind">自定义字段</a>
+                                <a href="javascript:;" class="openDefind" id="addDefind">自定义字段</a>
                             </div>
                             <div class="modal-item cityItem" style="display:none;">
                                 <span class="item-title">所在城市</span>

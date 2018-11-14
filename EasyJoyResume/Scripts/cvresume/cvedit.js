@@ -1034,7 +1034,8 @@ cvmutual.main = {
 	        focusOpen: false,
 	        highlightMatches: true,
 	        template: ' <span>{{ label }}</span>'	    	
-	    });			
+        });
+       
 	},
 	resume_delete:function(){// 删除模块
 		function resumeDelete(){
@@ -4081,7 +4082,7 @@ cvmutual.main = {
 				$.ajax({type : "get",
     	    		cache: false,
     	    		async : false,
-    	    		url : "/cvresume/get_download_url/"+cvresume.info.resumeid+"/",
+    	    		url : "/cvresume/GetDownloadUrl/"+cvresume.info.resumeid+"/",
     	    		success : function(message) {
     	    			if(message.type=="success"){
 							cvresume.info.downloadUrl=message.content;

@@ -1,0 +1,867 @@
+﻿<div class="jyCv-baseStyle" id="resume_base" data_color="j2" data_font_name="yahei" data_font_size="14" data_line_height="1.5" data_font_type="0" resume_sort="" wap_resume_sort="" template_set="{&quot;left&quot;:[{&quot;key&quot;:&quot;resume_head&quot;,&quot;isShow&quot;:true},{&quot;key&quot;:&quot;base_info&quot;,&quot;isShow&quot;:true},{&quot;key&quot;:&quot;base_home&quot;,&quot;isShow&quot;:true},{&quot;key&quot;:&quot;base_social&quot;,&quot;isShow&quot;:true},{&quot;key&quot;:&quot;resume_skill&quot;,&quot;isShow&quot;:true},{&quot;key&quot;:&quot;resume_hobby&quot;,&quot;isShow&quot;:true}],&quot;top&quot;:[],&quot;right&quot;:[{&quot;key&quot;:&quot;resume_name&quot;,&quot;isShow&quot;:true},{&quot;key&quot;:&quot;resume_job_preference&quot;,&quot;isShow&quot;:true},{&quot;key&quot;:&quot;resume_edu&quot;,&quot;isShow&quot;:true},{&quot;key&quot;:&quot;resume_work&quot;,&quot;isShow&quot;:true},{&quot;key&quot;:&quot;resume_internship&quot;,&quot;isShow&quot;:false},{&quot;key&quot;:&quot;resume_volunteer&quot;,&quot;isShow&quot;:false},{&quot;key&quot;:&quot;resume_project&quot;,&quot;isShow&quot;:false},{&quot;key&quot;:&quot;resume_honor&quot;,&quot;isShow&quot;:false},{&quot;key&quot;:&quot;resume_summary&quot;,&quot;isShow&quot;:true},{&quot;key&quot;:&quot;resume_portfolio&quot;,&quot;isShow&quot;:false},{&quot;key&quot;:&quot;resume_recoment&quot;,&quot;isShow&quot;:false},{&quot;key&quot;:&quot;resume_qrcode&quot;,&quot;isShow&quot;:false}],&quot;bottom&quot;:[]}" data_itemid="206" data-modal_margin="1">
+    <!--封面模块-->
+    <div class="jyCv-cover hidden" id="resume_cover">
+        <div class="coverItem  moduleItem"> 
+            <div class="baseItem-toolbar">
+                <span class="edit"></span>
+                <span class="handle ui-sortable-handle"></span>
+                <span class="add save_opt"></span>
+                <span class="change_style"></span>
+                <span class="set">
+                    <div class="set-con">
+                        <div class="inner clearfix">
+                            <div class="set-list hiddenTitle save_opt"><i>隐藏栏目标题</i><s></s></div>
+                            <div class="set-list hiddenTime save_opt"><i>隐藏时间模块</i><s></s></div>
+                            <div class="set-list hiddenText save_opt"><i>隐藏描述模块</i><s></s></div>
+                            <!--<div class="set-list changeTitle save_opt"><i>修改栏目标题</i><a class="change">修改</a></div>-->
+                            <div class="set-list recovery_style save_opt"><i>恢复初始样式</i><a class="recovery ">恢复</a></div>
+                            <div class="set-list">
+                            <i class="noChange">删除当前模块</i>
+                            <a class="delete">删除</a></div>
+                        </div>
+                    </div>
+                </span>
+            </div>
+            <dl>
+                <dt><div data-textlang="cover" contenteditable="false">封面</div></dt>
+                <dd>
+                    <div class="cover-con">
+                        <div class="cover-list cover-name moduleItemList"><a class="jyfont  divIconFont"></a><div data-placeholder="你的姓名" contenteditable="true"></div><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块删除"></a></div>
+                        <div class="cover-list cover-phone moduleItemList"><a class="jyfont divIconFont"></a><div data-placeholder="电话号码" contenteditable="true"></div><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块删除"></a></div>
+                        <div class="cover-list cover-email moduleItemList"><a class="jyfont divIconFont"></a><div data-placeholder="电子邮箱" contenteditable="true"></div><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块删除"></a></div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <!--自荐书模块-->
+    <div class="jyCv-letter hidden" id="resume_letter">
+        <div class="letterItem moduleItem">
+            <dl>
+                <dt><div data-textlang="letter" contenteditable="false">自荐信</div></dt>
+                <dd>
+                    <div data-placeholder="在这里添加描述" contenteditable="true"></div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="jyCv-resume clearfix" style="height: 1160px; min-height: 1160px;">
+        <div class="jyCv-baseTop"></div>
+        <div class="jyCv-baseLeft ui-sortable" id="foo">
+            <div class="headItem moduleItem resume_sort template_css " data-size="rectangle" id="resume_head">
+                <dl>
+                    <dt class="clearfix">
+                        <a class="jyfont divIconFont" for-key="resume_head">?</a>
+                        <span><div class="item-title module_item_title" data-placeholder="头像" data-textlang="head" contenteditable="false">头像</div></span>
+                    </dt>
+                    <dd class="clearfix">
+                        <!--头像尺寸设置弹框-->
+                        <div class="head_size_edit " data_track="PC-CV6.5.0-在线制作-文档编辑页-简历编辑区-简历头像-设置按钮"></div>
+                        <div class="head_size_selector">
+                            <span class="head_size_title">头像风格</span>
+                            <span class="head_size_option " data_track="PC-CV6.5.0-在线制作-文档编辑页-简历编辑区-简历头像-头像风格1" data-size="round"></span>
+                            <span class="head_size_option " data_track="PC-CV6.5.0-在线制作-文档编辑页-简历编辑区-简历头像-头像风格2" data-size="square"></span>
+                            <span class="head_size_option " data_track="PC-CV6.5.0-在线制作-文档编辑页-简历编辑区-简历头像-头像风格3" data-size="rectangle"></span>
+                        </div>
+                        <div class="head-con">
+                            <a class="img-preview-hover " data_track="PC-在线制作-文档编辑页-中间简历编辑-头像-上传照片"> </a>
+                            <div class="img-preview"><img src="http://static.500d.me/resources/500d/cvresume/images/1.jpg"></div>
+                        </div>
+                    </dd>
+                </dl>
+            </div><div class="infoItem bInfoItem moduleItem resume_sort template_css" id="base_info">
+
+                <div class="baseItem-toolbar">
+                    <span class="edit " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-编辑"></span><span class="handle ui-sortable-handle " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-拖动"></span><span class="add save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-添加"></span>
+                    <span class="change_style "></span>
+                    <span class="set " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-设置">
+                        <div class="set-con">
+                            <div class="inner clearfix">
+                                <div class="set-list hiddenTitle save_opt"><i>隐藏栏目标题</i><s></s></div>
+                                <div class="set-list hiddenTime save_opt"><i>隐藏时间模块</i><s></s></div>
+                                <div class="set-list hiddenText save_opt"><i>隐藏描述模块</i><s></s></div>
+                                <!--<div class="set-list changeTitle save_opt"><i>修改栏目标题</i><a class="change">修改</a></div>-->
+                                <div class="set-list recovery_style save_opt no_revert"><i>恢复初始样式</i><a class="recovery ">恢复</a></div>
+                                <div class="set-list"><i class="noChange">删除当前模块</i><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-删除">删除</a></div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <dl>
+                    <dt class="clearfix">
+                        <a class="jyfont divIconFont" for-key="base_info"></a>
+                        <span><div class="resume_lang module_item_title" for-key="info_title" data-placeholder="基本信息" data-placelang="baseMsg" data-textlang="baseMsg" contenteditable="false">基本信息</div></span>
+                    </dt>
+                    <dd class="clearfix">
+                        <div class="info-con">
+                            <!-- 渲染时 从工作年限开始没有内容的 div 添加 hidden 类  身高 & 体重 要加小写单位 -->
+                            <div class="info-sex info-list moduleItemList hidden" id="sex"><a class="jyfont divIconFont" for-key="sex"></a><span class="" data_track="PC-在线制作-文档编辑页-中间简历编辑-基本信息（其他）-点击模块编辑"></span><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块删除"></a></div>
+                            <div class="info-age info-list moduleItemList " id="birth"><a class="jyfont divIconFont" for-key="birth"></a><span class="" data_track="PC-在线制作-文档编辑页-中间简历编辑-基本信息（其他）-点击模块编辑" data-placelang="age" data-value="" data-placeholder="年龄"></span><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块删除"></a></div>
+                            <div class="info-nation info-list moduleItemList hidden" id="nation"><a class="jyfont divIconFont" for-key="nation"></a><span class="" data_track="PC-在线制作-文档编辑页-中间简历编辑-基本信息（其他）-点击模块编辑"></span><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块删除"></a></div>
+                            <div class="info-highedu info-list moduleItemList hidden" id="education"><a class="jyfont divIconFont" for-key="education"></a><span class="" data_track="PC-在线制作-文档编辑页-中间简历编辑-基本信息（其他）-点击模块编辑" data-value=""></span><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块删除"></a></div>
+                            <div class="info-marital info-list moduleItemList hidden" id="marriageStatus"><a class="jyfont divIconFont" for-key="marriageStatus"></a><span class="" data_track="PC-在线制作-文档编辑页-中间简历编辑-基本信息（其他）-点击模块编辑" data-value=""></span><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块删除"></a></div>
+                            <div class="info-height info-list moduleItemList hidden" id="height"><a class="jyfont divIconFont" for-key="height"></a><span class="" data_track="PC-在线制作-文档编辑页-中间简历编辑-基本信息（其他）-点击模块编辑" data-value="">cm</span><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块删除"></a></div>
+                            <div class="info-status info-list moduleItemList hidden" id="politicalStatus"><a class="jyfont divIconFont" for-key="politicalStatus"></a><span class="" data_track="PC-在线制作-文档编辑页-中间简历编辑-基本信息（其他）-点击模块编辑" data-value=""></span><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块删除"></a></div>
+                            <div class="info-city info-list moduleItemList hidden" id="city"><a class="jyfont divIconFont" for-key="city"></a><span class="" data_track="PC-在线制作-文档编辑页-中间简历编辑-基本信息（其他）-点击模块编辑" data-placelang="city" data-value=""></span><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块删除"></a></div>
+                            <div class="info-work info-list moduleItemList " id="jobYear"><a class="jyfont divIconFont" for-key="jobYear"></a><span class="" data_track="PC-在线制作-文档编辑页-中间简历编辑-基本信息（其他）-点击模块编辑" data-value="" data-placelang="jobYear" data-placeholder="工作年限"></span><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块删除"></a></div>
+                            <div class="info-phone info-list moduleItemList " id="mobile"><a class="jyfont divIconFont" for-key="mobile"></a><span class="" data_track="PC-在线制作-文档编辑页-中间简历编辑-基本信息（其他）-点击模块编辑" data-placelang="phone" data-placeholder="联系电话"></span><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块删除"></a></div>
+                            <div class="info-email info-list moduleItemList " id="email"><a class="jyfont divIconFont" for-key="email"></a><span class="" data_track="PC-在线制作-文档编辑页-中间简历编辑-基本信息（其他）-点击模块编辑" data-placelang="email" data-placeholder="电子邮箱"></span><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块删除"></a></div>
+                            <div class="info-weight info-list moduleItemList hidden" id="weight"><a class="jyfont divIconFont" for-key="weight"></a><span class="" data_track="PC-在线制作-文档编辑页-中间简历编辑-基本信息（其他）-点击模块编辑" data-value="">kg</span><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块删除"></a></div>
+                            <!--自定义基本信息-->
+                        </div>
+                    </dd>
+                </dl>
+            </div><div class="homeItem bInfoItem moduleItem resume_sort hidden template_css" data-parts="" id="base_home">
+
+                <div class="baseItem-toolbar">
+                    <span class="edit " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-编辑"></span><span class="handle ui-sortable-handle " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-拖动"></span><span class="add save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-添加"></span>
+                    <span class="change_style "></span>
+                    <span class="set " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-设置">
+                        <div class="set-con">
+                            <div class="inner clearfix">
+                                <div class="set-list hiddenTitle save_opt"><i>隐藏栏目标题</i><s></s></div>
+                                <div class="set-list hiddenTime save_opt"><i>隐藏时间模块</i><s></s></div>
+                                <div class="set-list hiddenText save_opt"><i>隐藏描述模块</i><s></s></div>
+                                <!--<div class="set-list changeTitle save_opt"><i>修改栏目标题</i><a class="change">修改</a></div>-->
+                                <div class="set-list recovery_style save_opt no_revert"><i>恢复初始样式</i><a class="recovery ">恢复</a></div>
+                                <div class="set-list"><i class="noChange">删除当前模块</i><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-删除">删除</a></div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <dl>
+                    <dt class="clearfix">
+                        <a class="jyfont divIconFont" for-key="base_home">?</a>
+                        <span><div class="resume_lang module_item_title" for-key="base_home" data-placeholder="个人主页" data-placelang="homePage" data-textlang="homePage" contenteditable="false">个人主页</div></span>
+                    </dt>
+                    <dd class="clearfix">
+                        <div class="home-con">
+                        </div>
+                    </dd>
+                </dl>
+            </div><div class="socialItem bInfoItem moduleItem resume_sort template_css hidden" id="base_social">
+
+                <div class="baseItem-toolbar">
+                    <span class="edit " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-编辑"></span><span class="handle ui-sortable-handle " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-拖动"></span><span class="add save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-添加"></span>
+                    <span class="change_style "></span>
+                    <span class="set " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-设置">
+                        <div class="set-con">
+                            <div class="inner clearfix">
+                                <div class="set-list hiddenTitle save_opt"><i>隐藏栏目标题</i><s></s></div>
+                                <div class="set-list hiddenTime save_opt"><i>隐藏时间模块</i><s></s></div>
+                                <div class="set-list hiddenText save_opt"><i>隐藏描述模块</i><s></s></div>
+                                <!--<div class="set-list changeTitle save_opt"><i>修改栏目标题</i><a class="change">修改</a></div>-->
+                                <div class="set-list recovery_style save_opt no_revert"><i>恢复初始样式</i><a class="recovery ">恢复</a></div>
+                                <div class="set-list"><i class="noChange">删除当前模块</i><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-删除">删除</a></div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <dl>
+                    <dt class="clearfix">
+                        <a class="jyfont divIconFont" for-key="base_social"></a>
+                        <span><div class="resume_lang module_item_title" for-key="base_social" data-placeholder="社交账号" data-placelang="social" data-textlang="social" contenteditable="false">社交账号</div></span>
+                    </dt>
+                    <dd class="clearfix">
+                        <div class="social-con">
+                            <div class="social-wx social-list moduleItemList hidden"><a class="hvr-buzz" href="javascript:;" data-title="微信"></a><span>微信</span></div>
+                            <div class="social-qq social-list moduleItemList hidden"><a class="hvr-buzz" href="javascript:;" data-title="QQ"></a><span>QQ</span></div>
+                            <div class="social-zh social-list moduleItemList hidden"><a class="hvr-buzz" href="#" title="知乎"></a><span>知乎</span></div>
+                            <div class="social-wb social-list moduleItemList hidden"><a class="hvr-buzz" href="#" title="微博"></a><span>微博</span></div>
+                            <div class="social-dd social-list moduleItemList hidden"><a class="hvr-buzz" href="javascript:;" data-title="钉钉号"></a><span>钉钉号</span></div>
+                        </div>
+                    </dd>
+                </dl>
+            </div><div class="skillItem baseItem moduleItem resume_sort template_css" data-parts="" id="resume_skill">
+
+                <div class="baseItem-toolbar">
+                    <span class="edit " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-编辑"></span><span class="handle ui-sortable-handle  horizontal" data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-拖动"></span><span class="add save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-添加"></span>
+                    <span class="change_style "></span>
+                    <span class="set " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-设置">
+                        <div class="set-con">
+                            <div class="inner clearfix">
+                                <div class="set-list hiddenTitle save_opt"><i>隐藏栏目标题</i><s></s></div>
+                                <div class="set-list hiddenTime save_opt"><i>隐藏时间模块</i><s></s></div>
+                                <div class="set-list hiddenText save_opt"><i>隐藏描述模块</i><s></s></div>
+                                <!--<div class="set-list changeTitle save_opt"><i>修改栏目标题</i><a class="change">修改</a></div>-->
+                                <div class="set-list recovery_style save_opt no_revert"><i>恢复初始样式</i><a class="recovery ">恢复</a></div>
+                                <div class="set-list"><i class="noChange">删除当前模块</i><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-删除">删除</a></div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <dl>
+                    <dt class="clearfix ">
+                        <a class="jyfont divIconFont" for-key="resume_skill"></a>
+                        <span><div class="resume_lang module_item_title" for-key="resume_skill" data-placeholder="技能特长" data-placelang="skill" data-textlang="skill" contenteditable="false">技能特长</div></span>
+                    </dt>
+                    <dd class="clearfix">
+                        <div class="skill-con">
+                            <div class="baseItem-null" style="display: block;"><div class="baseItem-nullcon " data_track="PC-在线制作-文档编辑页-中间简历编辑-技能特长-添加我的技能特长"><i>+</i><span data-textlang="addSkills">技能特长</span></div></div>
+                        </div>
+                    </dd>
+                </dl>
+            </div><div class="hobbyItem baseItem moduleItem resume_sort template_css" data-parts="" id="resume_hobby">
+
+                <div class="baseItem-toolbar">
+                    <span class="edit " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-编辑"></span><span class="handle ui-sortable-handle  horizontal" data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-拖动"></span><span class="add save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-添加"></span>
+                    <span class="change_style "></span>
+                    <span class="set " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-设置">
+                        <div class="set-con">
+                            <div class="inner clearfix">
+                                <div class="set-list hiddenTitle save_opt"><i>隐藏栏目标题</i><s></s></div>
+                                <div class="set-list hiddenTime save_opt"><i>隐藏时间模块</i><s></s></div>
+                                <div class="set-list hiddenText save_opt"><i>隐藏描述模块</i><s></s></div>
+                                <!--<div class="set-list changeTitle save_opt"><i>修改栏目标题</i><a class="change">修改</a></div>-->
+                                <div class="set-list recovery_style save_opt no_revert"><i>恢复初始样式</i><a class="recovery ">恢复</a></div>
+                                <div class="set-list"><i class="noChange">删除当前模块</i><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-删除">删除</a></div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <dl>
+                    <dt class="clearfix ">
+                        <a class="jyfont divIconFont" for-key="resume_hobby"></a>
+                        <span><div class="resume_lang module_item_title" for-key="resume_hobby" data-placeholder="个人标签" data-placelang="hobby" data-textlang="hobby" contenteditable="false">个人标签</div></span>
+                    </dt>
+                    <dd class="clearfix">
+                        <div class="hobby-con">
+                            <div class="baseItem-null" style="display: block;"><div class="baseItem-nullcon " data_track="PC-在线制作-文档编辑页-中间简历编辑-个人标签-添加我的个人标签"><i>+</i><span data-textlang="addHobby">个人标签</span></div></div>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+            <!--头像模块-->
+            <!--基本信息模块-->
+            <!--个人主页模块-->
+            <!--社交账号模块-->
+            <!--技能特长模块-->
+            <!--兴趣爱好模块-->
+
+        </div>
+        <div class="jyCv-baseRight ui-sortable" id="bar">
+            <div class="nameItem bInfoItem moduleItem resume_sort template_css" id="resume_name">
+
+                <div class="baseItem-toolbar">
+                    <span class="edit " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-编辑"></span><span class="handle ui-sortable-handle " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-拖动"></span><span class="add save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-添加"></span>
+                    <span class="change_style "></span>
+                    <span class="set " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-设置">
+                        <div class="set-con" style="height: 0px; overflow: hidden;">
+                            <div class="inner clearfix">
+                                <div class="set-list hiddenTitle save_opt"><i>隐藏栏目标题</i><s></s></div>
+                                <div class="set-list hiddenTime save_opt"><i>隐藏时间模块</i><s></s></div>
+                                <div class="set-list hiddenText save_opt"><i>隐藏描述模块</i><s></s></div>
+                                <!--<div class="set-list changeTitle save_opt"><i>修改栏目标题</i><a class="change">修改</a></div>-->
+                                <div class="set-list recovery_style save_opt no_revert"><i>恢复初始样式</i><a class="recovery ">恢复</a></div>
+                                <div class="set-list"><i class="noChange">删除当前模块</i><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-删除">删除</a></div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <dl>
+                    <dt class="clearfix">
+                        <a class="jyfont divIconFont" for-key="resume_name">?</a>
+                        <span><div class="item-title module_item_title" data-placeholder="姓名" contenteditable="false">姓名</div></span>
+                    </dt>
+                    <dd class="clearfix">
+                        <div class="name-con">
+                            <div class="name resume_lang " data_track="PC-在线制作-文档编辑页-中间简历编辑-基本信息（名字）-点击模块编辑" for-key="name" data-placeholder="你的名字" data-placelang="name" contenteditable="false"></div>
+                            <div class="word resume_lang " data_track="PC-在线制作-文档编辑页-中间简历编辑-基本信息（名字）-点击模块编辑" for-key="word" data-placeholder="一句话介绍自己，告诉HR为什么选择你而不是别人" data-placelang="word" contenteditable="false"></div>
+                        </div>
+                    </dd>
+                </dl>
+            </div><div class="inteItem baseItem moduleItem resume_sort template_css" data-parts="" id="resume_job_preference">
+
+                <div class="baseItem-toolbar">
+                    <span class="edit " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-编辑"></span><span class="handle ui-sortable-handle  horizontal" data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-拖动"></span><span class="add save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-添加"></span>
+                    <span class="change_style "></span>
+                    <span class="set " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-设置">
+                        <div class="set-con">
+                            <div class="inner clearfix">
+                                <div class="set-list hiddenTitle save_opt"><i>隐藏栏目标题</i><s></s></div>
+                                <div class="set-list hiddenTime save_opt"><i>隐藏时间模块</i><s></s></div>
+                                <div class="set-list hiddenText save_opt"><i>隐藏描述模块</i><s></s></div>
+                                <!--<div class="set-list changeTitle save_opt"><i>修改栏目标题</i><a class="change">修改</a></div>-->
+                                <div class="set-list recovery_style save_opt no_revert"><i>恢复初始样式</i><a class="recovery ">恢复</a></div>
+                                <div class="set-list"><i class="noChange">删除当前模块</i><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-删除">删除</a></div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <dl>
+                    <dt class="clearfix ">
+                        <a class="jyfont divIconFont" for-key="resume_job_preference"></a>
+                        <span><div class="resume_lang module_item_title" for-key="resume_job_preference" data-placeholder="求职意向" data-placelang="job" data-textlang="job" contenteditable="false">求职意向</div></span>
+                    </dt>
+                    <dd class="clearfix">
+                        <div class="inte-con">
+                            <div data_track="PC-在线制作-文档编辑页-中间简历编辑-求职意向-点击模块编辑" class=" inte-job inte-list moduleItemList " id="jobFunction"><a class="jyfont divIconFont" for-key="jobFunction"></a><span data-placeholder="意向岗位" data-placelang="jobFun"></span><a href="javascript:;" class="delete"></a></div>
+                            <div data_track="PC-在线制作-文档编辑页-中间简历编辑-求职意向-点击模块编辑" class=" inte-type inte-list moduleItemList hidden" id="jobType"><a class="jyfont divIconFont" for-key="jobType">?</a><span data-value="" data-placeholder="职业类型" data-placelang="jobType"></span><a href="javascript:;" class="delete"></a></div>
+                            <div data_track="PC-在线制作-文档编辑页-中间简历编辑-求职意向-点击模块编辑" class=" inte-city inte-list moduleItemList " id="jobCity"><a class="jyfont divIconFont" for-key="jobCity"></a><span data-placeholder="意向城市" data-value="" data-placelang="jobCity"></span><a href="javascript:;" class="delete"></a></div>
+                            <div data_track="PC-在线制作-文档编辑页-中间简历编辑-求职意向-点击模块编辑" class=" inte-price inte-list moduleItemList " id="jobSalary"><a class="jyfont divIconFont" for-key="jobSalary"></a><span data-placeholder="薪资要求" data-placelang="jobSalary"></span><a href="javascript:;" class="delete job"></a></div>
+                            <div data_track="PC-在线制作-文档编辑页-中间简历编辑-求职意向-点击模块编辑" class=" inte-time inte-list moduleItemList " id="jobTime"><a class="jyfont divIconFont" for-key="jobTime"></a><span data-value="" data-placeholder="入职时间" data-placelang="jobTime"></span><a href="javascript:;" class="delete"></a></div>
+                        </div>
+                    </dd>
+                </dl>
+            </div><div class="eduItem baseItem timeItem moduleItem resume_sort template_css" data-parts="" id="resume_edu">
+
+                <div class="baseItem-toolbar">
+                    <span class="edit " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-编辑"></span><span class="handle ui-sortable-handle  vertical" data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-拖动"></span><span class="add save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-添加"></span>
+                    <span class="change_style "></span>
+                    <span class="set " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-设置">
+                        <div class="set-con" style="height: 0px; overflow: hidden;">
+                            <div class="inner clearfix">
+                                <div class="set-list hiddenTitle save_opt"><i>隐藏栏目标题</i><s></s></div>
+                                <div class="set-list hiddenTime save_opt"><i>隐藏时间模块</i><s></s></div>
+                                <div class="set-list hiddenText save_opt"><i>隐藏描述模块</i><s></s></div>
+                                <!--<div class="set-list changeTitle save_opt"><i>修改栏目标题</i><a class="change">修改</a></div>-->
+                                <div class="set-list recovery_style save_opt no_revert"><i>恢复初始样式</i><a class="recovery ">恢复</a></div>
+                                <div class="set-list"><i class="noChange">删除当前模块</i><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-删除">删除</a></div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <dl>
+                    <dt class="clearfix ">
+                        <a class="jyfont divIconFont" for-key="resume_edu"></a>
+                        <span><div class="resume_lang module_item_title" for-key="resume_edu" data-placeholder="教育背景" data-placelang="edu" data-textlang="edu" contenteditable="false">教育背景</div></span>
+                    </dt>
+                    <dd class="clearfix">
+                        <div class="dd-content moduleItemList">
+                            <div class="move-downup"><a class="up save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块上移"></a><a class="down save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块下移"></a><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块删除"></a></div><div class="dd-title clearfix">
+                                <span class="time">
+                                    <div class="date_select">
+                                        <div class="date_type">
+                                            <a data-type="time-start" class="current">开始</a>
+                                            <a data-type="time-end">结束</a>
+                                        </div>
+                                        <div class="date_list">
+                                            <!-- 开始时间 -->
+                                            <div class="select_panel start_time">
+                                                <div class="year_select">
+                                                    <div class="year_header">
+                                                        <a class="prev_years"></a>
+                                                        <span class="years_rang">2001-2009</span>
+                                                        <a class="next_years"></a>
+                                                    </div>
+                                                    <div class="year_body"></div>
+                                                </div>
+                                                <div class="month_select">
+                                                    <div class="month_header">2008</div>
+                                                    <div class="month_body">
+                                                        <span data-value="1">一月</span><span data-value="2">二月</span><span data-value="3">三月</span><span data-value="4">四月</span>
+                                                        <span data-value="5">五月</span><span data-value="6">六月</span><span data-value="7">七月</span><span data-value="8">八月</span>
+                                                        <span data-value="9">九月</span><span data-value="10">十月</span><span data-value="11">十一月</span><span data-value="12">十二月</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 结束时间 -->
+                                            <div class="select_panel end_time">
+                                                <div class="year_select">
+                                                    <div class="year_header">
+                                                        <a class="prev_years"></a>
+                                                        <span class="years_rang"></span>
+                                                        <a class="next_years"></a>
+                                                    </div>
+                                                    <div class="year_body"></div>
+                                                </div>
+                                                <div class="month_select">
+                                                    <div class="month_header"></div>
+                                                    <div class="month_body">
+                                                        <span data-value="1">一月</span><span data-value="2">二月</span><span data-value="3">三月</span><span data-value="4">四月</span>
+                                                        <span data-value="5">五月</span><span data-value="6">六月</span><span data-value="7">七月</span><span data-value="8">八月</span>
+                                                        <span data-value="9">九月</span><span data-value="10">十月</span><span data-value="11">十一月</span><span data-value="12">十二月</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-placeholder="设置时间" data-placelang="time" contenteditable="false"></div>
+                                </span>
+                                <span class="company"><div data-placeholder="填写学校名称" data-placelang="school" class="autocompleter-node" autocomplete="off" contenteditable="true"></div><div class="autocompleter " id="autocompleter-1"><ul class="autocompleter-list"></ul></div></span>
+                                <span class="post"><div data-placeholder="填写专业名称" data-placelang="major" contenteditable="true"></div></span>
+                            </div>
+                            <div class="dd-text clearfix">
+                                <div class="resume_lang resume_content" for-key="exper_content" data-placeholder="尽量简洁，突出重点，成绩优异的话建议写上GPA及排名等信息，如：GPA：3.72/4（专业前10%）                         GRE：324" data-placelang="description" contenteditable="true"></div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div><div class="experItem baseItem timeItem moduleItem resume_sort template_css" data-parts="" id="resume_work">
+
+                <div class="baseItem-toolbar">
+                    <span class="edit " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-编辑"></span><span class="handle ui-sortable-handle  vertical" data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-拖动"></span><span class="add save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-添加"></span>
+                    <span class="change_style "></span>
+                    <span class="set " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-设置">
+                        <div class="set-con">
+                            <div class="inner clearfix">
+                                <div class="set-list hiddenTitle save_opt"><i>隐藏栏目标题</i><s></s></div>
+                                <div class="set-list hiddenTime save_opt"><i>隐藏时间模块</i><s></s></div>
+                                <div class="set-list hiddenText save_opt"><i>隐藏描述模块</i><s></s></div>
+                                <!--<div class="set-list changeTitle save_opt"><i>修改栏目标题</i><a class="change">修改</a></div>-->
+                                <div class="set-list recovery_style save_opt no_revert"><i>恢复初始样式</i><a class="recovery ">恢复</a></div>
+                                <div class="set-list"><i class="noChange">删除当前模块</i><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-删除">删除</a></div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <dl>
+                    <dt class="clearfix ">
+                        <a class="jyfont divIconFont" for-key="resume_work"></a>
+                        <span><div class="resume_lang module_item_title" for-key="resume_work" data-placeholder="工作经验" data-placelang="exper" data-textlang="exper" contenteditable="false">工作经验</div></span>
+                    </dt>
+                    <dd class="clearfix">
+                        <div class="dd-content moduleItemList">
+                            <div class="move-downup"><a class="up save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块上移"></a><a class="down save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块下移"></a><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块删除"></a></div><div class="dd-title clearfix">
+                                <span class="time">
+                                    <div class="date_select">
+                                        <div class="date_type">
+                                            <a data-type="time-start" class="current">开始</a>
+                                            <a data-type="time-end">结束</a>
+                                        </div>
+                                        <div class="date_list">
+                                            <!-- 开始时间 -->
+                                            <div class="select_panel start_time">
+                                                <div class="year_select">
+                                                    <div class="year_header">
+                                                        <a class="prev_years"></a>
+                                                        <span class="years_rang">2001-2009</span>
+                                                        <a class="next_years"></a>
+                                                    </div>
+                                                    <div class="year_body"></div>
+                                                </div>
+                                                <div class="month_select">
+                                                    <div class="month_header">2008</div>
+                                                    <div class="month_body">
+                                                        <span data-value="1">一月</span><span data-value="2">二月</span><span data-value="3">三月</span><span data-value="4">四月</span>
+                                                        <span data-value="5">五月</span><span data-value="6">六月</span><span data-value="7">七月</span><span data-value="8">八月</span>
+                                                        <span data-value="9">九月</span><span data-value="10">十月</span><span data-value="11">十一月</span><span data-value="12">十二月</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 结束时间 -->
+                                            <div class="select_panel end_time">
+                                                <div class="year_select">
+                                                    <div class="year_header">
+                                                        <a class="prev_years"></a>
+                                                        <span class="years_rang"></span>
+                                                        <a class="next_years"></a>
+                                                    </div>
+                                                    <div class="year_body"></div>
+                                                </div>
+                                                <div class="month_select">
+                                                    <div class="month_header"></div>
+                                                    <div class="month_body">
+                                                        <span data-value="1">一月</span><span data-value="2">二月</span><span data-value="3">三月</span><span data-value="4">四月</span>
+                                                        <span data-value="5">五月</span><span data-value="6">六月</span><span data-value="7">七月</span><span data-value="8">八月</span>
+                                                        <span data-value="9">九月</span><span data-value="10">十月</span><span data-value="11">十一月</span><span data-value="12">十二月</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-placeholder="设置时间" data-placelang="time" contenteditable="false"></div>
+                                </span>
+                                <span class="company"><div data-placeholder="填写公司名称" data-placelang="organization" contenteditable="true"></div></span>
+                                <span class="post"><div data-placeholder="填写职位名称" data-placelang="JobTitle" contenteditable="true"></div></span>
+                            </div>
+                            <div class="dd-text clearfix">
+                                <div class="resume_lang resume_content" for-key="exper_content" data-placeholder="详细描述你的职责范围、工作任务及取得的成绩，工作经验的时间采取倒叙形式，最近经历写在前面，描述尽量具体简洁，工作经验的描述与目标岗位的招聘要求尽量匹配，用词精准。" data-placelang="description" contenteditable="true"></div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div><div class="intexperItem baseItem timeItem moduleItem resume_sort  hidden template_css" data-parts="" id="resume_internship" style="">
+
+                <div class="baseItem-toolbar">
+                    <span class="edit " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-编辑"></span><span class="handle ui-sortable-handle  vertical" data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-拖动"></span><span class="add save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-添加"></span>
+                    <span class="change_style "></span>
+                    <span class="set " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-设置">
+                        <div class="set-con">
+                            <div class="inner clearfix">
+                                <div class="set-list hiddenTitle save_opt"><i>隐藏栏目标题</i><s></s></div>
+                                <div class="set-list hiddenTime save_opt"><i>隐藏时间模块</i><s></s></div>
+                                <div class="set-list hiddenText save_opt"><i>隐藏描述模块</i><s></s></div>
+                                <!--<div class="set-list changeTitle save_opt"><i>修改栏目标题</i><a class="change">修改</a></div>-->
+                                <div class="set-list recovery_style save_opt no_revert"><i>恢复初始样式</i><a class="recovery ">恢复</a></div>
+                                <div class="set-list"><i class="noChange">删除当前模块</i><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-删除">删除</a></div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <dl>
+                    <dt class="clearfix ">
+                        <a class="jyfont divIconFont" for-key="resume_internship"></a>
+                        <span><div class="resume_lang module_item_title" for-key="resume_internship" data-placeholder="实习经历" data-placelang="intexper" data-textlang="intexper" contenteditable="false">实习经验</div></span>
+                    </dt>
+                    <dd class="clearfix">
+                        <div class="dd-content moduleItemList">
+                            <div class="move-downup"><a class="up save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块上移"></a><a class="down save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块下移"></a><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块删除"></a></div><div class="dd-title clearfix">
+                                <span class="time">
+                                    <div class="date_select">
+                                        <div class="date_type">
+                                            <a data-type="time-start" class="current">开始</a>
+                                            <a data-type="time-end">结束</a>
+                                        </div>
+                                        <div class="date_list">
+                                            <!-- 开始时间 -->
+                                            <div class="select_panel start_time">
+                                                <div class="year_select">
+                                                    <div class="year_header">
+                                                        <a class="prev_years"></a>
+                                                        <span class="years_rang">2001-2009</span>
+                                                        <a class="next_years"></a>
+                                                    </div>
+                                                    <div class="year_body"></div>
+                                                </div>
+                                                <div class="month_select">
+                                                    <div class="month_header">2008</div>
+                                                    <div class="month_body">
+                                                        <span data-value="1">一月</span><span data-value="2">二月</span><span data-value="3">三月</span><span data-value="4">四月</span>
+                                                        <span data-value="5">五月</span><span data-value="6">六月</span><span data-value="7">七月</span><span data-value="8">八月</span>
+                                                        <span data-value="9">九月</span><span data-value="10">十月</span><span data-value="11">十一月</span><span data-value="12">十二月</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 结束时间 -->
+                                            <div class="select_panel end_time">
+                                                <div class="year_select">
+                                                    <div class="year_header">
+                                                        <a class="prev_years"></a>
+                                                        <span class="years_rang"></span>
+                                                        <a class="next_years"></a>
+                                                    </div>
+                                                    <div class="year_body"></div>
+                                                </div>
+                                                <div class="month_select">
+                                                    <div class="month_header"></div>
+                                                    <div class="month_body">
+                                                        <span data-value="1">一月</span><span data-value="2">二月</span><span data-value="3">三月</span><span data-value="4">四月</span>
+                                                        <span data-value="5">五月</span><span data-value="6">六月</span><span data-value="7">七月</span><span data-value="8">八月</span>
+                                                        <span data-value="9">九月</span><span data-value="10">十月</span><span data-value="11">十一月</span><span data-value="12">十二月</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-placeholder="设置时间" data-placelang="time" contenteditable="false"></div>
+                                </span>
+                                <span class="company"><div data-placeholder="填写公司名称" data-placelang="organization" contenteditable="true"></div></span>
+                                <span class="post"><div data-placeholder="填写职位名称" data-placelang="JobTitle" contenteditable="true"></div></span>
+                            </div>
+                            <div class="dd-text clearfix">
+                                <div class="resume_lang resume_content" for-key="exper_content" data-placeholder="此项为非必选项，根据实际情况选择，实习经验的时间采取倒叙形式，最近经历写在前面，实习经验的描述与目标岗位的招聘要求尽量匹配，用词精准，实习成果尽量以数据来呈现，突出个人成果以及做出的贡献，描述尽量具体简洁。" data-placelang="description" contenteditable="true"></div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div><div class="volexperItem baseItem timeItem moduleItem resume_sort  hidden template_css" data-parts="" id="resume_volunteer" style="">
+
+                <div class="baseItem-toolbar">
+                    <span class="edit " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-编辑"></span><span class="handle ui-sortable-handle  vertical" data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-拖动"></span><span class="add save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-添加"></span>
+                    <span class="change_style "></span>
+                    <span class="set " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-设置">
+                        <div class="set-con">
+                            <div class="inner clearfix">
+                                <div class="set-list hiddenTitle save_opt"><i>隐藏栏目标题</i><s></s></div>
+                                <div class="set-list hiddenTime save_opt"><i>隐藏时间模块</i><s></s></div>
+                                <div class="set-list hiddenText save_opt"><i>隐藏描述模块</i><s></s></div>
+                                <!--<div class="set-list changeTitle save_opt"><i>修改栏目标题</i><a class="change">修改</a></div>-->
+                                <div class="set-list recovery_style save_opt no_revert"><i>恢复初始样式</i><a class="recovery ">恢复</a></div>
+                                <div class="set-list"><i class="noChange">删除当前模块</i><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-删除">删除</a></div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <dl>
+                    <dt class="clearfix ">
+                        <a class="jyfont divIconFont" for-key="resume_volunteer"></a>
+                        <span><div class="resume_lang module_item_title" for-key="resume_volunteer" data-placeholder="志愿者经历" data-placelang="volexper" data-textlang="volexper" contenteditable="false">志愿者经历</div></span>
+                    </dt>
+                    <dd class="clearfix">
+                        <div class="dd-content moduleItemList">
+                            <div class="move-downup"><a class="up save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块上移"></a><a class="down save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块下移"></a><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块删除"></a></div><div class="dd-title clearfix">
+                                <span class="time">
+                                    <div class="date_select">
+                                        <div class="date_type">
+                                            <a data-type="time-start" class="current">开始</a>
+                                            <a data-type="time-end">结束</a>
+                                        </div>
+                                        <div class="date_list">
+                                            <!-- 开始时间 -->
+                                            <div class="select_panel start_time">
+                                                <div class="year_select">
+                                                    <div class="year_header">
+                                                        <a class="prev_years"></a>
+                                                        <span class="years_rang">2001-2009</span>
+                                                        <a class="next_years"></a>
+                                                    </div>
+                                                    <div class="year_body"></div>
+                                                </div>
+                                                <div class="month_select">
+                                                    <div class="month_header">2008</div>
+                                                    <div class="month_body">
+                                                        <span data-value="1">一月</span><span data-value="2">二月</span><span data-value="3">三月</span><span data-value="4">四月</span>
+                                                        <span data-value="5">五月</span><span data-value="6">六月</span><span data-value="7">七月</span><span data-value="8">八月</span>
+                                                        <span data-value="9">九月</span><span data-value="10">十月</span><span data-value="11">十一月</span><span data-value="12">十二月</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 结束时间 -->
+                                            <div class="select_panel end_time">
+                                                <div class="year_select">
+                                                    <div class="year_header">
+                                                        <a class="prev_years"></a>
+                                                        <span class="years_rang"></span>
+                                                        <a class="next_years"></a>
+                                                    </div>
+                                                    <div class="year_body"></div>
+                                                </div>
+                                                <div class="month_select">
+                                                    <div class="month_header"></div>
+                                                    <div class="month_body">
+                                                        <span data-value="1">一月</span><span data-value="2">二月</span><span data-value="3">三月</span><span data-value="4">四月</span>
+                                                        <span data-value="5">五月</span><span data-value="6">六月</span><span data-value="7">七月</span><span data-value="8">八月</span>
+                                                        <span data-value="9">九月</span><span data-value="10">十月</span><span data-value="11">十一月</span><span data-value="12">十二月</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-placeholder="设置时间" data-placelang="time" contenteditable="false"></div>
+                                </span>
+                                <span class="company"><div data-placeholder="填写单位信息" data-placelang="organization" contenteditable="true"></div></span>
+                                <span class="post"><div data-placeholder="填写角色名称" data-placelang="JobTitle" contenteditable="true"></div></span>
+                            </div>
+                            <div class="dd-text clearfix">
+                                <div class="resume_lang resume_content" for-key="exper_content" data-placeholder="此项为非必选项，根据实际情况选择， 如果你的工作经验略显单薄，那么志愿者经验则能够帮助你在有限的条件下丰富你的简历，使你距离名企更进一步。" data-placelang="description" contenteditable="true"></div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div><div class="proexperItem baseItem timeItem moduleItem resume_sort  hidden template_css" data-parts="" id="resume_project" style="">
+
+                <div class="baseItem-toolbar">
+                    <span class="edit " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-编辑"></span><span class="handle ui-sortable-handle  vertical" data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-拖动"></span><span class="add save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-添加"></span>
+                    <span class="change_style "></span>
+                    <span class="set " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-设置">
+                        <div class="set-con">
+                            <div class="inner clearfix">
+                                <div class="set-list hiddenTitle save_opt"><i>隐藏栏目标题</i><s></s></div>
+                                <div class="set-list hiddenTime save_opt"><i>隐藏时间模块</i><s></s></div>
+                                <div class="set-list hiddenText save_opt"><i>隐藏描述模块</i><s></s></div>
+                                <!--<div class="set-list changeTitle save_opt"><i>修改栏目标题</i><a class="change">修改</a></div>-->
+                                <div class="set-list recovery_style save_opt no_revert"><i>恢复初始样式</i><a class="recovery ">恢复</a></div>
+                                <div class="set-list"><i class="noChange">删除当前模块</i><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-删除">删除</a></div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <dl>
+                    <dt class="clearfix ">
+                        <a class="jyfont divIconFont" for-key="resume_project"></a>
+                        <span><div class="resume_lang module_item_title" for-key="resume_project" data-placeholder="项目经验" data-placelang="proexper" data-textlang="proexper" contenteditable="false">项目经验</div></span>
+                    </dt>
+                    <dd class="clearfix">
+                        <div class="dd-content moduleItemList">
+                            <div class="move-downup"><a class="up save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块上移"></a><a class="down save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块下移"></a><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-子模块删除"></a></div><div class="dd-title clearfix">
+                                <span class="time">
+                                    <div class="date_select">
+                                        <div class="date_type">
+                                            <a data-type="time-start" class="current">开始</a>
+                                            <a data-type="time-end">结束</a>
+                                        </div>
+                                        <div class="date_list">
+                                            <!-- 开始时间 -->
+                                            <div class="select_panel start_time">
+                                                <div class="year_select">
+                                                    <div class="year_header">
+                                                        <a class="prev_years"></a>
+                                                        <span class="years_rang">2001-2009</span>
+                                                        <a class="next_years"></a>
+                                                    </div>
+                                                    <div class="year_body"></div>
+                                                </div>
+                                                <div class="month_select">
+                                                    <div class="month_header">2008</div>
+                                                    <div class="month_body">
+                                                        <span data-value="1">一月</span><span data-value="2">二月</span><span data-value="3">三月</span><span data-value="4">四月</span>
+                                                        <span data-value="5">五月</span><span data-value="6">六月</span><span data-value="7">七月</span><span data-value="8">八月</span>
+                                                        <span data-value="9">九月</span><span data-value="10">十月</span><span data-value="11">十一月</span><span data-value="12">十二月</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 结束时间 -->
+                                            <div class="select_panel end_time">
+                                                <div class="year_select">
+                                                    <div class="year_header">
+                                                        <a class="prev_years"></a>
+                                                        <span class="years_rang"></span>
+                                                        <a class="next_years"></a>
+                                                    </div>
+                                                    <div class="year_body"></div>
+                                                </div>
+                                                <div class="month_select">
+                                                    <div class="month_header"></div>
+                                                    <div class="month_body">
+                                                        <span data-value="1">一月</span><span data-value="2">二月</span><span data-value="3">三月</span><span data-value="4">四月</span>
+                                                        <span data-value="5">五月</span><span data-value="6">六月</span><span data-value="7">七月</span><span data-value="8">八月</span>
+                                                        <span data-value="9">九月</span><span data-value="10">十月</span><span data-value="11">十一月</span><span data-value="12">十二月</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-placeholder="设置时间" data-placelang="time" contenteditable="false"></div>
+                                </span>
+                                <span class="company"><div data-placeholder="填写项目名称" data-placelang="organization" contenteditable="true"></div></span>
+                                <span class="post"><div data-placeholder="填写角色名称" data-placelang="JobTitle" contenteditable="true"></div></span>
+                            </div>
+                            <div class="dd-text clearfix">
+                                <div class="resume_lang resume_content" for-key="exper_content" data-placeholder="描述你参加的项目负责的工作内容，内容清晰，突出重点，如项目描述、项目职责、项目业绩。" data-placelang="description" contenteditable="true"></div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div><div class="honorItem baseItem moduleItem descItem resume_sort  hidden template_css" data-parts="" id="resume_honor" style="">
+
+                <div class="baseItem-toolbar">
+                    <span class="edit " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-编辑"></span><span class="handle ui-sortable-handle  horizontal" data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-拖动"></span><span class="add save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-添加"></span>
+                    <span class="change_style "></span>
+                    <span class="set " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-设置">
+                        <div class="set-con">
+                            <div class="inner clearfix">
+                                <div class="set-list hiddenTitle save_opt"><i>隐藏栏目标题</i><s></s></div>
+                                <div class="set-list hiddenTime save_opt"><i>隐藏时间模块</i><s></s></div>
+                                <div class="set-list hiddenText save_opt"><i>隐藏描述模块</i><s></s></div>
+                                <!--<div class="set-list changeTitle save_opt"><i>修改栏目标题</i><a class="change">修改</a></div>-->
+                                <div class="set-list recovery_style save_opt no_revert"><i>恢复初始样式</i><a class="recovery ">恢复</a></div>
+                                <div class="set-list"><i class="noChange">删除当前模块</i><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-删除">删除</a></div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <dl>
+                    <dt class="clearfix ">
+                        <a class="jyfont divIconFont" for-key="resume_honor"></a>
+                        <span><div class="resume_lang module_item_title" for-key="resume_honor" data-placeholder="荣誉奖项" data-placelang="honor" data-textlang="honor" contenteditable="false">荣誉奖项</div></span>
+                    </dt>
+                    <dd class="clearfix">
+                        <div class="dd-content moduleItemList">
+                            <div class="dd-text clearfix">
+                                <div class="resume_lang resume_content" for-key="honor_content" data-placeholder="详细描述你所获得的奖项荣誉，时间倒叙，与目标岗位相关性强的写在前面，只写有代表性的奖项即可，同年或同类别的奖项可进行适当合并。" data-placelang="description" contenteditable="true"></div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div><div class="evalItem baseItem moduleItem descItem resume_sort template_css" data-parts="" id="resume_summary">
+
+                <div class="baseItem-toolbar">
+                    <span class="edit " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-编辑"></span><span class="handle ui-sortable-handle  horizontal" data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-拖动"></span><span class="add save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-添加"></span>
+                    <span class="change_style "></span>
+                    <span class="set " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-设置">
+                        <div class="set-con">
+                            <div class="inner clearfix">
+                                <div class="set-list hiddenTitle save_opt"><i>隐藏栏目标题</i><s></s></div>
+                                <div class="set-list hiddenTime save_opt"><i>隐藏时间模块</i><s></s></div>
+                                <div class="set-list hiddenText save_opt"><i>隐藏描述模块</i><s></s></div>
+                                <!--<div class="set-list changeTitle save_opt"><i>修改栏目标题</i><a class="change">修改</a></div>-->
+                                <div class="set-list recovery_style save_opt no_revert"><i>恢复初始样式</i><a class="recovery ">恢复</a></div>
+                                <div class="set-list"><i class="noChange">删除当前模块</i><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-删除">删除</a></div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <dl>
+                    <dt class="clearfix ">
+                        <a class="jyfont divIconFont" for-key="resume_summary"></a>
+                        <span><div class="resume_lang module_item_title" for-key="resume_summary" data-placeholder="自我评价" data-placelang="self" data-textlang="self" contenteditable="false">自我评价</div></span>
+                    </dt>
+                    <dd class="clearfix">
+                        <div class="dd-content moduleItemList">
+                            <div class="dd-text clearfix">
+                                <div class="resume_lang resume_content" for-key="summary_content" data-placeholder="篇幅不要太长，注意结合简历整体的美观度，如果真的有很多话要说，建议以求职信的形式附上。自我评价应做到突出自身符合目标岗位要求的“卖点”，避免过多使用形容词，而应该通过数据及实例来对自身价值进行深化。" data-placelang="description" contenteditable="true"></div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div><div class="workItem baseItem moduleItem resume_sort  hidden template_css" data-parts="" id="resume_portfolio" style="">
+
+                <div class="baseItem-toolbar">
+                    <span class="edit " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-编辑"></span><span class="handle ui-sortable-handle  horizontal" data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-拖动"></span><span class="add save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-添加"></span>
+                    <span class="change_style "></span>
+                    <span class="set " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-设置">
+                        <div class="set-con">
+                            <div class="inner clearfix">
+                                <div class="set-list hiddenTitle save_opt"><i>隐藏栏目标题</i><s></s></div>
+                                <div class="set-list hiddenTime save_opt"><i>隐藏时间模块</i><s></s></div>
+                                <div class="set-list hiddenText save_opt"><i>隐藏描述模块</i><s></s></div>
+                                <!--<div class="set-list changeTitle save_opt"><i>修改栏目标题</i><a class="change">修改</a></div>-->
+                                <div class="set-list recovery_style save_opt no_revert"><i>恢复初始样式</i><a class="recovery ">恢复</a></div>
+                                <div class="set-list"><i class="noChange">删除当前模块</i><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-删除">删除</a></div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <dl>
+                    <dt class="clearfix ">
+                        <a class="jyfont divIconFont" for-key="resume_portfolio"></a>
+                        <span><div class="resume_lang module_item_title" for-key="resume_portfolio" data-placeholder="作品展示" data-placelang="portfolio" data-textlang="portfolio">作品展示</div></span>
+                    </dt>
+                    <dd class="clearfix">
+                        <div class="work-con">
+                            <div class="baseItem-null" style="display: block;"><div class="baseItem-nullcon"><i>+</i><span data-textlang="addPortfolio">添加作品</span></div></div>
+                            <div class="work-con-img clearfix">
+                            </div>
+                            <div class="work-con-link clearfix">
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+            </div><div class="ewmItem baseItem moduleItem resume_sort  hidden template_css" data-parts="" id="resume_qrcode" style="">
+
+                <div class="baseItem-toolbar">
+                    <span class="edit " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-编辑"></span><span class="handle ui-sortable-handle  horizontal" data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-拖动"></span><span class="add save_opt " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-添加"></span>
+                    <span class="change_style "></span>
+                    <span class="set " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-设置">
+                        <div class="set-con">
+                            <div class="inner clearfix">
+                                <div class="set-list hiddenTitle save_opt"><i>隐藏栏目标题</i><s></s></div>
+                                <div class="set-list hiddenTime save_opt"><i>隐藏时间模块</i><s></s></div>
+                                <div class="set-list hiddenText save_opt"><i>隐藏描述模块</i><s></s></div>
+                                <!--<div class="set-list changeTitle save_opt"><i>修改栏目标题</i><a class="change">修改</a></div>-->
+                                <div class="set-list recovery_style save_opt no_revert"><i>恢复初始样式</i><a class="recovery ">恢复</a></div>
+                                <div class="set-list"><i class="noChange">删除当前模块</i><a class="delete " data_track="PC-在线制作-文档编辑页-中间简历编辑-{0}-删除">删除</a></div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <dl>
+                    <dt class="clearfix">
+                        <a class="jyfont divIconFont" for-key="resume_qrcode">?</a>
+                        <span><div class="resume_lang module_item_title" for-key="resume_qrcode" data-placeholder="二维码" data-placelang="code" data-textlang="code">二维码</div></span>
+                    </dt>
+                    <dd class="clearfix moduleItemList">
+                        <div class="ewm-con">
+                            <span><img class="qrImg" src="http://static.500d.me/resources/500d/images/ad_Attention_weixin_ewm.png" width="196"></span>
+                            <div class="resume_content" data-placeholder="感谢您的阅读，扫一扫查看我的手机简历" data-placelang="ewm" data-textlang="ewm" contenteditable="true">感谢您的阅读，扫一扫查看我的手机简历</div>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+            <!--姓名一句话模块-->
+            <!--求职意向模块-->
+            <!--教育背景模块-->
+            <!--工作经历模块-->
+            <!--实习经历模块-->
+            <!--志愿者经历模块-->
+            <!--项目经验模块-->
+            <!--荣誉奖项模块-->
+            <!--自我评价模块-->
+            <!--作品展示模块-->
+            <!--手机二维码模块-->
+            <!--添加自定义模块-->
+        </div>
+        <div class="jyCv-baseBottom"></div> 
+    </div>
+</div>

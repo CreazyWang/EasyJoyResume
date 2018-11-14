@@ -164,7 +164,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\ReflectionUtil.cs" />
     <Compile Include="Utility\ResumeHelper.cs" />
-    <Compile Include="Utility\TxtHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\animate.css" />
@@ -172,7 +171,6 @@
     <Content Include="Content\cvresume\bg0019.css" />
     <Content Include="Content\cvresume\common.css" />
     <Content Include="Content\cvresume\jl0003.css" />
-    <Content Include="Content\cvresume\jl0007.css" />
     <Content Include="Content\cvresume\jm0001.css" />
     <Content Include="Content\cvresume\jm0001y.css" />
     <Content Include="Content\cvresume\jm0106.css" />
@@ -184,27 +182,15 @@
     <Content Include="Content\cvresume\jm0347.css" />
     <Content Include="Content\cvresume\jm0350.css" />
     <Content Include="Content\cvresume\jm0369.css" />
-    <Content Include="Content\cvresume\parts_css.css" />
     <Content Include="Content\cvresume\sjs0056.css" />
     <Content Include="Content\cvresume\um0010.css" />
     <Content Include="Content\cvresume\um0016.css" />
     <Content Include="Content\cvresume\um0072.css" />
     <Content Include="fonts\editresume\iconfont.svg" />
-    <Content Include="Html\jl0003.html" />
-    <Content Include="Html\jm0256.html" />
-    <Content Include="Html\sjs0140.html" />
-    <Content Include="Html\jm0217.html" />
-    <Content Include="Html\jm0288.html" />
-    <Content Include="Html\jm0292.html" />
-    <Content Include="Html\um0016.html" />
-    <Content Include="Html\jm0369.html" />
-    <Content Include="Html\jm0203.html" />
     <Content Include="images\common\tips.jpg" />
     <Content Include="images\cvresume\diagnosing.gif" />
     <Content Include="Content\cvresume\edit.css" />
     <Content Include="Content\cvresume\jm0203.css" />
-    <Content Include="images\cvresume\jl0007\j1_head_bg.png" />
-    <Content Include="images\cvresume\jl0007\j9_head_bg.png" />
     <Content Include="images\cvresume\member_zxwd.jpg" />
     <Content Include="images\cvresume\paging_bg.png" />
     <Content Include="Content\cvresume\parts.css" />
@@ -518,8 +504,6 @@
     <Content Include="Views\CvResume\ResumeModule.cshtml" />
     <Content Include="Views\CvResume\EditTemplate.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
-    <Content Include="Views\CvResume\Index.cshtml" />
-    <Content Include="Views\CvResume\ResumePreView.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -537,10 +521,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
-          <DevelopmentServerVPath>
-          </DevelopmentServerVPath>
-          <IISUrl>http://localhost:52003/</IISUrl>
+          <DevelopmentServerPort>53079</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53079/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

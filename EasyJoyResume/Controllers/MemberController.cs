@@ -19,6 +19,7 @@ namespace EasyJoyResume.Controllers
         {
             return View();
         }
+
         /// <summary>
         /// 投递简历
         /// </summary>

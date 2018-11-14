@@ -1,0 +1,159 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html class="cv-preview">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="ROBOTS" content="noindex,nofollow">
+    <meta name="robots" content="noarchive">
+    <title>@ViewBag.Title - 简悦</title>
+    <link href="~/Scripts/plugin/cropper/cropper.min.css" rel="stylesheet" />
+    <link href="~/Content/layer.css" rel="stylesheet" />
+    <link href="~/Content/editresume/base.css" rel="stylesheet" />
+    <link href="~/Content/common/common.css" rel="stylesheet" />
+    <link href="~/Content/cvresume/common.css" rel="stylesheet" />
+    <link href="~/Content/cvresume/parts.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/editresume/jquery-ui.min.js"></script>
+    <script src="~/Scripts/plugin/cropper/cropper.min.js"></script>
+    <script src="~/Scripts/plugin/modal/modal.js"></script>
+    <script src="~/Scripts/common_ext.js"></script>
+    <script src="~/Scripts/layer.js"></script>
+    <link href="~/Scripts/skin/layer.css" rel="stylesheet" />
+    <script src="~/Scripts/cvresume/jquery.s2t.js"></script>
+    <script src="~/Scripts/cvresume/resume.js"></script>
+    <link href="~/Content/cvresume/@ViewBag.ResumeCss" rel="stylesheet" />
+    <script src="~/Scripts/utils.js"></script>
+</head>
+<body class="cv-preview">
+    <!--在线编辑6.2.0 新增-->
+    <div class="release_operation">
+        <div class="operation_main" style="top: 208px;">
+            <!--下载-->
+            <div class="download current">
+                <a data-show-vip-type="resume" data_auth="download" href="javascript:;" id="releaseDownloadPDFBtn" data_visitid="9875076154" data_id="4452106">
+                    <i class="icon"></i>下载简历
+                </a>
+            </div>
+            <!--简历投递-->
+            <div class="share ">
+                <a href="/Member/ResumeSendEdit"><i></i>简历投递</a>
+            </div>
+        </div>
+    </div>
+    <div id="mark_mask" style="display:none;position:fixed;top:40px;left:0;z-index:99999999;height:1000px;width:100%;background:rgba(0,0,0,0.4);"></div>
+    <!--在线编辑6.2.0 新增end-->
+    <!--模态框写这里-->
+    <div class="jyCv-modals">
+        <div class="modal fade promptModal in" id="preview_qrcode_tips">
+            <div class="modal-dialog">
+                <div class="modal-content clearfix">
+                    <div id="preview_qrcode_image">
+                        <a href="javascript:;" class="close_icon"></a>
+                        <span>请使用微信扫描二维码查看简历</span>
+                        <img class="qrImg" src="%E7%AE%80%E5%8E%86%E8%AF%AF%E5%88%A0_files/101b3a7b-040e-4ccd-832a-059b19698711.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--简历编辑区域-->
+    <div class="jyCv-container resume">
+        <div class="mobile-head"></div>
+       @Html.Action("ResumePreView","CvResume",new { resumeId=558 })
+        
+        <!--非自由编辑-->
+        <!--联系我模块-->
+        <div class="contactItem hidden" id="resume_contact">
+            <dl>
+                <dt class="clearfix ">
+                    <span><div class="resume_lang module_item_title" for-key="resume_contact" data-placeholder="联系我" data-textlang="contact" data-placelang="contact">联系我</div></span>
+                </dt>
+                <dd class="clearfix">
+                    <div class="contact-con">
+                        <div class="disc resume_contact_desc" data-placeholder-tips="在这里留言，我将尽快联系你。" data-textlang="contactTip" data-placelang="contactTip" contenteditable="false">在这里留言，我将尽快联系你。</div>
+                        <div class="contact-main">
+                            <div class="name resume_contact_name" data-placeholder="姓名" data-textlang="contactName" data-placelang="contactName" contenteditable="true"></div>
+                            <div class="phone resume_contact_mobile" data-placeholder="电话" data-textlang="contactEmail" data-placelang="contactEmail" contenteditable="true"></div>
+                            <div class="text resume_contact_content" data-placeholder-tips="留言内容。" data-textlang="contactMsg" data-placelang="contactMsg" contenteditable="true">留言内容。</div>
+                            <button class="btn 500dtongji" data_track="PC-在线制作-文档编辑页-中间简历编辑-联系我-发送" data-textlang="send">发送</button>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <script>
+            $(function () {
+                $("#resume_contact .btn").click(function () {
+                    cvresume.main.contact_me(4452106);
+                });
+                $("div[data-placeholder-tips]").each(function (index, ele) {
+                    var curhtml = $(ele).html();
+                    if (cvresume.main.is_empty(curhtml)) {
+                        $(ele).html($(ele).attr("data-placeholder-tips"));
+                    }
+                })
+                $(document).on("focus", "div[data-placeholder-tips]", function () {
+                    var curhtml = $(this).html();
+                    if ($(this).attr("data-placeholder-tips") == curhtml) {
+                        $(this).html("");
+                    }
+                })
+                $(document).on("blur", "div[data-placeholder-tips]", function () {
+                    var curhtml = $(this).html();
+                    if (cvresume.main.is_empty(curhtml)) {
+                        $(this).html($(this).attr("data-placeholder-tips"));
+                    }
+                })
+            });
+        </script>
+        <div class="mobile-bottom"></div>
+    </div>
+
+
+    <script>
+        $(function () {
+            cvresume.main.resume_release_pageInit();
+            common.main.repairResumeLeftHeight();
+            if (common.main.getUrlParamsValue("device") == "wap") {
+                $(".share [data-target='#shareResume-modal']").attr("data-target", "#preview_qrcode_tips");
+                $("#preview_qrcode_tips").on('click', function () {
+                    $("#preview_qrcode_tips").modal("hide");
+                })
+            }
+
+            common.main.pagination_and_magnifier();//在线编辑6.2.0新增 - 分页和图片放大镜
+            //绑定处理事件
+
+            QR_code_position();
+            function QR_code_position() {
+                if ($(window).height() <= 800) {
+                    $(".operation_main").css("top", "208px")
+                } else {
+                    $(".operation_main").css("bottom", "130px")
+                }
+            }
+            $(window).on("resize", function () {
+                QR_code_position();
+            });
+
+            common.main.init_authority_lock();
+            common.main.template_down_event();
+        });
+        $(function () {
+            $('.zhaopin_bottom .close').on('click', function () {
+                $(this).parent('.zhaopin_bottom').css('bottom', '-350px')
+            });
+
+            $('.down_word_template i').hover(function () {
+                $('.down_word_template p').addClass("show")
+            }, function () {
+                $('.down_word_template p').removeClass("show")
+            });
+        });
+    </script>
+</body>
+</html>

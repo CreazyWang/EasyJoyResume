@@ -572,16 +572,13 @@
                                     </div>
                                     <div class="dd-title clearfix @ViewBag.isTimeShow">
                                         <span class="time">
-                                            <div class="date_select"></div>
+
                                             <div data-placeholder="设置时间" data-placelang="time" contenteditable="false">
                                                 <i class="time-start">@Edu.beginTime</i>-<i class="time-end">@Edu.endTime</i>
                                             </div>
                                         </span>
                                         <span class="company">
-                                            <div data-placeholder="填写学校名称" data-placelang="school" class="autocompleter-node" autocomplete="off" contenteditable="true">@Edu.unit</div>
-                                            <div class="autocompleter " id="autocompleter-1">
-                                                <ul class="autocompleter-list"></ul>
-                                            </div>
+                                            <div data-placeholder="填写学校名称" data-placelang="school" contenteditable="true">@Html.Raw(Edu.unit) </div>
                                         </span>
                                         <span class="post"><div data-placeholder="填写专业名称" data-placelang="major" contenteditable="true">@Edu.job</div></span>
                                     </div>
@@ -595,21 +592,13 @@
                         {
                             <div class="dd-content moduleItemList">
                                 <div class="move-downup">
-                                    <a class="up save_opt"></a>
-                                    <a class="down save_opt"></a>
-                                    <a class="delete"></a>
-
-                                </div>
+                                <a class="up save_opt"></a><a class="down save_opt"></a><a class="delete"></a></div>
                                 <div class="dd-title clearfix">
                                     <span class="time">
-                                        <div class="date_select"></div>
                                         <div data-placeholder="设置时间" data-placelang="time" contenteditable="false"></div>
                                     </span>
                                     <span class="company">
-                                        <div data-placeholder="填写学校名称" data-placelang="school" class="autocompleter-node" autocomplete="off" contenteditable="true"></div>
-                                        <div class="autocompleter " id="autocompleter-1">
-                                            <ul class="autocompleter-list"></ul>
-                                        </div>
+                                        <div data-placeholder="填写学校名称" data-placelang="school" contenteditable="true"></div>
                                     </span>
                                     <span class="post"><div data-placeholder="填写专业名称" data-placelang="major" contenteditable="true"></div></span>
                                 </div>
@@ -617,6 +606,7 @@
                                     <div class="resume_lang resume_content" for-key="exper_content" data-placeholder="尽量简洁，突出重点，成绩优异的话建议写上GPA及排名等信息，如：GPA：3.72/4（专业前10%）                         GRE：324" data-placelang="description" contenteditable="true"></div>
                                 </div>
                             </div>
+                            
                         }
                     </dd>
                 </dl>
@@ -659,8 +649,7 @@
                                         <a class="delete"></a>
                                     </div>
                                     <div class="dd-title clearfix @ViewBag.isTimeShow">
-                                        <span class="time">
-                                            <div class="date_select"></div>
+                                        <span class="time"> 
                                             <div data-placeholder="设置时间" data-placelang="time" contenteditable="false">
                                                 <i class="time-start">@Work.beginTime</i>-<i class="time-end">@Work.endTime</i>
                                             </div>
@@ -688,7 +677,7 @@
                                 </div>
                                 <div class="dd-title clearfix @ViewBag.isTimeShow">
                                     <span class="time">
-                                        <div class="date_select"></div>
+                                        
                                         <div data-placeholder="设置时间" data-placelang="time" contenteditable="false"></div>
                                     </span>
                                     <span class="company"><div data-placeholder="填写公司名称" data-placelang="organization" contenteditable="true"></div></span>
@@ -741,7 +730,7 @@
                                     </div>
                                     <div class="dd-title clearfix @ViewBag.isTimeShow">
                                         <span class="time">
-                                            <div class="date_select"></div>
+                                            
                                             <div data-placeholder="设置时间" data-placelang="time" contenteditable="false">
                                                 <i class="time-start">@Internship.beginTime</i>-<i class="time-end">@Internship.endTime</i>
                                             </div>
@@ -769,7 +758,7 @@
                                 </div>
                                 <div class="dd-title clearfix @ViewBag.isTimeShow">
                                     <span class="time">
-                                        <div class="date_select"></div>
+                                        
                                         <div data-placeholder="设置时间" data-placelang="time" contenteditable="false"></div>
                                     </span>
                                     <span class="company"><div data-placeholder="填写公司名称" data-placelang="organization" contenteditable="true"></div></span>
@@ -822,7 +811,7 @@
                                     </div>
                                     <div class="dd-title clearfix @ViewBag.isTimeShow">
                                         <span class="time">
-                                            <div class="date_select"></div>
+                                            
                                             <div data-placeholder="设置时间" data-placelang="time" contenteditable="false">
                                                 <i class="time-start">@Volunteer.beginTime</i>-<i class="time-end">@Volunteer.endTime</i>
                                             </div>
@@ -848,7 +837,7 @@
                                 </div>
                                 <div class="dd-title clearfix @ViewBag.isTimeShow">
                                     <span class="time">
-                                        <div class="date_select"></div>
+                                        
                                         <div data-placeholder="设置时间" data-placelang="time" contenteditable="false"></div>
                                     </span>
                                     <span class="company"><div data-placeholder="填写单位信息" data-placelang="organization" contenteditable="true"></div></span>
@@ -904,7 +893,7 @@
                                     </div>
                                     <div class="dd-title clearfix @ViewBag.isTimeShow">
                                         <span class="time">
-                                            <div class="date_select"></div>
+                                            
                                             <div data-placeholder="设置时间" data-placelang="time" contenteditable="false">
                                                 <i class="time-start">@Project.beginTime</i>-<i class="time-end">@Project.endTime</i>
                                             </div>
@@ -928,7 +917,7 @@
                                 </div>
                                 <div class="dd-title clearfix @ViewBag.isTimeShow">
                                     <span class="time">
-                                        <div class="date_select"></div>
+                                        
                                         <div data-placeholder="设置时间" data-placelang="time" contenteditable="false"></div>
                                     </span>
                                     <span class="company"><div data-placeholder="填写项目名称" data-placelang="organization" contenteditable="true"></div></span>

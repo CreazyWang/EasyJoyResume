@@ -10,14 +10,22 @@ namespace EasyJoyResume
     public class RouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)
-        {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+        { 
+            //简历预览
+            routes.MapRoute(
+              name: "ResumePreView",
+              url: "CvResume/{id}",
+              defaults: new { controller = "CvResume", action = "Index", id = UrlParameter.Optional },
+              constraints: new { id = @"\d+"  }
+            );
+          
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+
         }
     }
 }

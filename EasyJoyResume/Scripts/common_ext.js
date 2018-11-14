@@ -158,7 +158,7 @@ common.main = {
 		    	$.ajax({type : "get",
 				   	cache: false,
 				   	async : false,
-				   	url : "/cvresume/get_download_url/"+id+"/",
+				   	url : "/cvresume/GetDownloadUrl?id="+id+"",
 				   	success : function(message) {
 				   		if(message.type=="success"){
 				   			downloadUrl=message.content;
@@ -170,7 +170,7 @@ common.main = {
 	    		if(!common.main.is_empty(downloadUrl)){
 	    			var timestr=new Date().getTime();
 	    			var reg=/_\d*\.pdf/;
-	    			downloadUrl=downloadUrl.replace(reg,"_"+timestr+".pdf");
+	    			//downloadUrl=downloadUrl.replace(reg,"_"+timestr+".pdf");
 	    			window.open(downloadUrl);
 	    		}
 	    	});
@@ -220,7 +220,7 @@ common.main = {
 	    			$.ajax({type : "get",
 			    		cache: false,
 			    		async : false,
-			    		url : "/cvresume/get_download_url/"+id+"/",
+			    		url : "/cvresume/GetDownloadUrl?id="+id+"",
 			    		success : function(message) {
 			    			if(message.type=="success"){
 								downloadUrl=message.content;
@@ -232,9 +232,9 @@ common.main = {
 			    	});
 	    		}
 	    		if(downloadFlag){
-	    			var timestr=new Date().getTime();
-	    			var reg=/_\d*\.pdf/;
-	    			downloadUrl=downloadUrl.replace(reg,"_"+timestr+".pdf");
+	    			 var timestr=new Date().getTime();
+	    			 var reg=/_\d*\.pdf/;
+	    			//downloadUrl=downloadUrl.replace(reg,"_"+timestr+".pdf");
 	    			window.open(downloadUrl);
 	    			//下载提示
 	    			var param=location.search;
@@ -1355,7 +1355,7 @@ common.main = {
 	    			$(".share_resume_modal .share_select .password_box").slideUp(200);
 	    			// 设置公开状态
 	    			var status = $this.parent("li").attr("data-status");
-	    			$.post("/cvresume/set_visit_type/",{
+	    			$.post("/cvresume/SetVisitType/",{
 	    				visitType: status,
 	    				resumeid: resume_id
 	    			},function(data){
@@ -1395,7 +1395,7 @@ common.main = {
 	    			},
 	    			onOk: function(value){
 	    				pwd.removeAttr("style");
-	    				$.post("/cvresume/set_visit_password/", {
+	    				$.post("/cvresume/SetVisitPassword/", {
 	    					password: pwd.val(),
 	    					resumeid: resume_id
 	    				},function(message){
