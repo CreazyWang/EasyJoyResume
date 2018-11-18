@@ -11,11 +11,10 @@ namespace EasyJoyResume.Models.ViewModel
     /// </summary>
     public class resume_base
     {
-        public resume_base()
+        public resume_base() { }
+        public resume_base(string resume_title, string resume_scale, string resume_language, resume_set resume_set, modul_show modul_show, iconFontMap iconFontMap, List<resume_cover_item> resume_cover, string resume_letter, string resume_head, string resume_headType, resume_base_info resume_base_info, resume_job_preference resume_job_preference,  resume_skill[]  resume_skill, List<resume_hobby> resume_hobby, List<resume_experience>  resume_edu, List<resume_experience> resume_work, List<resume_experience> resume_internship, List<resume_experience> resume_volunteer, List<resume_experience> resume_project, string resume_summary, string resume_honor, resume_portfolio resume_portfolio, List<custom> custom, sort sort, resume_contact resume_contact, resume_qrcode resume_qrcode)
         {
-        }
-        public resume_base(string resume_scale, string resume_language, resume_set resume_set, modul_show modul_show, iconFontMap iconFontMap, List<resume_cover_item> resume_cover, string resume_letter, string resume_head, string resume_headType, resume_base_info resume_base_info, resume_job_preference resume_job_preference, List<resume_skill> resume_skills, List<resume_hobby> resume_hobby, List<resume_experience> resume_edu, List<resume_experience> resume_work, List<resume_experience> resume_internship, List<resume_experience> resume_volunteer, List<resume_experience> resume_project, string resume_summary, string resume_honor, resume_portfolio resume_portfolio, List<custom> custom, sort sort, resume_contact resume_contact, resume_qrcode resume_qrcode)
-        {
+            this.resume_title = resume_title;
             this.resume_scale = resume_scale;
             this.resume_language = resume_language;
             this.resume_set = resume_set;
@@ -27,7 +26,7 @@ namespace EasyJoyResume.Models.ViewModel
             this.resume_headType = resume_headType;
             this.resume_base_info = resume_base_info;
             this.resume_job_preference = resume_job_preference;
-            this.resume_skills = resume_skills;
+            this.resume_skill = resume_skill;
             this.resume_hobby = resume_hobby;
             this.resume_edu = resume_edu;
             this.resume_work = resume_work;
@@ -42,6 +41,8 @@ namespace EasyJoyResume.Models.ViewModel
             this.resume_contact = resume_contact;
             this.resume_qrcode = resume_qrcode;
         }
+
+        public string resume_title { set; get; }
         //简历进度
         public string resume_scale { set; get; }
         //简历语言
@@ -56,9 +57,9 @@ namespace EasyJoyResume.Models.ViewModel
         public string resume_headType { set; get; }
         public resume_base_info resume_base_info { set; get; }
         public resume_job_preference resume_job_preference { set; get; } 
-        public List<resume_skill> resume_skills { set; get; }
+        public resume_skill[] resume_skill { set; get; }
         public List<resume_hobby> resume_hobby { set; get; }
-        public List<resume_experience> resume_edu { set; get; }
+        public List<resume_experience>  resume_edu { set; get; }
         public List<resume_experience> resume_work { set; get; }
         public List<resume_experience> resume_internship { set; get; }
         public List<resume_experience> resume_volunteer { set; get; }

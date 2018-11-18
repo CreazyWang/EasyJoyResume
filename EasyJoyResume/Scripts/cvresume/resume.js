@@ -449,7 +449,7 @@ cvresume.main = {
                         }
                     } else {
                         //打点简历修改数据
-                        cvresume.main._500dtongji("PC-简历-修改简历");
+                        cvresume.main._("PC-简历-修改简历");
                     }
                     setTimeout(function () {
                         $(".liveupdate").find("span").css("color", "#00c190").text(common.main.date_format(new Date(), "HH:mm") + " 保存成功");
@@ -1403,10 +1403,10 @@ cvresume.main = {
             }
         });
     },
-    _500dtongji: function (lable) {
+    _: function (lable) {
         try {
             if (window.localStorage && (cvresume.main.is_empty(localStorage.getItem("pcEditDataUpdated")) || localStorage.getItem("pcEditDataUpdated") != cvresume.info.resumeid)) {
-                common.main._500dtongji(lable);
+                common.main._(lable);
                 localStorage.setItem("pcEditDataUpdated", cvresume.info.resumeid);
             }
         } catch (e) {

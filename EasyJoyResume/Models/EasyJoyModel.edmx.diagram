@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ab382bd1cb7443d3a44150c563d8c6f1" Name="Diagram1">
+        <EntityTypeShape EntityType="EasyJoy589452Model.EJ_RESUME_BANK547852" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EasyJoy589452Model.EJ_MY_RESUME652145" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="EasyJoy589452Model.EJ_USER241856" Width="1.5" PointX="0.75" PointY="4.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

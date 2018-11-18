@@ -286,7 +286,8 @@ loginMain.main = {
 			$(this).siblings(".valid-tips").css('display','none');
 		});	
     },
-    username_login:function(form){
+    username_login: function (form) {
+
     	if(form==null||form==undefined){
     		layer.msg("获取不到登录参数，请刷新重试");
     		return;
@@ -301,7 +302,7 @@ loginMain.main = {
     		return;
     	}
     	$.ajax({
-			url: "/common/public_key/",
+			url: "/Common/PublicKey/",
 			type: "GET",
 			dataType: "json",
 			cache: false,
@@ -335,7 +336,10 @@ loginMain.main = {
 							}else{
 								location.href = message.content;
 							}
-						} else {
+                        } else {
+                            layer.msg(message.content, function () {
+                                 
+                            });
                             form.find(".valid-msg").show();
                             form.find(".valid-msg").find(".incorrect_username").show();
                             form.find(".valid-msg").find(".null_tips").hide();
@@ -435,7 +439,7 @@ loginMain.main = {
     		return;
     	}
     	$.ajax({
-			url: "/common/public_key/",
+			url: "/Common/PublicKey/",
 			type: "GET",
 			dataType: "json",
 			cache: false,
@@ -501,7 +505,7 @@ loginMain.main = {
     		return;
     	}
     	$.ajax({
-			url: "/common/public_key/",
+			url: "/Common/PublicKey/",
 			type: "GET",
 			dataType: "json",
 			cache: false,
@@ -673,7 +677,7 @@ loginMain.main = {
     		return;
     	}
     	$.ajax({
-			url: "/common/public_key/",
+			url: "/Common/PublicKey/",
 			type: "GET",
 			dataType: "json",
 			cache: false,
@@ -730,7 +734,7 @@ loginMain.main = {
 	   	return;
 	   }
 	   $.ajax({
-			url: "/common/public_key/",
+			url: "/Common/PublicKey/",
 			type: "GET",
 			dataType: "json",
 			cache: false,
@@ -850,7 +854,7 @@ loginMain.main = {
   	    	return;
   	    }
     	$.ajax({
-			url: "/common/public_key/",
+			url: "/Common/PublicKey/",
 			type: "GET",
 			dataType: "json",
 			cache: false,
@@ -1120,7 +1124,7 @@ loginMain.main = {
     	//发送验证码
 		$.ajax({
 			type : "GET",
-			url : "/common/public_key/",
+			url : "/Common/PublicKey/",
 			async : false,
 			success : function(data) {
                 var _rsaKey = new RSAKey();

@@ -232,7 +232,7 @@
                     </dt>
                     <dd class="clearfix">
                         <div class="skill-con">
-                            @if (Resume.resume_skills.Count > 0)
+                            @if (Resume.resume_skill!=null)
                             {
                                 <div class="baseItem-null" style="display: none;">
                                     <div class="baseItem-nullcon">
@@ -240,7 +240,7 @@
                                         <span data-textlang="addSkills">技能特长</span>
                                     </div>
                                 </div>
-                                foreach (var skill in Resume.resume_skills)
+                                foreach (var skill in Resume.resume_skill)
                                 {
                                     <div class="skill-list moduleItemList">
                                         <span class="skill-title item_title"> @skill.name </span>
@@ -295,7 +295,7 @@
                     </dt>
                     <dd class="clearfix">
                         <div class="hobby-con">
-                            @if (Resume.resume_hobby.Count > 0)
+                            @if (Resume.resume_hobby != null)
                             {
                                 <div class="baseItem-null" style="display: none;">
                                     <div class="baseItem-nullcon">
@@ -560,7 +560,7 @@
                         <span><div class="resume_lang module_item_title" for-key="resume_edu" data-placeholder="教育背景" data-placelang="edu" data-textlang="edu" contenteditable="false">@Resume.modul_show.resume_edu.title</div></span>
                     </dt>
                     <dd class="clearfix">
-                        @if (Resume.resume_edu.Count > 0)
+                        @if (Resume.resume_edu != null)
                         {
                             foreach (var Edu in Resume.resume_edu)
                             {
@@ -638,7 +638,7 @@
                         <span><div class="resume_lang module_item_title" for-key="resume_work" data-placeholder="工作经验" data-placelang="exper" data-textlang="exper" contenteditable="false">@Resume.modul_show.resume_work.title</div></span>
                     </dt>
                     <dd class="clearfix">
-                        @if (Resume.resume_work.Count > 0)
+                        @if (Resume.resume_work != null)
                         {
                             foreach (var Work in Resume.resume_work)
                             {
@@ -718,7 +718,7 @@
                         <span><div class="resume_lang module_item_title" for-key="resume_internship" data-placeholder="实习经历" data-placelang="intexper" data-textlang="intexper" contenteditable="false">@Resume.modul_show.resume_internship.title</div></span>
                     </dt>
                     <dd class="clearfix">
-                        @if (Resume.resume_internship.Count > 0)
+                        @if (Resume.resume_internship != null)
                         {
                             foreach (var Internship in Resume.resume_internship)
                             {
@@ -799,7 +799,7 @@
                         <span><div class="resume_lang module_item_title" for-key="resume_volunteer" data-placeholder="志愿者经历" data-placelang="volexper" data-textlang="volexper" contenteditable="false">@Resume.modul_show.resume_volunteer.title</div></span>
                     </dt>
                     <dd class="clearfix">
-                        @if (Resume.resume_volunteer.Count > 0)
+                        @if (Resume.resume_volunteer != null)
                         {
                             foreach (var Volunteer in Resume.resume_volunteer)
                             {
@@ -881,7 +881,7 @@
                         </span>
                     </dt>
                     <dd class="clearfix">
-                        @if (Resume.resume_project.Count > 0)
+                        @if (Resume.resume_project != null)
                         {
                             foreach (var Project in Resume.resume_project)
                             {

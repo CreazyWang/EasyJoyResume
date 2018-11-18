@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<EasyJoyResume.Models.ViewModel.MyResumeItem> 
 @{
     Layout = null;
 }
@@ -190,7 +190,7 @@
                         <li class="current">
                             <div class="item clearfix">
                                 <div class="text">
-                                    <h3>在线简历(<i id="web_size">1</i>)</h3>
+                                    <h3>在线简历(<i id="web_size">@Model.Count()</i>)</h3>
                                 </div>
                             </div>
                         </li>
@@ -202,33 +202,35 @@
                             <div class="zxmbDiv">
                                 <div class="zxjl-ul clearfix">
                                     <div class="first item">
-                                        <div class="inner"><a class="open_create_resume_panel"></a></div>
-                                    </div>
-
-                                    <div class="item sort doc_resume" date_time="20180804224930">
-                                        <div class="inner">
-                                            <s class="bq"></s>
-                                            <div class="resume_content">
-                                                <a class="img cv-edit wd" href="/cvresume/edit/?itemid=206&amp;resumeId=6036868"></a> 
-                                            </div>
-                                            <div class="text">
-                                                <div>
-                                                    <s class="resume_title" data_num="0">我的简历-20180804</s>
-                                                    <a class="down_btn " data_track="PC-个人中心-我的简历页-在线简历展示-在线简历-下载" data-href="http://download.500d.me/cvresume/pdf_download/500d_6036868_206_3670436_20181106204450.pdf?downmsg=95ac05e6c1e380b5d109002fc629c34f" target="_blank"></a>
-                                                     <div class="set-btn  " data_track="PC-个人中心-我的简历页-在线简历展示-在线简历-设置">
-                                                        <div class="set-box">
-                                                            <div class="set-box-inner">
-                                                                <div class="set-box-list sz"><a class="cv-set"   title="设置简历" data_num="0" data_id="6036868" data_title="我的简历-20180804" data_visi_id="4302095086" data_visitype="open" data_visitpwd=""><i></i>设置</a></div>
-                                                                 <div class="set-box-list fx"><a class="cv-share"  title="分享简历" data_id="6036868" data_visi_id="4302095086" data_visitype="open" data_visitpwd=""><i></i>分享</a></div>
-                                                                 <div class="set-box-list sc"><a class="del_cvresume" data_id="6036868"><i></i>删除</a></div>
+                                        <div class="inner"><a href="/CvResume/CvTemplate" class="open_create_resume_panel"></a></div>
+                                    </div> 
+                                    @foreach (var item in Model)
+                                    {
+                                        <div class="item sort doc_resume" date_time="@item.date_time">
+                                            <div class="inner">
+                                                <s class="bq"></s>
+                                                <div class="resume_content">
+                                                    <a class="img cv-edit wd" href="/cvresume/edit/?itemid=@item.itemid&resumeId=@item.resumeId"></a>
+                                                </div>
+                                                <div class="text">
+                                                    <div>
+                                                        <s class="resume_title" data_num="0">@item.resume_title</s>
+                                                        <a class="down_btn" data-href="@item.download_href" target="_blank"></a>
+                                                        <div class="set-btn">
+                                                            <div class="set-box">
+                                                                <div class="set-box-inner">
+                                                                    <div class="set-box-list sz"><a class="cv-set" title="设置简历" data_num="0" data_id="@item.resumeId" data_title="@item.resume_title" data_visi_id="@item.data_visi_id" data_visitype="@item.data_visitype" data_visitpwd="@item.data_visitpwd"><i></i>设置</a></div>
+                                                                    <div class="set-box-list fx"><a class="cv-share" title="分享简历" data_id="@item.resumeId" data_visi_id="@item.data_visi_id" data_visitype="@item.data_visitype" data_visitpwd="@item.data_visitpwd"><i></i>分享</a></div>
+                                                                    <div class="set-box-list sc"><a class="del_cvresume" data_id="@item.resumeId"><i></i>删除</a></div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <i>@item.create_time</i>
                                                 </div>
-                                                <i>3个月前 </i>
                                             </div>
                                         </div>
-                                    </div>
+                                    }
                                 </div>
                             </div>
                         </li>

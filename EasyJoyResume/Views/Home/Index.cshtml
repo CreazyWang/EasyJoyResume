@@ -31,12 +31,12 @@
     <link href="../Scripts/plugin/owl-carouselowl/owl.carousel.min.css" rel="stylesheet">
 </head>
 <body class="index_div">
-    <div class="index_header">
+    <div class="index_header"> 
         <div class="jl-header">
             <div class="jl-logo">
                 <h1><a href="/"></a></h1>
             </div>
-            <div class="jl-touxiang" id="userHead">
+            <div class="jl-touxiang" id="userHead" style="display: none;">
                 <a class="jl-tx-img" id="user_center" href="/Member/Myresume/"> 
                 <i style="display: none;"></i> 
                 <img src="/../images/0.png" alt="" width="48" height="48"> 
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="jl-login"> 
-            <a style="display:none;" id="login" class="jl-login-a">登录&nbsp;/&nbsp;注册</a> 
+            <a   id="login" class="jl-login-a">登录&nbsp;/&nbsp;注册</a> 
             </div>
             <div class="jl-nav">
                 <ul>
@@ -542,7 +542,7 @@
                         <div class="field code-field">
                             <label title="验证码">验证码</label>
                             <input type="text" placeholder="请输入验证码" name="captchaCode">
-                            <img class="codeimg captchaImage" src="">
+                            <img class="codeimg captchaImage"  onclick="this.src='/Common/captcha?'+Math.random()" src="">
                             <div class="valid-error">
                                 <p class="error">请输入正确的验证码</p>
                             </div>
@@ -580,7 +580,7 @@
                         <div class="field code-field">
                             <label title="验证码：">验证码：</label>
                             <input type="text" placeholder="请输入验证码" name="captchaCode" autocomplete="off">
-                            <img class="codeimg captchaImage" src="">
+                            <img class="codeimg captchaImage" onclick="this.src='/Common/Captcha?'+Math.random()" src="">
                             <div class="valid-error">
                                 <p class="error">请输入正确的验证码</p>
                             </div>

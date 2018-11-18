@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EasyJoy589452Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EJ_MY_RESUME652145">
+          <Key>
+            <PropertyRef Name="MR_ID" />
+          </Key>
+          <Property Name="MR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MR_RESUMEID" Type="int" Nullable="false" />
+          <Property Name="MR_TITLE" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="MR_ITEMID" Type="int" Nullable="false" />
+          <Property Name="MR_MEMBER_ID" Type="int" Nullable="false" />
+          <Property Name="MR_JSON" Type="text" Nullable="false" />
+          <Property Name="MR_CREAT_TIME" Type="datetime" Nullable="false" />
+          <Property Name="MR_DEL" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EJ_RESUME_BANK547852">
+          <Key>
+            <PropertyRef Name="RB_ID" />
+          </Key>
+          <Property Name="RB_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RB_ITEMID" Type="int" Nullable="false" />
+          <Property Name="RB_CONTENT" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="RB_LANGUAGE" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="RB_COLOR" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="RB_FONT_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RB_FONT_SIZE" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="RB_FONT_HEIGHT" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="RB_FONT_TYPE" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="RB_RESUME_SOFT" Type="text" Nullable="false" />
+          <Property Name="RB_MODEL_MARGIN" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="RB_COUNT" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EJ_USER241856">
+          <Key>
+            <PropertyRef Name="U_ID" />
+          </Key>
+          <Property Name="U_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="U_MEMBER_ID" Type="int" />
+          <Property Name="U_MAIL" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="U_MOBILE" Type="varchar" MaxLength="100" />
+          <Property Name="U_NICK_NAME" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="U_PWD" Type="varchar" MaxLength="300" />
+          <Property Name="U_TYPE" Type="int" Nullable="false" />
+          <Property Name="U_DEL" Type="bit" Nullable="false" />
+          <Property Name="U_IMG" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="U_CREAT_TIME" Type="datetime" Nullable="false" />
+          <Property Name="U_LOGIN_IP" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="U_LOGIN_TIME" Type="datetime" Nullable="false" />
+          <Property Name="U_LOGIN_ERROR" Type="int" Nullable="false" />
+          <Property Name="U_SECRETKEY" Type="varchar" MaxLength="32" />
+          <Property Name="U_EMAIL_CHECK" Type="bit" Nullable="false" />
+          <Property Name="U_MOBILE_CHECK" Type="bit" Nullable="false" />
+        </EntityType>
+        <Function Name="P_EJ_RESUME_SAVE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RESUMEID" Type="int" Mode="In" />
+          <Parameter Name="MEMBERID" Type="int" Mode="In" />
+          <Parameter Name="ITEM_ID" Type="int" Mode="In" />
+          <Parameter Name="JSON" Type="text" Mode="In" />
+        </Function>
+        <EntityContainer Name="EasyJoy589452ModelStoreContainer">
+          <EntitySet Name="EJ_MY_RESUME652145" EntityType="Self.EJ_MY_RESUME652145" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EJ_RESUME_BANK547852" EntityType="Self.EJ_RESUME_BANK547852" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EJ_USER241856" EntityType="Self.EJ_USER241856" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EasyJoy589452Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="EJ_RESUME_BANK547852">
+          <Key>
+            <PropertyRef Name="RB_ID" />
+          </Key>
+          <Property Name="RB_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RB_ITEMID" Type="Int32" Nullable="false" />
+          <Property Name="RB_CONTENT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RB_LANGUAGE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RB_COLOR" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RB_FONT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RB_FONT_SIZE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RB_FONT_HEIGHT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RB_FONT_TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RB_RESUME_SOFT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RB_MODEL_MARGIN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RB_COUNT" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="EasyJoy589452Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EJ_RESUME_BANK547852" EntityType="Self.EJ_RESUME_BANK547852" />
+          <EntitySet Name="EJ_MY_RESUME652145" EntityType="EasyJoy589452Model.EJ_MY_RESUME652145" />
+          <FunctionImport Name="EJ_RESUME_SAVE">
+            <Parameter Name="RESUMEID" Mode="In" Type="Int32" />
+            <Parameter Name="MEMBERID" Mode="In" Type="Int32" />
+            <Parameter Name="ITEM_ID" Mode="In" Type="Int32" />
+            <Parameter Name="JSON" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="P_EJ_RESUME_SAVE">
+            <Parameter Name="RESUMEID" Mode="In" Type="Int32" />
+            <Parameter Name="MEMBERID" Mode="In" Type="Int32" />
+            <Parameter Name="ITEM_ID" Mode="In" Type="Int32" />
+            <Parameter Name="JSON" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="EJ_USER241856" EntityType="EasyJoy589452Model.EJ_USER241856" />
+        </EntityContainer>
+        <EntityType Name="EJ_MY_RESUME652145">
+          <Key>
+            <PropertyRef Name="MR_ID" />
+          </Key>
+          <Property Name="MR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MR_RESUMEID" Type="Int32" Nullable="false" />
+          <Property Name="MR_TITLE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MR_ITEMID" Type="Int32" Nullable="false" />
+          <Property Name="MR_MEMBER_ID" Type="Int32" Nullable="false" />
+          <Property Name="MR_JSON" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MR_CREAT_TIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MR_DEL" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EJ_USER241856">
+          <Key>
+            <PropertyRef Name="U_ID" />
+          </Key>
+          <Property Name="U_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="U_MEMBER_ID" Type="Int32" />
+          <Property Name="U_MAIL" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="U_MOBILE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="U_NICK_NAME" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="U_PWD" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="U_TYPE" Type="Int32" Nullable="false" />
+          <Property Name="U_DEL" Type="Boolean" Nullable="false" />
+          <Property Name="U_IMG" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="U_CREAT_TIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="U_LOGIN_IP" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="U_LOGIN_TIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="U_LOGIN_ERROR" Type="Int32" Nullable="false" />
+          <Property Name="U_SECRETKEY" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="U_EMAIL_CHECK" Type="Boolean" Nullable="false" />
+          <Property Name="U_MOBILE_CHECK" Type="Boolean" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EasyJoy589452ModelStoreContainer" CdmEntityContainer="EasyJoy589452Entities">
+          <EntitySetMapping Name="EJ_RESUME_BANK547852">
+            <EntityTypeMapping TypeName="EasyJoy589452Model.EJ_RESUME_BANK547852">
+              <MappingFragment StoreEntitySet="EJ_RESUME_BANK547852">
+                <ScalarProperty Name="RB_ID" ColumnName="RB_ID" />
+                <ScalarProperty Name="RB_ITEMID" ColumnName="RB_ITEMID" />
+                <ScalarProperty Name="RB_CONTENT" ColumnName="RB_CONTENT" />
+                <ScalarProperty Name="RB_LANGUAGE" ColumnName="RB_LANGUAGE" />
+                <ScalarProperty Name="RB_COLOR" ColumnName="RB_COLOR" />
+                <ScalarProperty Name="RB_FONT_NAME" ColumnName="RB_FONT_NAME" />
+                <ScalarProperty Name="RB_FONT_SIZE" ColumnName="RB_FONT_SIZE" />
+                <ScalarProperty Name="RB_FONT_HEIGHT" ColumnName="RB_FONT_HEIGHT" />
+                <ScalarProperty Name="RB_FONT_TYPE" ColumnName="RB_FONT_TYPE" />
+                <ScalarProperty Name="RB_RESUME_SOFT" ColumnName="RB_RESUME_SOFT" />
+                <ScalarProperty Name="RB_MODEL_MARGIN" ColumnName="RB_MODEL_MARGIN" />
+                <ScalarProperty Name="RB_COUNT" ColumnName="RB_COUNT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EJ_MY_RESUME652145">
+            <EntityTypeMapping TypeName="EasyJoy589452Model.EJ_MY_RESUME652145">
+              <MappingFragment StoreEntitySet="EJ_MY_RESUME652145">
+                <ScalarProperty Name="MR_DEL" ColumnName="MR_DEL" />
+                <ScalarProperty Name="MR_CREAT_TIME" ColumnName="MR_CREAT_TIME" />
+                <ScalarProperty Name="MR_JSON" ColumnName="MR_JSON" />
+                <ScalarProperty Name="MR_MEMBER_ID" ColumnName="MR_MEMBER_ID" />
+                <ScalarProperty Name="MR_ITEMID" ColumnName="MR_ITEMID" />
+                <ScalarProperty Name="MR_TITLE" ColumnName="MR_TITLE" />
+                <ScalarProperty Name="MR_RESUMEID" ColumnName="MR_RESUMEID" />
+                <ScalarProperty Name="MR_ID" ColumnName="MR_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="P_EJ_RESUME_SAVE" FunctionName="EasyJoy589452Model.Store.P_EJ_RESUME_SAVE" />
+          <EntitySetMapping Name="EJ_USER241856">
+            <EntityTypeMapping TypeName="EasyJoy589452Model.EJ_USER241856">
+              <MappingFragment StoreEntitySet="EJ_USER241856">
+                <ScalarProperty Name="U_MOBILE_CHECK" ColumnName="U_MOBILE_CHECK" />
+                <ScalarProperty Name="U_EMAIL_CHECK" ColumnName="U_EMAIL_CHECK" />
+                <ScalarProperty Name="U_SECRETKEY" ColumnName="U_SECRETKEY" />
+                <ScalarProperty Name="U_LOGIN_ERROR" ColumnName="U_LOGIN_ERROR" />
+                <ScalarProperty Name="U_LOGIN_TIME" ColumnName="U_LOGIN_TIME" />
+                <ScalarProperty Name="U_LOGIN_IP" ColumnName="U_LOGIN_IP" />
+                <ScalarProperty Name="U_CREAT_TIME" ColumnName="U_CREAT_TIME" />
+                <ScalarProperty Name="U_IMG" ColumnName="U_IMG" />
+                <ScalarProperty Name="U_DEL" ColumnName="U_DEL" />
+                <ScalarProperty Name="U_TYPE" ColumnName="U_TYPE" />
+                <ScalarProperty Name="U_PWD" ColumnName="U_PWD" />
+                <ScalarProperty Name="U_NICK_NAME" ColumnName="U_NICK_NAME" />
+                <ScalarProperty Name="U_MOBILE" ColumnName="U_MOBILE" />
+                <ScalarProperty Name="U_MAIL" ColumnName="U_MAIL" />
+                <ScalarProperty Name="U_MEMBER_ID" ColumnName="U_MEMBER_ID" />
+                <ScalarProperty Name="U_ID" ColumnName="U_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

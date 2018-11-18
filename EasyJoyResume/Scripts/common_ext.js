@@ -2870,11 +2870,11 @@ common.main = {
 		 * 登录信息
 		 */
 		loginMsg:function() {
-            userHead = "http://wx.qlogo.cn/mmopen/HxUXztbCLA4Oeecic8vKS0UISPibEBSOmZ1icRnvIUUrLcGjZ7ZWGd91CCtySjcC1LrlqaMqMTriaauHtcxZh6oqNI6O8676XSO0/0"/*getCookie("memberHead")*/;
-            userId = "1097785"/*getCookie("memberId")*/;
-            userEmail = "1160651865@jy500.com" /*getCookie("memberEmail")*/;
-            userIsVerifyEmail = true/*getCookie("memberIsVerifyEmail")*/;
-            memberIsVerifyMobile = true /*getCookie("memberIsVerifyMobile")*/;
+            userHead = getCookie("memberHead");
+            userId = getCookie("memberId");
+            userEmail =getCookie("memberEmail");
+            userIsVerifyEmail =getCookie("memberIsVerifyEmail");
+            memberIsVerifyMobile = getCookie("memberIsVerifyMobile");
 			if (userId != null || userEmail != null) {
 				$("#login").hide(); // 登录|注册按钮
 				$("#userHead").show().find("img").attr("src", userHead); // 显示头像
@@ -2911,17 +2911,13 @@ common.main = {
 				window.localStorage.removeItem("discount_ticket");
 				window.localStorage.removeItem("ticket_name");
 			}
-			$.get(jycnf.base + "/logout/", function(data){
+			$.get(/*jycnf.base + */"/common/logout/", function(data){
 				if(data.type == "success") {
 					$("#userHead").hide(); // 头像隐藏
 					$(".ul_top_user").hide(); // 用户操作菜单隐藏
 					$(".m-top_user").hide(); // 用户操作菜单隐藏
 					
-					$("#login").show(); // 显示登录|注册按钮
-					var synarr = $(data.content); // 同步登出论坛
-					synarr.each(function(index, ele) {
-					    $.getScript(ele.src, function(){});
-					});
+					$("#login").show(); // 显示登录|注册按钮 
 					location.reload();
 				} else {
 					var loaded = 0;
@@ -2930,14 +2926,14 @@ common.main = {
 						synarr.each(function(index, ele) {
 							$.getScript(ele.src, function(){
 								if (++loaded == synarr.length) {
-									location.href = jycnf.base + "/";
+									location.href = /*jycnf.base +*/ "/";
 								}
 							}).fail(function() {
-								location.href = jycnf.base + "/";
+								location.href = /*jycnf.base +*/ "/";
 						    });
 						});
 					} else {
-						location.href = jycnf.base + "/";
+						location.href =/* jycnf.base + */"/";
 					}
 				}
 			});

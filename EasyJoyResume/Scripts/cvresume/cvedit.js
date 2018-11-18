@@ -4683,7 +4683,12 @@ cvmutual.main = {
 		}catch(e){}
     }
 };
-$(function(){
+$(function () {
+    var userId = getCookie("memberId");
+    var userEmail = getCookie("memberEmail");
+    if (userId != null || userEmail != null) {
+        $(".bottom-modal").css("display", "none");
+    }
 	cvmutual.main.init_();// 初始化
 	cvmutual.main.caclulate_resume_scale();
 });

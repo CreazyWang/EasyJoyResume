@@ -45,10 +45,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="aliyun-net-sdk-core">
+      <HintPath>C:\Users\WangPeng\Desktop\aliyun-net-sdk-core.dll</HintPath>
+    </Reference>
+    <Reference Include="aliyun-net-sdk-dm">
+      <HintPath>C:\Users\WangPeng\Desktop\aliyun-net-sdk-dm.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -153,20 +167,59 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\ResumeSendRecordsController.cs" />
+    <Compile Include="DAL\DalBase.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\EasyJoyModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EasyJoyModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EasyJoyModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EasyJoyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EasyJoyModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EasyJoyModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EJ_MY_RESUME652145.cs">
+      <DependentUpon>EasyJoyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EJ_RESUME_BANK547852.cs">
+      <DependentUpon>EasyJoyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EJ_USER241856.cs">
+      <DependentUpon>EasyJoyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Resume\Base_Info_Item.cs" />
+    <Compile Include="Models\ViewModel\MyResumeItem.cs" />
     <Compile Include="Models\ViewModel\ResumeBase.cs" />
     <Compile Include="Models\ViewModel\ResumeEdit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\AliYunSendMail.cs" />
+    <Compile Include="Utility\BaseCookies.cs" />
+    <Compile Include="Utility\DateTimeHelper.cs" />
+    <Compile Include="Utility\IPHelper.cs" />
+    <Compile Include="Utility\PageValidate.cs" />
+    <Compile Include="Utility\PwdRSAEncrypt.cs" />
+    <Compile Include="Utility\Rand.cs" />
     <Compile Include="Utility\ReflectionUtil.cs" />
     <Compile Include="Utility\ResumeHelper.cs" />
+    <Compile Include="Utility\SessionHelper.cs" />
     <Compile Include="Utility\TxtHelper.cs" />
+    <Compile Include="Utility\ValidateCode.cs" />
+    <Compile Include="Utility\XmlHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\RSA_KEY\PrivateKey.xml" />
+    <Content Include="App_Data\RSA_KEY\PublicKey.xml" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\common\common.css" />
     <Content Include="Content\cvresume\bg0019.css" />
@@ -190,8 +243,9 @@
     <Content Include="Content\cvresume\um0016.css" />
     <Content Include="Content\cvresume\um0072.css" />
     <Content Include="fonts\editresume\iconfont.svg" />
-    <Content Include="Html\jl0003.html" />
     <Content Include="Html\jm0256.html" />
+    <Content Include="Html\jm0369 - 复制.html" />
+    <Content Include="Html\sjs0056.html" />
     <Content Include="Html\sjs0140.html" />
     <Content Include="Html\jm0217.html" />
     <Content Include="Html\jm0288.html" />
@@ -199,15 +253,37 @@
     <Content Include="Html\um0016.html" />
     <Content Include="Html\jm0369.html" />
     <Content Include="Html\jm0203.html" />
+    <Content Include="Html\jl0003.html" />
     <Content Include="images\common\tips.jpg" />
     <Content Include="images\cvresume\diagnosing.gif" />
     <Content Include="Content\cvresume\edit.css" />
     <Content Include="Content\cvresume\jm0203.css" />
     <Content Include="images\cvresume\jl0007\j1_head_bg.png" />
     <Content Include="images\cvresume\jl0007\j9_head_bg.png" />
+    <Content Include="images\cvresume\jm0256\j10_head.jpg" />
+    <Content Include="images\cvresume\jm0256\j11_head.jpg" />
+    <Content Include="images\cvresume\jm0256\j12_head.jpg" />
+    <Content Include="images\cvresume\jm0256\j13_head.jpg" />
+    <Content Include="images\cvresume\jm0256\j14_head.jpg" />
+    <Content Include="images\cvresume\jm0256\j15_head.jpg" />
+    <Content Include="images\cvresume\jm0256\j1_head.jpg" />
+    <Content Include="images\cvresume\jm0256\j2_head.jpg" />
+    <Content Include="images\cvresume\jm0256\j2_head.png" />
+    <Content Include="images\cvresume\jm0256\j3_head.jpg" />
+    <Content Include="images\cvresume\jm0256\j4_head.jpg" />
+    <Content Include="images\cvresume\jm0256\j5_head.jpg" />
+    <Content Include="images\cvresume\jm0256\j6_head.jpg" />
+    <Content Include="images\cvresume\jm0256\j7_head.jpg" />
+    <Content Include="images\cvresume\jm0256\j8_head.jpg" />
     <Content Include="images\cvresume\member_zxwd.jpg" />
     <Content Include="images\cvresume\paging_bg.png" />
     <Content Include="Content\cvresume\parts.css" />
+    <Content Include="images\cvresume\sjs0056\j1_head.png" />
+    <Content Include="images\cvresume\sjs0056\j2_head.png" />
+    <Content Include="images\cvresume\sjs0056\j3_head.png" />
+    <Content Include="images\cvresume\sjs0056\j4_head.png" />
+    <Content Include="images\cvresume\sjs0056\j5_head.png" />
+    <Content Include="images\cvresume\sjs0056\j6_head.png" />
     <Content Include="images\cvresume\upheadimg.png" />
     <Content Include="images\cvresume\vip_key1.png" />
     <Content Include="Content\editresume\bootstrap.min.css" />
@@ -378,6 +454,16 @@
     <Content Include="images\zjx\zjx0028_j7.jpg" />
     <Content Include="images\zjx\zjx0028_j8.jpg" />
     <Content Include="images\zjx\zjx0028_j9.jpg" />
+    <Content Include="Models\EasyJoyModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EasyJoyModel.edmx</DependentUpon>
+      <LastGenOutput>EasyJoyModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\EasyJoyModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EasyJoyModel.edmx</DependentUpon>
+      <LastGenOutput>EasyJoyModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\ajaxfileupload.js" />
     <Content Include="Scripts\cvresume\jquery.autocompleter.js" />
     <Content Include="Scripts\cvresume\school.js" />
@@ -495,14 +581,21 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Views\Common\" />
+    <Folder Include="Views\Password\" />
     <Folder Include="Views\ResumeSendRecords\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\editresume\iconfont.eot" />
     <Content Include="fonts\editresume\iconfont.ttf" />
     <Content Include="fonts\editresume\iconfont.woff" />
+    <EntityDeploy Include="Models\EasyJoyModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EasyJoyModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\EasyJoyModel.edmx.diagram">
+      <DependentUpon>EasyJoyModel.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\CvResume\CvTemplate.cshtml" />
     <Content Include="Views\CvResume\Edit.cshtml" />
@@ -520,6 +613,12 @@
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <Content Include="Views\CvResume\Index.cshtml" />
     <Content Include="Views\CvResume\ResumePreView.cshtml" />
+    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
+    <Content Include="Views\Member\CheckMobile.cshtml" />
+    <Content Include="Views\Member\CheckEmail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

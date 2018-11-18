@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
-using EasyJoyResume.Models.Resume;
+using EasyJoyResume.Models;
 using EasyJoyResume.Models.ViewModel;
+using Newtonsoft.Json;
 
 namespace EasyJoyResume.Controllers
 {
@@ -16,7 +19,8 @@ namespace EasyJoyResume.Controllers
         /// </summary>
         /// <param name="id">简历id</param>
         /// <returns></returns>
-        public ActionResult Index(int id) {
+        public ActionResult Index(int id)
+        {
             //id最大值 2147483647
             ViewBag.id = id;
             ViewBag.ResumeCss = "jm0203.css";
@@ -35,260 +39,60 @@ namespace EasyJoyResume.Controllers
         /// 简历在线编辑
         /// </summary>
         /// <returns></returns>
-        public ActionResult Edit(int itemid = 206, int resumeId = -1)
+        public ActionResult Edit(int itemid = 206, int resumeId = 0)
         {
-            ViewBag.ItemId = itemid;
-            ViewBag.Type = true;
-            //resumeId = 0;
-            ViewBag.EditType = true;//默认为加载模板 true ：加载模板； false : 加载用户编辑大的简历
-            if (resumeId == -1)//加载模板
+            ViewBag.itemid = itemid;
+            ViewBag.resumeid = 0;
+            EJ_USER241856 User = Utility.SessionHelper.GetLoginInfo();
+            DAL.DalBase<EJ_RESUME_BANK547852> dalBaseRB = new DAL.DalBase<EJ_RESUME_BANK547852>();
+            EJ_RESUME_BANK547852 ResumeBank = new EJ_RESUME_BANK547852();
+            resume_base resume_Base=new resume_base();
+            ///判断用户是否登录
+            if (User != null && Convert.ToInt32(User.U_MEMBER_ID) > 0)
             {
-                
-                //判断加载的简历模板CSS
-                ViewBag.ResumeCss = "jm0203.css";
-                Utility.TxtHelper txtHelper = new Utility.TxtHelper();
-
-                ViewBag.Html = txtHelper.ReadTxtContent(Server.MapPath("~/Html/jm0203.html"));
-                ViewBag.resume_language = "zh";
-                ViewBag.TemplateSet = "";
-                //查询加载的模板 
-                return View();
+                ViewBag.memberid = User.U_MEMBER_ID;
             }
-            else//加载用户简历
+            else
+            {
+                ViewBag.memberid = 0;
+            }
+            ViewBag.Type = true;   //默认为加载模板 true ：加载模板； false : 加载用户编辑的简历 
+            if (resumeId == 0)//加载模板
+            { 
+                ResumeBank = dalBaseRB.LoadEntities(a => a.RB_ITEMID == itemid).FirstOrDefault();
+                //没有查询到对应的简历模板信息，加载默认模板
+                if (ResumeBank == null)
+                {
+                    itemid = 206;
+                }
+                ResumeBank = dalBaseRB.LoadEntities(a => a.RB_ITEMID == itemid).FirstOrDefault();
+                resume_Base.resume_set = new resume_set(ResumeBank.RB_COLOR, ResumeBank.RB_FONT_NAME, ResumeBank.RB_FONT_SIZE, ResumeBank.RB_FONT_HEIGHT, ResumeBank.RB_MODEL_MARGIN, ResumeBank.RB_FONT_TYPE);
+                ViewBag.Title = "在线编辑简历模板";
+                //判断加载的简历模板CSS 
+                ViewBag.ResumeCss = ResumeBank.RB_CONTENT + ".css";
+                ViewBag.resume_language = ResumeBank.RB_LANGUAGE;
+                ViewBag.template_set = ResumeBank.RB_RESUME_SOFT;
+            }
+            else// 加载用户编辑的简历 
             {
                 ViewBag.Type = false;
-                ResumeEdit resumeEdit = new ResumeEdit();
-                resume_base resume_Base = new resume_base();
-                if (itemid == 206)
+                DAL.DalBase<EJ_MY_RESUME652145> dalBaseMR = new DAL.DalBase<EJ_MY_RESUME652145>();
+                EJ_MY_RESUME652145 Resume = dalBaseMR.LoadEntities(a => a.MR_DEL == false && a.MR_RESUMEID == resumeId && a.MR_MEMBER_ID == User.U_MEMBER_ID).FirstOrDefault();
+                if (Resume == null)//没有查询到用户简历
                 {
-                    ViewBag.TemplateSet = "{\"left\":[{\"key\":\"resume_head\",\"isShow\":true},{\"key\":\"base_info\",\"isShow\":true},{\"key\":\"base_home\",\"isShow\":true},{\"key\":\"base_social\",\"isShow\":true},{\"key\":\"resume_skill\",\"isShow\":true},{\"key\":\"resume_hobby\",\"isShow\":true}],\"top\":[],\"right\":[{\"key\":\"resume_name\",\"isShow\":true},{\"key\":\"resume_job_preference\",\"isShow\":true},{\"key\":\"resume_edu\",\"isShow\":true},{\"key\":\"resume_work\",\"isShow\":true},{\"key\":\"resume_internship\",\"isShow\":false},{\"key\":\"resume_volunteer\",\"isShow\":false},{\"key\":\"resume_project\",\"isShow\":false},{\"key\":\"resume_honor\",\"isShow\":false},{\"key\":\"resume_summary\",\"isShow\":true},{\"key\":\"resume_portfolio\",\"isShow\":false},{\"key\":\"resume_recoment\",\"isShow\":false},{\"key\":\"resume_qrcode\",\"isShow\":false}],\"bottom\":[]}";
-                    ViewBag.ResumeCss = "jm0203.css";
-                    resume_Base = new resume_base
-                    {
-                        resume_scale = "0",
-                        resume_language = "zh",
-                        resume_set = new resume_set("j2", "yahei", "14", "1.5", "1", "0"),
-                        modul_show = new modul_show(true, true, true, true,
-                        new modul_item_show() { isShow = true, isTitleShow = true,isTimeShow=true, isContentShow = true, title = "头像", key = "resume_head" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "基本信息", key = "base_info" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "个人主页", key = "base_home" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "社交账号", key = "base_social" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "技能特长", key = "resume_skill" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "个人标签", key = "resume_hobby" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "姓名", key = "resume_name" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "求职意向", key = "resume_job_preference" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "教育背景", key = "resume_edu" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "工作经验", key = "resume_work" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "实习经验", key = "resume_internship" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "志愿者经历", key = "resume_volunteer" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "项目经验", key = "resume_project" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "荣誉奖项", key = "resume_honor" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "自我评价", key = "resume_summary" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "作品展示", key = "resume_portfolio" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "二维码", key = "resume_qrcode" }
-                        ),
-                        iconFontMap = new iconFontMap("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""),
-                        resume_cover = new List<resume_cover_item>() { },
-                        resume_letter = "这是自荐信",
-                        resume_head = "http://static.500d.me/resources/500d/cvresume/images/1.jpg",
-                        resume_headType = "rectangle",
-                        resume_base_info = new resume_base_info("王朝阳", "路漫漫其修远兮", "25", "", "1770545529", "1160651865@qq.com", "男", "", "", "", "", "", "", new List<CustomMsg>(), new List<string>()),
-                        resume_job_preference = new resume_job_preference(),
-                        resume_skills = new List<resume_skill>(),
-                        resume_hobby = new List<resume_hobby>(),
-                        resume_edu = new List<resume_experience>(),
-                        resume_work = new List<resume_experience>(),
-                        resume_internship = new List<resume_experience>(),
-                        resume_volunteer = new List<resume_experience>(),
-                        resume_project = new List<resume_experience>(),
-                        resume_portfolio = new resume_portfolio(new List<Img>(), new List<Link>()),
-                        custom = new List<custom>(),
-                        sort = new sort(new List<string>() { "resume_head", "base_info", "base_home", "base_social", "resume_skill", "resume_hobby" }, new List<string>() { }, new List<string>() { "resume_name", "resume_job_preference", "resume_edu", "resume_work", "resume_internship", "resume_volunteer", "resume_project", "resume_honor", "resume_summary", "resume_portfolio", "resume_qrcode" }, new List<string>() { }),
-                        resume_contact = new resume_contact("", "在这里留言，我将尽快联系你。", "", "留言内容。"),
-                        resume_qrcode = new resume_qrcode("感谢您的阅读，扫一扫查看手机简历")
-                    };
-                    ViewBag.letterShow = "hidden";
-                    if (resume_Base.modul_show.letterShow)
-                    {
-                        ViewBag.letterShow = "";
-                    }
-                    ViewBag.coverShow = "hidden";
-                    if (resume_Base.modul_show.coverShow)
-                    {
-                        ViewBag.coverShow = "";
-                    }
-                    resumeEdit = new ResumeEdit()
-                    {//"j2", "yahei", "14", "1.5", "1", "0"
-                        resume_language = "zh",
-                        data_color = "j2",
-                        data_font_name = "yahei",
-                        data_font_size = "14",
-                        data_line_height = "1.5",
-                        data_font_type = "0",
-                        resume_sort = "",
-                        wap_resume_sort = "",
-                        template_set = "",
-                        data_itemid = itemid.ToString(),
-                        data_modal_margin = "1",
-                        sort = resume_Base.sort,
-                        coverModel = new CoverModel()
-                        {
-                            CoverShow = "hidden",
-                            ResumeCover = resume_Base.resume_cover
-                        },
-                        letterModel = new LetterModel()
-                        {
-                            LetterShow = "hidden",
-                            LetterContent = resume_Base.resume_letter
-                        },
-                        resumeHeadModel = new ResumeHeadModel()
-                        {
-                            Font = resume_Base.iconFontMap.resume_head,
-                            HeadLink = resume_Base.resume_head,
-                            key = resume_Base.modul_show.resume_head.key,
-                            title = resume_Base.modul_show.resume_head.title
-                        },
-                        baseInfoModel = new BaseInfoModel()
-                        {
-                            Font = resume_Base.iconFontMap.base_info,
-                            isContentShow = "hidden",
-                            isShow = "hidden",
-                            isTimeShow = "hidden",
-                            isTitleShow = "hidden",
-                            Item = new List<InfoItem>(),
-                            key = resume_Base.modul_show.base_info.key,
-                            title = resume_Base.modul_show.base_info.title
-                        },
-                        resumeExperience = new Dictionary<string, ResumeExperience>(),
-                        ResumeHonor = new ResumeHonor()
-                        {
-                            Font = resume_Base.iconFontMap.resume_honor,
-                            isContentShow = "hidden",
-                            isShow = "hidden",
-                            isTimeShow = "hidden",
-                            isTitleShow = "hidden",
-                            Content = resume_Base.resume_honor,
-                            key = resume_Base.modul_show.resume_honor.key,
-                            title = resume_Base.modul_show.resume_honor.title
-                        },
-                        ResumeName = new ResumeName()
-                        {
-                            Font = resume_Base.iconFontMap.resume_name,
-                            isContentShow = "hidden",
-                            isShow = "hidden",
-                            isTimeShow = "hidden",
-                            isTitleShow = "hidden",
-                            name = "",
-                            word = "",
-                            key = resume_Base.modul_show.resume_name.key,
-                            title = resume_Base.modul_show.resume_name.title
-                        },
-                        ResumeJobPreference = new ResumeJobPreference()
-                        {
-                            Font = resume_Base.iconFontMap.resume_job_preference,
-                            isContentShow = "hidden",
-                            isShow = "hidden",
-                            isTimeShow = "hidden",
-                            isTitleShow = "hidden",
-                            Item = new Dictionary<string, InfoItem>(),
-                            key = resume_Base.modul_show.resume_job_preference.key,
-                            title = resume_Base.modul_show.resume_job_preference.title
-                        },
-                        ResumeSummary = new ResumeSummary()
-                        {
-                            Font = resume_Base.iconFontMap.resume_summary,
-                            isContentShow = "hidden",
-                            isShow = "hidden",
-                            isTimeShow = "hidden",
-                            isTitleShow = "hidden",
-                            Content = "",
-                            key = resume_Base.modul_show.resume_summary.key,
-                            title = resume_Base.modul_show.resume_summary.title
-                        },
-                        ResumePortfolio = new ResumePortfolio()
-                        {
-                            Font = resume_Base.iconFontMap.resume_portfolio,
-                            isContentShow = "hidden",
-                            isShow = "hidden",
-                            isTimeShow = "hidden",
-                            isTitleShow = "hidden",
-                            Imgs = new List<Img>(),
-                            Links = new List<Link>(),
-                            key = resume_Base.modul_show.resume_portfolio.key,
-                            title = resume_Base.modul_show.resume_portfolio.title
-                        },
-                        ResumeQrcode = new ResumeQrcode()
-                        {
-                            Font = resume_Base.iconFontMap.resume_qrcode,
-                            isContentShow = "hidden",
-                            isShow = "hidden",
-                            isTimeShow = "hidden",
-                            isTitleShow = "hidden",
-                            Content = resume_Base.resume_qrcode.qrcodeTips,
-                            QrcodeLink = "http://static.500d.me/resources/500d/cvresume/images/1.jpg",
-                            key = resume_Base.modul_show.resume_qrcode.key,
-                            title = resume_Base.modul_show.resume_qrcode.title
-                        }
-                    };
-                }
-                else if (itemid == 664)
-                {
-                    ViewBag.TemplateSet = "{\"left\":[{\"key\":\"resume_head\",\"isShow\":true},{\"key\":\"resume_name\",\"isShow\":true},{\"key\":\"base_info\",\"isShow\":true},{\"key\":\"base_home\",\"isShow\":true},{\"key\":\"base_social\",\"isShow\":true}],\"top\":[],\"right\":[{\"key\":\"resume_job_preference\",\"isShow\":true},{\"key\":\"resume_edu\",\"isShow\":true},{\"key\":\"resume_work\",\"isShow\":true},{\"key\":\"resume_internship\",\"isShow\":false},{\"key\":\"resume_volunteer\",\"isShow\":false},{\"key\":\"resume_skill\",\"isShow\":true},{\"key\":\"resume_project\",\"isShow\":false},{\"key\":\"resume_honor\",\"isShow\":false},{\"key\":\"resume_summary\",\"isShow\":true},{\"key\":\"resume_portfolio\",\"isShow\":true},{\"key\":\"resume_hobby\",\"isShow\":true},{\"key\":\"resume_recoment\",\"isShow\":false},{\"key\":\"resume_qrcode\",\"isShow\":false}],\"bottom\":[]}";
-                    ViewBag.ResumeCss = "jm0369.css";
-                }
-                else if (itemid == 653)
-                {
-                    ViewBag.ResumeCss = "jl0003.css";
+                    //跳转错误界面，提示不存在该简历
+                    return RedirectToAction("Index", "Home", new { });
                 }
                 else
-
                 {
-                    ViewBag.TemplateSet = "{\"left\":[{\"key\":\"resume_head\",\"isShow\":true},{\"key\":\"base_info\",\"isShow\":true},{\"key\":\"base_home\",\"isShow\":true},{\"key\":\"base_social\",\"isShow\":true},{\"key\":\"resume_skill\",\"isShow\":true},{\"key\":\"resume_hobby\",\"isShow\":true}],\"top\":[],\"right\":[{\"key\":\"resume_name\",\"isShow\":true},{\"key\":\"resume_job_preference\",\"isShow\":true},{\"key\":\"resume_edu\",\"isShow\":true},{\"key\":\"resume_work\",\"isShow\":true},{\"key\":\"resume_internship\",\"isShow\":false},{\"key\":\"resume_volunteer\",\"isShow\":false},{\"key\":\"resume_project\",\"isShow\":false},{\"key\":\"resume_honor\",\"isShow\":false},{\"key\":\"resume_summary\",\"isShow\":true},{\"key\":\"resume_portfolio\",\"isShow\":false},{\"key\":\"resume_recoment\",\"isShow\":false},{\"key\":\"resume_qrcode\",\"isShow\":false}],\"bottom\":[]}";
-                    ViewBag.ResumeCss = "jm0203.css";
-                    resume_Base = new resume_base
-                    {
-                        resume_scale = "0",
-                        resume_language = "zh",
-                        resume_set = new resume_set("j2", "yahei", "14", "1.5", "1", "0"),
-                        modul_show = new modul_show(true, true, true, true,
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "头像", key = "resume_head" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "基本信息", key = "base_info" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "个人主页", key = "base_home" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "社交账号", key = "base_social" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "技能特长", key = "resume_skill" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "个人标签", key = "resume_hobby" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "姓名", key = "resume_name" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "求职意向", key = "resume_job_preference" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "教育背景", key = "resume_edu" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "工作经验", key = "resume_work" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "实习经验", key = "resume_internship" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "志愿者经历", key = "resume_volunteer" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "项目经验", key = "resume_project" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "荣誉奖项", key = "resume_honor" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "自我评价", key = "resume_summary" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "作品展示", key = "resume_portfolio" },
-                        new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "二维码", key = "resume_qrcode" }
-                        ),
-                        iconFontMap = new iconFontMap("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""),
-                        resume_cover = new List<resume_cover_item>() { },
-                        resume_letter = "这是自荐信",
-                        resume_head = "http://static.500d.me/resources/500d/cvresume/images/1.jpg",
-                        resume_headType = "rectangle",
-                        resume_base_info = new resume_base_info("王朝阳", "路漫漫其修远兮", "25", "", "1770545529", "1160651865@qq.com", "男", "", "", "", "", "", "", new List<CustomMsg>(), new List<string>()),
-                        resume_job_preference = new resume_job_preference(),
-                        resume_skills = new List<resume_skill>(),
-                        resume_hobby = new List<resume_hobby>(),
-                        resume_edu = new List<resume_experience>(),
-                        resume_work = new List<resume_experience>(),
-                        resume_internship = new List<resume_experience>(),
-                        resume_volunteer = new List<resume_experience>(),
-                        resume_project = new List<resume_experience>(),
-                        resume_portfolio = new resume_portfolio(new List<Img>(), new List<Link>()),
-                        custom = new List<custom>(),
-                        sort = new sort(new List<string>() { "resume_head", "base_info", "base_home", "base_social", "resume_skill", "resume_hobby" }, new List<string>() { }, new List<string>() { "resume_name", "resume_job_preference", "resume_edu", "resume_work", "resume_internship", "resume_volunteer", "resume_project", "resume_honor", "resume_summary", "resume_portfolio", "resume_qrcode" }, new List<string>() { }),
-                        resume_contact = new resume_contact("", "在这里留言，我将尽快联系你。", "", "留言内容。"),
-                        resume_qrcode = new resume_qrcode("感谢您的阅读，扫一扫查看手机简历")
-                    };
+                    resume_Base = JsonConvert.DeserializeObject<resume_base>(Resume.MR_JSON);
+                    ViewBag.Title = Resume.MR_TITLE;
+                    //判断加载的简历模板CSS 
+                    ResumeBank = dalBaseRB.LoadEntities(a => a.RB_ITEMID == Resume.MR_ITEMID).FirstOrDefault();
+                    ViewBag.ResumeCss = ResumeBank.RB_CONTENT + ".css";
+                    ViewBag.resume_language = ResumeBank.RB_LANGUAGE;
+                    ViewBag.template_set = ResumeBank.RB_RESUME_SOFT;
+
                     ViewBag.letterShow = "hidden";
                     if (resume_Base.modul_show.letterShow)
                     {
@@ -299,122 +103,10 @@ namespace EasyJoyResume.Controllers
                     {
                         ViewBag.coverShow = "";
                     }
-                    resumeEdit = new ResumeEdit()
-                    {//"j2", "yahei", "14", "1.5", "1", "0"
-                        resume_language = "zh",
-                        data_color = "j2",
-                        data_font_name = "yahei",
-                        data_font_size = "14",
-                        data_line_height = "1.5",
-                        data_font_type = "0",
-                        resume_sort = "",
-                        wap_resume_sort = "",
-                        template_set = "",
-                        data_itemid = itemid.ToString(),
-                        data_modal_margin = "1",
-                        sort = resume_Base.sort,
-                        coverModel = new CoverModel()
-                        {
-                            CoverShow = "hidden",
-                            ResumeCover = resume_Base.resume_cover
-                        },
-                        letterModel = new LetterModel()
-                        {
-                            LetterShow = "hidden",
-                            LetterContent = resume_Base.resume_letter
-                        },
-                        resumeHeadModel = new ResumeHeadModel()
-                        {
-                            Font = resume_Base.iconFontMap.resume_head,
-                            HeadLink = resume_Base.resume_head,
-                            key = resume_Base.modul_show.resume_head.key,
-                            title = resume_Base.modul_show.resume_head.title
-                        },
-                        baseInfoModel = new BaseInfoModel()
-                        {
-                            Font = resume_Base.iconFontMap.base_info,
-                            isContentShow = "hidden",
-                            isShow = "hidden",
-                            isTimeShow = "hidden",
-                            isTitleShow = "hidden",
-                            Item = new List<InfoItem>(),
-                            key = resume_Base.modul_show.base_info.key,
-                            title = resume_Base.modul_show.base_info.title
-                        },
-                        resumeExperience = new Dictionary<string, ResumeExperience>(),
-                        ResumeHonor = new ResumeHonor()
-                        {
-                            Font = resume_Base.iconFontMap.resume_honor,
-                            isContentShow = "hidden",
-                            isShow = "hidden",
-                            isTimeShow = "hidden",
-                            isTitleShow = "hidden",
-                            Content = resume_Base.resume_honor,
-                            key = resume_Base.modul_show.resume_honor.key,
-                            title = resume_Base.modul_show.resume_honor.title
-                        },
-                        ResumeName = new ResumeName()
-                        {
-                            Font = resume_Base.iconFontMap.resume_name,
-                            isContentShow = "hidden",
-                            isShow = "hidden",
-                            isTimeShow = "hidden",
-                            isTitleShow = "hidden",
-                            name = "",
-                            word = "",
-                            key = resume_Base.modul_show.resume_name.key,
-                            title = resume_Base.modul_show.resume_name.title
-                        },
-                        ResumeJobPreference = new ResumeJobPreference()
-                        {
-                            Font = resume_Base.iconFontMap.resume_job_preference,
-                            isContentShow = "hidden",
-                            isShow = "hidden",
-                            isTimeShow = "hidden",
-                            isTitleShow = "hidden",
-                            Item = new Dictionary<string, InfoItem>(),
-                            key = resume_Base.modul_show.resume_job_preference.key,
-                            title = resume_Base.modul_show.resume_job_preference.title
-                        },
-                        ResumeSummary = new ResumeSummary()
-                        {
-                            Font = resume_Base.iconFontMap.resume_summary,
-                            isContentShow = "hidden",
-                            isShow = "hidden",
-                            isTimeShow = "hidden",
-                            isTitleShow = "hidden",
-                            Content = "",
-                            key = resume_Base.modul_show.resume_summary.key,
-                            title = resume_Base.modul_show.resume_summary.title
-                        },
-                        ResumePortfolio = new ResumePortfolio()
-                        {
-                            Font = resume_Base.iconFontMap.resume_portfolio,
-                            isContentShow = "hidden",
-                            isShow = "hidden",
-                            isTimeShow = "hidden",
-                            isTitleShow = "hidden",
-                            Imgs = new List<Img>(),
-                            Links = new List<Link>(),
-                            key = resume_Base.modul_show.resume_portfolio.key,
-                            title = resume_Base.modul_show.resume_portfolio.title
-                        },
-                        ResumeQrcode = new ResumeQrcode()
-                        {
-                            Font = resume_Base.iconFontMap.resume_qrcode,
-                            isContentShow = "hidden",
-                            isShow = "hidden",
-                            isTimeShow = "hidden",
-                            isTitleShow = "hidden",
-                            Content = resume_Base.resume_qrcode.qrcodeTips,
-                            QrcodeLink = "http://static.500d.me/resources/500d/cvresume/images/1.jpg",
-                            key = resume_Base.modul_show.resume_qrcode.key,
-                            title = resume_Base.modul_show.resume_qrcode.title
-                        }
-                    };
-                }
-                ViewBag.ResumeBase = resume_Base;
+                   
+                } 
             }
+            ViewBag.ResumeBase = resume_Base;
             return View();
         }
         /// <summary>
@@ -510,366 +202,9 @@ namespace EasyJoyResume.Controllers
             return PartialView();
         }
 
-        public PartialViewResult ResumePreView(int resumeId = -1) {
-            int itemid = 206;
-            ViewBag.ItemId = itemid;
-            ResumeEdit resumeEdit = new ResumeEdit();
-            resume_base resume_Base = new resume_base();
-            if (itemid == 206)
-            {
-                ViewBag.TemplateSet = "{\"left\":[{\"key\":\"resume_head\",\"isShow\":true},{\"key\":\"base_info\",\"isShow\":true},{\"key\":\"base_home\",\"isShow\":true},{\"key\":\"base_social\",\"isShow\":true},{\"key\":\"resume_skill\",\"isShow\":true},{\"key\":\"resume_hobby\",\"isShow\":true}],\"top\":[],\"right\":[{\"key\":\"resume_name\",\"isShow\":true},{\"key\":\"resume_job_preference\",\"isShow\":true},{\"key\":\"resume_edu\",\"isShow\":true},{\"key\":\"resume_work\",\"isShow\":true},{\"key\":\"resume_internship\",\"isShow\":false},{\"key\":\"resume_volunteer\",\"isShow\":false},{\"key\":\"resume_project\",\"isShow\":false},{\"key\":\"resume_honor\",\"isShow\":false},{\"key\":\"resume_summary\",\"isShow\":true},{\"key\":\"resume_portfolio\",\"isShow\":false},{\"key\":\"resume_recoment\",\"isShow\":false},{\"key\":\"resume_qrcode\",\"isShow\":false}],\"bottom\":[]}";
-                ViewBag.ResumeCss = "jm0203.css";
-                resume_Base = new resume_base
-                {
-                    resume_scale = "0",
-                    resume_language = "zh",
-                    resume_set = new resume_set("j2", "yahei", "14", "1.5", "1", "0"),
-                    modul_show = new modul_show(true, true, true, true,
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "头像", key = "resume_head" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "基本信息", key = "base_info" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "个人主页", key = "base_home" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "社交账号", key = "base_social" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "技能特长", key = "resume_skill" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "个人标签", key = "resume_hobby" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "姓名", key = "resume_name" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "求职意向", key = "resume_job_preference" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "教育背景", key = "resume_edu" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "工作经验", key = "resume_work" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "实习经验", key = "resume_internship" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "志愿者经历", key = "resume_volunteer" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "项目经验", key = "resume_project" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "荣誉奖项", key = "resume_honor" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "自我评价", key = "resume_summary" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "作品展示", key = "resume_portfolio" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "二维码", key = "resume_qrcode" }
-                    ),
-                    iconFontMap = new iconFontMap("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""),
-                    resume_cover = new List<resume_cover_item>() { },
-                    resume_letter = "这是自荐信",
-                    resume_head = "http://static.500d.me/resources/500d/cvresume/images/1.jpg",
-                    resume_headType = "rectangle",
-                    resume_base_info = new resume_base_info("王朝阳", "路漫漫其修远兮", "25", "", "1770545529", "1160651865@qq.com", "男", "", "", "", "", "", "", new List<CustomMsg>(), new List<string>()),
-                    resume_job_preference = new resume_job_preference(),
-                    resume_skills = new List<resume_skill>(),
-                    resume_hobby = new List<resume_hobby>(),
-                    resume_edu = new List<resume_experience>(),
-                    resume_work = new List<resume_experience>(),
-                    resume_internship = new List<resume_experience>(),
-                    resume_volunteer = new List<resume_experience>(),
-                    resume_project = new List<resume_experience>(),
-                    resume_portfolio = new resume_portfolio(new List<Img>(), new List<Link>()),
-                    custom = new List<custom>(),
-                    sort = new sort(new List<string>() { "resume_head", "base_info", "base_home", "base_social", "resume_skill", "resume_hobby" }, new List<string>() { }, new List<string>() { "resume_name", "resume_job_preference", "resume_edu", "resume_work", "resume_internship", "resume_volunteer", "resume_project", "resume_honor", "resume_summary", "resume_portfolio", "resume_qrcode" }, new List<string>() { }),
-                    resume_contact = new resume_contact("", "在这里留言，我将尽快联系你。", "", "留言内容。"),
-                    resume_qrcode = new resume_qrcode("感谢您的阅读，扫一扫查看手机简历")
-                };
-                ViewBag.letterShow = "hidden";
-                if (resume_Base.modul_show.letterShow)
-                {
-                    ViewBag.letterShow = "";
-                }
-                ViewBag.coverShow = "hidden";
-                if (resume_Base.modul_show.coverShow)
-                {
-                    ViewBag.coverShow = "";
-                }
-                resumeEdit = new ResumeEdit()
-                {//"j2", "yahei", "14", "1.5", "1", "0"
-                    resume_language = "zh",
-                    data_color = "j2",
-                    data_font_name = "yahei",
-                    data_font_size = "14",
-                    data_line_height = "1.5",
-                    data_font_type = "0",
-                    resume_sort = "",
-                    wap_resume_sort = "",
-                    template_set = "",
-                    data_itemid = itemid.ToString(),
-                    data_modal_margin = "1",
-                    sort = resume_Base.sort,
-                    coverModel = new CoverModel()
-                    {
-                        CoverShow = "hidden",
-                        ResumeCover = resume_Base.resume_cover
-                    },
-                    letterModel = new LetterModel()
-                    {
-                        LetterShow = "hidden",
-                        LetterContent = resume_Base.resume_letter
-                    },
-                    resumeHeadModel = new ResumeHeadModel()
-                    {
-                        Font = resume_Base.iconFontMap.resume_head,
-                        HeadLink = resume_Base.resume_head,
-                        key = resume_Base.modul_show.resume_head.key,
-                        title = resume_Base.modul_show.resume_head.title
-                    },
-                    baseInfoModel = new BaseInfoModel()
-                    {
-                        Font = resume_Base.iconFontMap.base_info,
-                        isContentShow = "hidden",
-                        isShow = "hidden",
-                        isTimeShow = "hidden",
-                        isTitleShow = "hidden",
-                        Item = new List<InfoItem>(),
-                        key = resume_Base.modul_show.base_info.key,
-                        title = resume_Base.modul_show.base_info.title
-                    },
-                    resumeExperience = new Dictionary<string, ResumeExperience>(),
-                    ResumeHonor = new ResumeHonor()
-                    {
-                        Font = resume_Base.iconFontMap.resume_honor,
-                        isContentShow = "hidden",
-                        isShow = "hidden",
-                        isTimeShow = "hidden",
-                        isTitleShow = "hidden",
-                        Content = resume_Base.resume_honor,
-                        key = resume_Base.modul_show.resume_honor.key,
-                        title = resume_Base.modul_show.resume_honor.title
-                    },
-                    ResumeName = new ResumeName()
-                    {
-                        Font = resume_Base.iconFontMap.resume_name,
-                        isContentShow = "hidden",
-                        isShow = "hidden",
-                        isTimeShow = "hidden",
-                        isTitleShow = "hidden",
-                        name = "",
-                        word = "",
-                        key = resume_Base.modul_show.resume_name.key,
-                        title = resume_Base.modul_show.resume_name.title
-                    },
-                    ResumeJobPreference = new ResumeJobPreference()
-                    {
-                        Font = resume_Base.iconFontMap.resume_job_preference,
-                        isContentShow = "hidden",
-                        isShow = "hidden",
-                        isTimeShow = "hidden",
-                        isTitleShow = "hidden",
-                        Item = new Dictionary<string, InfoItem>(),
-                        key = resume_Base.modul_show.resume_job_preference.key,
-                        title = resume_Base.modul_show.resume_job_preference.title
-                    },
-                    ResumeSummary = new ResumeSummary()
-                    {
-                        Font = resume_Base.iconFontMap.resume_summary,
-                        isContentShow = "hidden",
-                        isShow = "hidden",
-                        isTimeShow = "hidden",
-                        isTitleShow = "hidden",
-                        Content = "",
-                        key = resume_Base.modul_show.resume_summary.key,
-                        title = resume_Base.modul_show.resume_summary.title
-                    },
-                    ResumePortfolio = new ResumePortfolio()
-                    {
-                        Font = resume_Base.iconFontMap.resume_portfolio,
-                        isContentShow = "hidden",
-                        isShow = "hidden",
-                        isTimeShow = "hidden",
-                        isTitleShow = "hidden",
-                        Imgs = new List<Img>(),
-                        Links = new List<Link>(),
-                        key = resume_Base.modul_show.resume_portfolio.key,
-                        title = resume_Base.modul_show.resume_portfolio.title
-                    },
-                    ResumeQrcode = new ResumeQrcode()
-                    {
-                        Font = resume_Base.iconFontMap.resume_qrcode,
-                        isContentShow = "hidden",
-                        isShow = "hidden",
-                        isTimeShow = "hidden",
-                        isTitleShow = "hidden",
-                        Content = resume_Base.resume_qrcode.qrcodeTips,
-                        QrcodeLink = "http://static.500d.me/resources/500d/cvresume/images/1.jpg",
-                        key = resume_Base.modul_show.resume_qrcode.key,
-                        title = resume_Base.modul_show.resume_qrcode.title
-                    }
-                };
-            }
-            else if (itemid == 664)
-            {
-                ViewBag.TemplateSet = "{\"left\":[{\"key\":\"resume_head\",\"isShow\":true},{\"key\":\"resume_name\",\"isShow\":true},{\"key\":\"base_info\",\"isShow\":true},{\"key\":\"base_home\",\"isShow\":true},{\"key\":\"base_social\",\"isShow\":true}],\"top\":[],\"right\":[{\"key\":\"resume_job_preference\",\"isShow\":true},{\"key\":\"resume_edu\",\"isShow\":true},{\"key\":\"resume_work\",\"isShow\":true},{\"key\":\"resume_internship\",\"isShow\":false},{\"key\":\"resume_volunteer\",\"isShow\":false},{\"key\":\"resume_skill\",\"isShow\":true},{\"key\":\"resume_project\",\"isShow\":false},{\"key\":\"resume_honor\",\"isShow\":false},{\"key\":\"resume_summary\",\"isShow\":true},{\"key\":\"resume_portfolio\",\"isShow\":true},{\"key\":\"resume_hobby\",\"isShow\":true},{\"key\":\"resume_recoment\",\"isShow\":false},{\"key\":\"resume_qrcode\",\"isShow\":false}],\"bottom\":[]}";
-                ViewBag.ResumeCss = "jm0369.css";
-            }
-            else if (itemid == 653)
-            {
-                ViewBag.ResumeCss = "jl0003.css";
-            }
-            else
-
-            {
-                ViewBag.TemplateSet = "{\"left\":[{\"key\":\"resume_head\",\"isShow\":true},{\"key\":\"base_info\",\"isShow\":true},{\"key\":\"base_home\",\"isShow\":true},{\"key\":\"base_social\",\"isShow\":true},{\"key\":\"resume_skill\",\"isShow\":true},{\"key\":\"resume_hobby\",\"isShow\":true}],\"top\":[],\"right\":[{\"key\":\"resume_name\",\"isShow\":true},{\"key\":\"resume_job_preference\",\"isShow\":true},{\"key\":\"resume_edu\",\"isShow\":true},{\"key\":\"resume_work\",\"isShow\":true},{\"key\":\"resume_internship\",\"isShow\":false},{\"key\":\"resume_volunteer\",\"isShow\":false},{\"key\":\"resume_project\",\"isShow\":false},{\"key\":\"resume_honor\",\"isShow\":false},{\"key\":\"resume_summary\",\"isShow\":true},{\"key\":\"resume_portfolio\",\"isShow\":false},{\"key\":\"resume_recoment\",\"isShow\":false},{\"key\":\"resume_qrcode\",\"isShow\":false}],\"bottom\":[]}";
-                ViewBag.ResumeCss = "jm0203.css";
-                resume_Base = new resume_base
-                {
-                    resume_scale = "0",
-                    resume_language = "zh",
-                    resume_set = new resume_set("j2", "yahei", "14", "1.5", "1", "0"),
-                    modul_show = new modul_show(true, true, true, true,
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "头像", key = "resume_head" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "基本信息", key = "base_info" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "个人主页", key = "base_home" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "社交账号", key = "base_social" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "技能特长", key = "resume_skill" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "个人标签", key = "resume_hobby" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "姓名", key = "resume_name" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "求职意向", key = "resume_job_preference" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "教育背景", key = "resume_edu" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "工作经验", key = "resume_work" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "实习经验", key = "resume_internship" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "志愿者经历", key = "resume_volunteer" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "项目经验", key = "resume_project" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "荣誉奖项", key = "resume_honor" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "自我评价", key = "resume_summary" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "作品展示", key = "resume_portfolio" },
-                    new modul_item_show() { isShow = true, isTitleShow = true, isTimeShow = true, isContentShow = true, title = "二维码", key = "resume_qrcode" }
-                    ),
-                    iconFontMap = new iconFontMap("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""),
-                    resume_cover = new List<resume_cover_item>() { },
-                    resume_letter = "这是自荐信",
-                    resume_head = "http://static.500d.me/resources/500d/cvresume/images/1.jpg",
-                    resume_headType = "rectangle",
-                    resume_base_info = new resume_base_info("王朝阳", "路漫漫其修远兮", "25", "", "1770545529", "1160651865@qq.com", "男", "", "", "", "", "", "", new List<CustomMsg>(), new List<string>()),
-                    resume_job_preference = new resume_job_preference(),
-                    resume_skills = new List<resume_skill>(),
-                    resume_hobby = new List<resume_hobby>(),
-                    resume_edu = new List<resume_experience>(),
-                    resume_work = new List<resume_experience>(),
-                    resume_internship = new List<resume_experience>(),
-                    resume_volunteer = new List<resume_experience>(),
-                    resume_project = new List<resume_experience>(),
-                    resume_portfolio = new resume_portfolio(new List<Img>(), new List<Link>()),
-                    custom = new List<custom>(),
-                    sort = new sort(new List<string>() { "resume_head", "base_info", "base_home", "base_social", "resume_skill", "resume_hobby" }, new List<string>() { }, new List<string>() { "resume_name", "resume_job_preference", "resume_edu", "resume_work", "resume_internship", "resume_volunteer", "resume_project", "resume_honor", "resume_summary", "resume_portfolio", "resume_qrcode" }, new List<string>() { }),
-                    resume_contact = new resume_contact("", "在这里留言，我将尽快联系你。", "", "留言内容。"),
-                    resume_qrcode = new resume_qrcode("感谢您的阅读，扫一扫查看手机简历")
-                };
-                ViewBag.letterShow = "hidden";
-                if (resume_Base.modul_show.letterShow)
-                {
-                    ViewBag.letterShow = "";
-                }
-                ViewBag.coverShow = "hidden";
-                if (resume_Base.modul_show.coverShow)
-                {
-                    ViewBag.coverShow = "";
-                }
-                resumeEdit = new ResumeEdit()
-                {//"j2", "yahei", "14", "1.5", "1", "0"
-                    resume_language = "zh",
-                    data_color = "j2",
-                    data_font_name = "yahei",
-                    data_font_size = "14",
-                    data_line_height = "1.5",
-                    data_font_type = "0",
-                    resume_sort = "",
-                    wap_resume_sort = "",
-                    template_set = "",
-                    data_itemid = itemid.ToString(),
-                    data_modal_margin = "1",
-                    sort = resume_Base.sort,
-                    coverModel = new CoverModel()
-                    {
-                        CoverShow = "hidden",
-                        ResumeCover = resume_Base.resume_cover
-                    },
-                    letterModel = new LetterModel()
-                    {
-                        LetterShow = "hidden",
-                        LetterContent = resume_Base.resume_letter
-                    },
-                    resumeHeadModel = new ResumeHeadModel()
-                    {
-                        Font = resume_Base.iconFontMap.resume_head,
-                        HeadLink = resume_Base.resume_head,
-                        key = resume_Base.modul_show.resume_head.key,
-                        title = resume_Base.modul_show.resume_head.title
-                    },
-                    baseInfoModel = new BaseInfoModel()
-                    {
-                        Font = resume_Base.iconFontMap.base_info,
-                        isContentShow = "hidden",
-                        isShow = "hidden",
-                        isTimeShow = "hidden",
-                        isTitleShow = "hidden",
-                        Item = new List<InfoItem>(),
-                        key = resume_Base.modul_show.base_info.key,
-                        title = resume_Base.modul_show.base_info.title
-                    },
-                    resumeExperience = new Dictionary<string, ResumeExperience>(),
-                    ResumeHonor = new ResumeHonor()
-                    {
-                        Font = resume_Base.iconFontMap.resume_honor,
-                        isContentShow = "hidden",
-                        isShow = "hidden",
-                        isTimeShow = "hidden",
-                        isTitleShow = "hidden",
-                        Content = resume_Base.resume_honor,
-                        key = resume_Base.modul_show.resume_honor.key,
-                        title = resume_Base.modul_show.resume_honor.title
-                    },
-                    ResumeName = new ResumeName()
-                    {
-                        Font = resume_Base.iconFontMap.resume_name,
-                        isContentShow = "hidden",
-                        isShow = "hidden",
-                        isTimeShow = "hidden",
-                        isTitleShow = "hidden",
-                        name = "",
-                        word = "",
-                        key = resume_Base.modul_show.resume_name.key,
-                        title = resume_Base.modul_show.resume_name.title
-                    },
-                    ResumeJobPreference = new ResumeJobPreference()
-                    {
-                        Font = resume_Base.iconFontMap.resume_job_preference,
-                        isContentShow = "hidden",
-                        isShow = "hidden",
-                        isTimeShow = "hidden",
-                        isTitleShow = "hidden",
-                        Item = new Dictionary<string, InfoItem>(),
-                        key = resume_Base.modul_show.resume_job_preference.key,
-                        title = resume_Base.modul_show.resume_job_preference.title
-                    },
-                    ResumeSummary = new ResumeSummary()
-                    {
-                        Font = resume_Base.iconFontMap.resume_summary,
-                        isContentShow = "hidden",
-                        isShow = "hidden",
-                        isTimeShow = "hidden",
-                        isTitleShow = "hidden",
-                        Content = "",
-                        key = resume_Base.modul_show.resume_summary.key,
-                        title = resume_Base.modul_show.resume_summary.title
-                    },
-                    ResumePortfolio = new ResumePortfolio()
-                    {
-                        Font = resume_Base.iconFontMap.resume_portfolio,
-                        isContentShow = "hidden",
-                        isShow = "hidden",
-                        isTimeShow = "hidden",
-                        isTitleShow = "hidden",
-                        Imgs = new List<Img>(),
-                        Links = new List<Link>(),
-                        key = resume_Base.modul_show.resume_portfolio.key,
-                        title = resume_Base.modul_show.resume_portfolio.title
-                    },
-                    ResumeQrcode = new ResumeQrcode()
-                    {
-                        Font = resume_Base.iconFontMap.resume_qrcode,
-                        isContentShow = "hidden",
-                        isShow = "hidden",
-                        isTimeShow = "hidden",
-                        isTitleShow = "hidden",
-                        Content = resume_Base.resume_qrcode.qrcodeTips,
-                        QrcodeLink = "http://static.500d.me/resources/500d/cvresume/images/1.jpg",
-                        key = resume_Base.modul_show.resume_qrcode.key,
-                        title = resume_Base.modul_show.resume_qrcode.title
-                    }
-                };
-            }
-            ViewBag.ResumeBase = resume_Base;
+        public PartialViewResult ResumePreView(int resumeId = -1)
+        {
+            
             return PartialView();
         }
         /// <summary>
@@ -891,9 +226,37 @@ namespace EasyJoyResume.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateInput(false)]
-        public JsonResult Save(int itemid, string json, string memberid, string resumeid)
+        public JsonResult Save(int itemid, string json, int memberid, int resumeid)
         {
-            return Json(new { type = "success", content = "保存成功！" }, JsonRequestBehavior.AllowGet);
+            if (Utility.SessionHelper.GetLoginInfo() == null && Utility.BaseCookies.GetCookieValue("memberId") == null)
+            {
+                return Json(new { type = "error", content = "没有登录！" }, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                //判断是否超过创建的最大简历数目
+                DAL.DalBase<EJ_MY_RESUME652145> dalBase = new DAL.DalBase<EJ_MY_RESUME652145>();
+                var data = dalBase.LoadEntities(a => a.MR_MEMBER_ID == memberid).OrderByDescending(a => a.MR_RESUMEID);
+                if (data.Count() > 5)
+                {
+                    return Json(new { type = "error", content = "已超过最大简历创建数量，请升级会员继续" }, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    EasyJoy589452Entities db = new EasyJoy589452Entities();
+                    SqlParameter[] parms = new SqlParameter[] {
+                        new SqlParameter{ParameterName = "@RESUMEID", Value =resumeid, Direction = ParameterDirection.Input },
+                        new SqlParameter{ParameterName = "@MEMBERID", Value = memberid, Direction = ParameterDirection.Input },
+                        new SqlParameter{ParameterName = "@ITEM_ID", Value =itemid, Direction = ParameterDirection.Input },
+                        new SqlParameter{ParameterName = "@JSON", Value = json, Direction = ParameterDirection.Input },
+                        new SqlParameter{ParameterName = "@Result", Value = 0, Direction = ParameterDirection.Output }
+                    };
+                    int ss = db.Database.ExecuteSqlCommand("exec @Result = P_EJ_RESUME_SAVE @RESUMEID,@MEMBERID,@ITEM_ID,@JSON", parms);
+                    string result = parms[4].Value.ToString();
+                    return Json(new { type = "success", content = "保存成功！" }, JsonRequestBehavior.AllowGet);
+                }
+            }
+
         }
 
         /// <summary>
@@ -901,7 +264,7 @@ namespace EasyJoyResume.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public JsonResult GetDownloadUrl(int id )
+        public JsonResult GetDownloadUrl(int id)
         {
             return Json(new { type = "success", content = "http://download.500d.me/cvresume/pdf_download/500d_4452106_667_1097704_20181114110922.pdf?downmsg=27e74485e84110465588db6d9471cf33" }, JsonRequestBehavior.AllowGet);
         }
@@ -923,7 +286,7 @@ namespace EasyJoyResume.Controllers
         /// <returns></returns>
         public HtmlString SelectResume()
         {
-            string html = "<div class=\"px\"><li class=\"doc_resume sort\"date_time=\"20180610122708\"><b></b><div class=\"img\"><s></s><img src=\"http://static.500d.me\"><div class=\"hover-div\"><a class=\"edit btn choose_edit_other_resume 500dtongji\"data_track=\"PC-在线制作-我的简历功能（{0}编辑）-简历展示-简历展示-选择某简历\"href=\"/cvresume/edit/?itemid=10&resumeId=3081926\"data_path=\"/cvresume/edit/?itemid=10&resumeId=3081926\">编辑</a></div></div><div class=\"text\"><p>叶，勿删谢谢-20171025</p><i>5个月前</i></div></li><li class=\"doc_resume sort\"date_time=\"20180610122424\"><b></b><div class=\"img\"><s></s><img src=\"http://static.500d.me\"><div class=\"hover-div\"><a class=\"edit btn choose_edit_other_resume 500dtongji\"data_track=\"PC-在线制作-我的简历功能（{0}编辑）-简历展示-简历展示-选择某简历\"href=\"/cvresume/edit/?itemid=206&resumeId=3261457\"data_path=\"/cvresume/edit/?itemid=206&resumeId=3261457\">编辑</a></div></div><div class=\"text\"><p>张</p><i>5个月前</i></div></li><li class=\"doc_resume sort\"date_time=\"20180403132206\"><b></b><div class=\"img\"><s></s><img src=\"http://static.500d.me\"><div class=\"hover-div\"><a class=\"edit btn choose_edit_other_resume 500dtongji\"data_track=\"PC-在线制作-我的简历功能（{0}编辑）-简历展示-简历展示-选择某简历\"href=\"/cvresume/edit/?itemid=10&resumeId=3262107\"data_path=\"/cvresume/edit/?itemid=10&resumeId=3262107\">编辑</a></div></div><div class=\"text\"><p>杨丽</p><i>7个月前</i></div></li></div><script>$(function(){var div=$(\".sort\").toArray().sort(function(a,b){return parseInt($(b).attr(\"date_time\"))-parseInt($(a).attr(\"date_time\"))});$(div).appendTo('.px')});</script>";
+            string html = "<div class=\"px\"><li class=\"doc_resume sort\"date_time=\"20180610122708\"><b></b><div class=\"img\"><s></s><img src=\"http://static.500d.me\"><div class=\"hover-div\"><a class=\"edit btn choose_edit_other_resume \"data_track=\"PC-在线制作-我的简历功能（{0}编辑）-简历展示-简历展示-选择某简历\"href=\"/cvresume/edit/?itemid=10&resumeId=3081926\"data_path=\"/cvresume/edit/?itemid=10&resumeId=3081926\">编辑</a></div></div><div class=\"text\"><p>叶，勿删谢谢-20171025</p><i>5个月前</i></div></li><li class=\"doc_resume sort\"date_time=\"20180610122424\"><b></b><div class=\"img\"><s></s><img src=\"http://static.500d.me\"><div class=\"hover-div\"><a class=\"edit btn choose_edit_other_resume \"data_track=\"PC-在线制作-我的简历功能（{0}编辑）-简历展示-简历展示-选择某简历\"href=\"/cvresume/edit/?itemid=206&resumeId=3261457\"data_path=\"/cvresume/edit/?itemid=206&resumeId=3261457\">编辑</a></div></div><div class=\"text\"><p>张</p><i>5个月前</i></div></li><li class=\"doc_resume sort\"date_time=\"20180403132206\"><b></b><div class=\"img\"><s></s><img src=\"http://static.500d.me\"><div class=\"hover-div\"><a class=\"edit btn choose_edit_other_resume \"data_track=\"PC-在线制作-我的简历功能（{0}编辑）-简历展示-简历展示-选择某简历\"href=\"/cvresume/edit/?itemid=10&resumeId=3262107\"data_path=\"/cvresume/edit/?itemid=10&resumeId=3262107\">编辑</a></div></div><div class=\"text\"><p>杨丽</p><i>7个月前</i></div></li></div><script>$(function(){var div=$(\".sort\").toArray().sort(function(a,b){return parseInt($(b).attr(\"date_time\"))-parseInt($(a).attr(\"date_time\"))});$(div).appendTo('.px')});</script>";
             return new HtmlString(html);
         }
         /// <summary>
@@ -932,7 +295,7 @@ namespace EasyJoyResume.Controllers
         /// <param name="visitType"></param>
         /// <param name="resumeid"></param>
         /// <returns></returns>
-        public JsonResult SetVisitType(string visitType,string resumeid)
+        public JsonResult SetVisitType(string visitType, string resumeid)
         {
             switch (visitType)
             {
@@ -941,9 +304,9 @@ namespace EasyJoyResume.Controllers
                     break;
                 case "privary":
                     //仅自己
-                    break; 
+                    break;
                 default:
-                    return Json(new { type = "error", content = "设置失败，请输入访问权限！" }, JsonRequestBehavior.AllowGet); 
+                    return Json(new { type = "error", content = "设置失败，请输入访问权限！" }, JsonRequestBehavior.AllowGet);
             }
             return Json(new { type = "success", content = "设置成功！" }, JsonRequestBehavior.AllowGet);
         }
@@ -953,7 +316,7 @@ namespace EasyJoyResume.Controllers
         /// <param name="password"></param>
         /// <param name="resumeid"></param>
         /// <returns></returns>
-        public JsonResult SetVisitPassword(string password ,string resumeid )
+        public JsonResult SetVisitPassword(string password, string resumeid)
         {
             return Json(new { type = "success", content = "设置成功！" }, JsonRequestBehavior.AllowGet);
 

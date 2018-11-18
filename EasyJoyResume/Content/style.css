@@ -2450,9 +2450,9 @@ footer p a{text-decoration: none;color: #797979;}
 /*五百丁-网站地图-end*/
 
 /*五百丁-个人中心-start*/
-.wdddDiv .hr_li .orderPic .text .step s:before,.wdddDiv .hr_li .orderPic .text .step s,.hrDiv .hr_order_tbody .tbody_list .thead_th s i,.hrDiv .hr_tips i,.hrDiv .hr_order_tbody .tbody_title .thead_th i{background: url(../images/member/jl_hr.png?v=7000) no-repeat 0px 0px;}
-.wdddDiv .task_hr_li .orderPic .text .step s:before,.wdddDiv .task_hr_li .orderPic .text .step s,.hrDiv .hr_order_tbody .tbody_list .thead_th s i,.hrDiv .hr_tips i,.hrDiv .hr_order_tbody .tbody_title .thead_th i{background: url(../images/member/jl_hr.png?v=7000) no-repeat 0px 0px;}
-.member_workorder_list .workorder_head .select_box:before,.member_workorder_list .wo_hd a i,.member_workorder_detail .wo_hd a i, .jl-member-rd .common_order_question .back_list i,.member-resume-con .zxjl-ul .set-box:before,.member-resume-con .zxjl-ul .set-box-list i,.member-resume-con .zxjl-ul .text a,.member-resume-con .zxjl-ul .set-btn,.myhome-select-cv a.edit-btn,.myhome-select-cv a.select-btn i,.myhome-timeItem .baseItem .dd-icon,.jl-member-ld .member-nav li i,.jl-member-ld .member-set .set i{background: url(../../images/member/jl_member_sp.png) no-repeat 0px 0px;}
+.wdddDiv .hr_li .orderPic .text .step s:before,.wdddDiv .hr_li .orderPic .text .step s,.hrDiv .hr_order_tbody .tbody_list .thead_th s i,.hrDiv .hr_tips i,.hrDiv .hr_order_tbody .tbody_title .thead_th i{background: url(../images/member/jl_hr.png../../images/cvresume) no-repeat 0px 0px;}
+.wdddDiv .task_hr_li .orderPic .text .step s:before,.wdddDiv .task_hr_li .orderPic .text .step s,.hrDiv .hr_order_tbody .tbody_list .thead_th s i,.hrDiv .hr_tips i,.hrDiv .hr_order_tbody .tbody_title .thead_th i{background: url(../images/member/jl_hr.png../../images/cvresume) no-repeat 0px 0px;}
+.member_workorder_list .workorder_head .select_box:before,.member_workorder_list .wo_hd a i,.member_workorder_detail .wo_hd a i, .jl-member-rd .common_order_question .back_list i,.member-resume-con .zxjl-ul .set-box:before,.member-resume-con .zxjl-ul .set-box-list i,.member-resume-con .zxjl-ul .text a,.member-resume-con .zxjl-ul .set-btn,.myhome-select-cv a.edit-btn,.myhome-select-cv a.select-btn i,.myhome-timeItem .baseItem .dd-icon,.jl-member-ld .member-nav li i,.jl-member-ld .member-set .set i{background: url(../../images/member/jl_member6.0.1_sp.png) no-repeat 0px 0px;}
 .jl-member-bg{background: #f6f6f6;}
 .jl-member-bg .jl-header{box-shadow:none;}
 .jl-member :not(font) {font-size: 14px;color: #686868;word-wrap: break-word; box-sizing: border-box;}
@@ -2796,7 +2796,7 @@ footer p a{text-decoration: none;color: #797979;}
 .jl-member-order .orderHead span:nth-child(4){width: 15%;}
 .jl-member-order .orderHead span:nth-child(5){width: 18%;border: none;}
 .wdddDiv .task_hr_li .done_timeout, .wdddDiv .hr_li .orderPic .text .done_timeout{position:absolute; left:50%; bottom:-25px; width:200px; height:12px; line-height:12px; margin-left:-100px; font-size:12px; color:#969fac; text-align:center;}
-.wdddDiv .task_hr_li .done_timeout:before, .wdddDiv .hr_li .orderPic .text .done_timeout:before{content:""; display:inline-block; width:10px; height:12px; background:url(../member/images/jl_hr.png?v=7000)-102px -213px no-repeat; vertical-align:top;}
+.wdddDiv .task_hr_li .done_timeout:before, .wdddDiv .hr_li .orderPic .text .done_timeout:before{content:""; display:inline-block; width:10px; height:12px; background:url(../member/images/jl_hr.png../../images/cvresume)-102px -213px no-repeat; vertical-align:top;}
 /*确认倒计时提示*/
 .jl-member-order .timeout_tips{position:relative; display:block; height:46px; line-height:46px; margin:-4px 0 30px; background:#fcf8e3; text-align:center;}
 .jl-member-order .timeout_tips span{font-size:14px; color:#a68f62;}
@@ -2906,7 +2906,7 @@ footer p a{text-decoration: none;color: #797979;}
 .wdddDiv .hr_li .orderPic .downBtn{position:absolute; right:50px; top:20px; color:#666; font-size:12px; text-align:center;}
 .wdddDiv .hr_li .orderPic .downBtn.no{display: none;}
 .wdddDiv .hr_li .orderPic .downBtn:hover{color: #1e9fff;}
-.wdddDiv .hr_li .orderPic .downBtn i{width: 15px;height: 12px;display: inline-block;background: url(../images/member/jl_hr.png?v=7000) no-repeat -158px -1px;position: relative;top:2px;}
+.wdddDiv .hr_li .orderPic .downBtn i{width: 15px;height: 12px;display: inline-block;background: url(../images/member/jl_hr.png../../images/cvresume) no-repeat -158px -1px;position: relative;top:2px;}
 /*通过发布任务下单*/
 .wdddDiv .task_hr_li *{color:#464c5b; box-sizing:border-box; -webkit-box-sizing:border-box;}
 .wdddDiv .task_hr_li .orderPic{padding-bottom:20px;}
@@ -2940,9 +2940,9 @@ footer p a{text-decoration: none;color: #797979;}
 .wdddDiv .task_hr_li .orderPic .text .count_down{position:absolute; right:140px; bottom:19px; color:#999; font-size:12px;}
 .wdddDiv .task_hr_li .orderPic .text .count_down:before{content:""; display:inline-block; vertical-align:middle; width:10px; height:11px; margin:0 2px 2px 0; background:url(../member/images/jl_hr.png?v=8094)no-repeat -102px -214px;}
 /*内推岗位样式*/
-.wdddDiv .task_hr_li .orderPic .text .step1.push_job_step s{background:url(../member/images/jl_hr.png?v=7000) no-repeat; background-position:-2px -290px;}
+.wdddDiv .task_hr_li .orderPic .text .step1.push_job_step s{background:url(../member/images/jl_hr.png../../images/cvresume) no-repeat; background-position:-2px -290px;}
 .wdddDiv .task_hr_li .orderPic .text .step2.push_job_step{width:100px;}
-.wdddDiv .task_hr_li .orderPic .text .step2.push_job_step s{background:url(../member/images/jl_hr.png?v=7000) -60px -290px no-repeat;}
+.wdddDiv .task_hr_li .orderPic .text .step2.push_job_step s{background:url(../member/images/jl_hr.png../../images/cvresume) -60px -290px no-repeat;}
 /*内推岗位样式end*/
 .wdddDiv .task_hr_li .orderPic .text .step1 s{background-position: -22px -12px;}
 .wdddDiv .task_hr_li .orderPic .text .step2 s{background-position: 0 -157px;}
@@ -2953,8 +2953,8 @@ footer p a{text-decoration: none;color: #797979;}
 .wdddDiv .task_hr_li .orderPic .text .step7 s{background-position: -163px -95px;}
 .wdddDiv .task_hr_li .orderPic .text .step7 s:before{display: none;}
 /*内推岗位样式*/
-.wdddDiv .task_hr_li .orderPic .text .step1.done.push_job_step s{background:url(../member/images/jl_hr.png?v=7000) -2px -232px no-repeat;}
-.wdddDiv .task_hr_li .orderPic .text .step2.done.push_job_step s{background:url(../member/images/jl_hr.png?v=7000) -60px -232px no-repeat;}
+.wdddDiv .task_hr_li .orderPic .text .step1.done.push_job_step s{background:url(../member/images/jl_hr.png../../images/cvresume) -2px -232px no-repeat;}
+.wdddDiv .task_hr_li .orderPic .text .step2.done.push_job_step s{background:url(../member/images/jl_hr.png../../images/cvresume) -60px -232px no-repeat;}
 /*内推岗位样式end*/
 .wdddDiv .task_hr_li .orderPic .text .step1.done s{background-position: -22px -12px;}
 .wdddDiv .task_hr_li .orderPic .text .step2.done s{background-position: -68px -12px;}
@@ -2970,7 +2970,7 @@ footer p a{text-decoration: none;color: #797979;}
 .wdddDiv .task_hr_li .orderPic .downBtn{float:right; margin:10px 30px 0 0; color:#657180; font-size:14px; text-align:center;}
 .wdddDiv .task_hr_li .orderPic .downBtn.no{display: none;}
 .wdddDiv .task_hr_li .orderPic .downBtn:hover{color: #1e9fff;}
-.wdddDiv .task_hr_li .orderPic .downBtn i{width: 15px;height: 12px;display: inline-block;background: url(../images/member/jl_hr.png?v=7000) no-repeat -158px -1px;position: relative;top:2px;}
+.wdddDiv .task_hr_li .orderPic .downBtn i{width: 15px;height: 12px;display: inline-block;background: url(../images/member/jl_hr.png../../images/cvresume) no-repeat -158px -1px;position: relative;top:2px;}
 /*订单列表按钮样式*/
 .wdddDiv .orderCon .do .downBtn{width:auto; height:30px; line-height:30px; padding:0 10px; margin-top:5px; color:#fff; font-size:12px; background:#1e9fff; text-align:center; display:inline-block; border-radius:4px;}
 .wdddDiv .orderCon .do .downBtn:hover{opacity: 0.8;text-decoration: none;}

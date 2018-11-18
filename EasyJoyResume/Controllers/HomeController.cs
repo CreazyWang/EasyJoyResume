@@ -16,5 +16,7 @@ namespace EasyJoyResume.Controllers
         {
             return View();
         } 
+
+       
     }
 }

@@ -1,5 +1,12 @@
-.jyCv-baseTop{position:relative; width:100%; min-height:236px; padding-top:25px; padding-bottom:40px; background:url("../images/jm0256/j2_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j2_head.jpg*/ repeat-y 0 0; color:#fff;}
-.jyCv-baseLeft{display:none;}
+.jyCv-baseTop {
+    position: relative;
+    width: 100%;
+    min-height: 236px;
+    padding-top: 25px;
+    padding-bottom: 40px;
+    background: url("../../images/cvresume/jm0256/j2_head.jpg") /*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j2_head.jpg*/ repeat-y 0 0;
+    color: #fff;
+} .jyCv-baseLeft{display:none;}
 .jyCv-baseRight{width:100%;  padding:30px 40px 40px;  background:#fff;}
 .jyCv-baseRight .baseItem.template_css, .jyCv-baseRight .baseItem.template_css dl{position:relative;}
 .jyCv-baseRight .baseItem.template_css dt{position:absolute; top:30px; left:0; max-width:194px;}
@@ -134,21 +141,21 @@
 .jyCv-baseStyle[data_color="j14"] .jyCv-letter{background:url("../../images/zjx/zjx0008_j14.jpg")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j14.jpg*/ no-repeat top center;}
 .jyCv-baseStyle[data_color="j15"] .jyCv-letter{background:url("../../images/zjx/zjx0008_j15.jpg")/*tpa=http://static.500d.me/resources/500d/cvresu../../images/zjx/zjx0008_j15.jpg*/ no-repeat top center;}
 
-.jyCv-baseStyle[data_color="j1"] .jyCv-baseTop{background:url("../images/jm0256/j1_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j1_head.jpg*/ repeat-y 0 0;}
-.jyCv-baseStyle[data_color="j2"] .jyCv-baseTop{background:url("../images/jm0256/j2_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j2_head.jpg*/ repeat-y 0 0;}
-.jyCv-baseStyle[data_color="j3"] .jyCv-baseTop{background:url("../images/jm0256/j3_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j3_head.jpg*/ repeat-y 0 0;}
-.jyCv-baseStyle[data_color="j4"] .jyCv-baseTop{background:url("../images/jm0256/j4_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j4_head.jpg*/ repeat-y 0 0;}
-.jyCv-baseStyle[data_color="j5"] .jyCv-baseTop{background:url("../images/jm0256/j5_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j5_head.jpg*/ repeat-y 0 0;}
-.jyCv-baseStyle[data_color="j6"] .jyCv-baseTop{background:url("../images/jm0256/j6_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j6_head.jpg*/ repeat-y 0 0;}
-.jyCv-baseStyle[data_color="j7"] .jyCv-baseTop{background:url("../images/jm0256/j7_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j7_head.jpg*/ repeat-y 0 0;}
-.jyCv-baseStyle[data_color="j8"] .jyCv-baseTop{background:url("../images/jm0256/j8_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j8_head.jpg*/ repeat-y 0 0;}
-.jyCv-baseStyle[data_color="j9"] .jyCv-baseTop{background:url("../images/jm0256/j9_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j9_head.jpg*/ repeat-y 0 0;}
-.jyCv-baseStyle[data_color="j10"] .jyCv-baseTop{background:url("../images/jm0256/j10_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j10_head.jpg*/ repeat-y 0 0;}
-.jyCv-baseStyle[data_color="j11"] .jyCv-baseTop{background:url("../images/jm0256/j11_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j11_head.jpg*/ repeat-y 0 0;}
-.jyCv-baseStyle[data_color="j12"] .jyCv-baseTop{background:url("../images/jm0256/j12_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j12_head.jpg*/ repeat-y 0 0;}
-.jyCv-baseStyle[data_color="j13"] .jyCv-baseTop{background:url("../images/jm0256/j13_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j13_head.jpg*/ repeat-y 0 0;}
-.jyCv-baseStyle[data_color="j14"] .jyCv-baseTop{background:url("../images/jm0256/j14_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j14_head.jpg*/ repeat-y 0 0;}
-.jyCv-baseStyle[data_color="j15"] .jyCv-baseTop{background:url("../images/jm0256/j15_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j15_head.jpg*/ repeat-y 0 0;}
+.jyCv-baseStyle[data_color="j1"] .jyCv-baseTop{background:url("../../images/cvresume/jm0256/j1_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j1_head.jpg*/ repeat-y 0 0;}
+.jyCv-baseStyle[data_color="j2"] .jyCv-baseTop{background:url("../../images/cvresume/jm0256/j2_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j2_head.jpg*/ repeat-y 0 0;}
+.jyCv-baseStyle[data_color="j3"] .jyCv-baseTop{background:url("../../images/cvresume/jm0256/j3_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j3_head.jpg*/ repeat-y 0 0;}
+.jyCv-baseStyle[data_color="j4"] .jyCv-baseTop{background:url("../../images/cvresume/jm0256/j4_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j4_head.jpg*/ repeat-y 0 0;}
+.jyCv-baseStyle[data_color="j5"] .jyCv-baseTop{background:url("../../images/cvresume/jm0256/j5_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j5_head.jpg*/ repeat-y 0 0;}
+.jyCv-baseStyle[data_color="j6"] .jyCv-baseTop{background:url("../../images/cvresume/jm0256/j6_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j6_head.jpg*/ repeat-y 0 0;}
+.jyCv-baseStyle[data_color="j7"] .jyCv-baseTop{background:url("../../images/cvresume/jm0256/j7_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j7_head.jpg*/ repeat-y 0 0;}
+.jyCv-baseStyle[data_color="j8"] .jyCv-baseTop{background:url("../../images/cvresume/jm0256/j8_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j8_head.jpg*/ repeat-y 0 0;}
+.jyCv-baseStyle[data_color="j9"] .jyCv-baseTop{background:url("../../images/cvresume/jm0256/j9_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j9_head.jpg*/ repeat-y 0 0;}
+.jyCv-baseStyle[data_color="j10"] .jyCv-baseTop{background:url("../../images/cvresume/jm0256/j10_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j10_head.jpg*/ repeat-y 0 0;}
+.jyCv-baseStyle[data_color="j11"] .jyCv-baseTop{background:url("../../images/cvresume/jm0256/j11_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j11_head.jpg*/ repeat-y 0 0;}
+.jyCv-baseStyle[data_color="j12"] .jyCv-baseTop{background:url("../../images/cvresume/jm0256/j12_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j12_head.jpg*/ repeat-y 0 0;}
+.jyCv-baseStyle[data_color="j13"] .jyCv-baseTop{background:url("../../images/cvresume/jm0256/j13_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j13_head.jpg*/ repeat-y 0 0;}
+.jyCv-baseStyle[data_color="j14"] .jyCv-baseTop{background:url("../../images/cvresume/jm0256/j14_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j14_head.jpg*/ repeat-y 0 0;}
+.jyCv-baseStyle[data_color="j15"] .jyCv-baseTop{background:url("../../images/cvresume/jm0256/j15_head.jpg")/*tpa=http://static.500d.me/resources/500d/cvresume/images/jm0256/j15_head.jpg*/ repeat-y 0 0;}
 
 .jyCv-baseStyle[data_color="j1"] .jyCv-baseRight .baseItem.template_css dt span{color:#0b70bd; border-color:#0b70bd;}
 .jyCv-baseStyle[data_color="j2"] .jyCv-baseRight .baseItem.template_css dt span{color:#254665; border-color:#254665;}

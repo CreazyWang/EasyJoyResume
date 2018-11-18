@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "验证手机";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+<div class="lr-glbox lr-szbox" id="changeEmailyzemailModal">
+    <div class="szpwdcon">
+        <h2>修改邮箱</h2>
+        <p>亲爱的用户，修改后的邮箱地址将成为您新的登录账户。</p>
+        <form id="changeEmailForm">
+            <div class="field email-field">
+                <input type="text" name="email" placeholder="请输入你的新邮箱">
+                <div class="valid-error"><p class="error">请输入正确的邮箱账号</p></div>
+            </div>
+            <div class="field email-field">
+                <input type="text" name="confrEmail" placeholder="请再次输入你的新邮箱">
+                <div class="valid-tips"><p class="tips">验证完后，你可以用该邮箱登录和找回密码</p></div>
+                <div class="valid-error"><p class="error">请输入正确的邮箱账号</p></div>
+            </div>
+            <div class="submit">
+                <button type="button"><input class="loading1 spin" style="display:none">确认</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal lrModal" id="yzemailModal" style="display:none">
+    <div class="modal-dialog zhpwd show-swal2">
+        <div class="modal-content">
+            <div class="hd"><h2>验证邮箱</h2></div>
+            <div class="cd">
+                <form>
+                    <p>亲爱的用户，邮件发送完成，请登录邮箱进行验证</p>
+                    <div class="yz">已发送邮件至：<i>service@500d.me</i></div>
+                    <div class="submit"><button type="button" id="forward_validate_email"><input class="loading1 spin" style="display:none">前往邮箱验证</button></div>
+                </form>
+            </div>
+            <div class="zhemailtips">
+                <i>如果没有收到验证邮件，可能是：</i><br>1.邮件被外星人劫持到垃圾箱了~<br>2.请检查邮箱地址是否正确~
+            </div>
+        </div>
+    </div>
+</div>
